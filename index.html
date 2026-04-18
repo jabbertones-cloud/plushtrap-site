@@ -3,774 +3,1873 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Plushtrap — Kawaii Streetwear. Wear the Wildness.</title>
-  <meta name="description" content="Plushtrap — kawaii meets streetwear. Limited drops from Tempe, AZ. Uncompromising craft, zero restocks. BUNSKI, MOHAIR, RHINESTONE collections." />
-  <meta property="og:title" content="Plushtrap — Kawaii Streetwear" />
-  <meta property="og:description" content="Limited drops. No restocks. Built different." />
+  <meta name="color-scheme" content="dark light" />
+  <title>Plushtrap — Kawaii Streetwear / Vol. 07 BUNSKI ALLKNIT / Live Now</title>
+  <meta name="description" content="Plushtrap — kawaii-streetwear drops from Tempe, AZ. Limited runs. No restocks. Built by SMAT Designs. Vol. 07 BUNSKI ALLKNIT live now." />
+  <meta name="theme-color" content="#0b0a0c" />
+  <meta property="og:title" content="Plushtrap — Vol. 07 BUNSKI ALLKNIT" />
+  <meta property="og:description" content="Limited drops. No restocks. Kawaii × street." />
   <meta property="og:image" content="https://plushtrap.com/og.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
   <style>
+    /* ═══════════════════════════════════════════════════════════════
+       PLUSHTRAP / vol. 07 — art direction by SMAT Designs
+       Dual identity: ink/bone, lemon/bubblegum, serif/grotesque.
+       ═══════════════════════════════════════════════════════════════ */
     :root {
-      --bg:      #000;
-      --s1:      #0a0a0a;
-      --s2:      #111;
-      --s3:      #161616;
-      --white:   #fff;
-      --yellow:  #f5e642;
-      --pink:    #ff6eb4;
-      --y-dim:   rgba(245,230,66,0.08);
-      --y-glow:  rgba(245,230,66,0.25);
-      --p-dim:   rgba(255,110,180,0.08);
-      --p-glow:  rgba(255,110,180,0.2);
-      --dim:     #3a3a3a;
-      --dim2:    #555;
-      --dim3:    #888;
-      --border:  rgba(255,255,255,0.07);
-      --border2: rgba(255,255,255,0.03);
+      /* color — each has a purpose. do not reuse without intent. */
+      --ink:     #0b0a0c;
+      --ink-2:   #141218;
+      --ink-3:   #1c1920;
+      --bone:    #f3ece1;
+      --bone-2:  #e9ddc9;
+      --bone-3:  #d8c9b1;
+      --lemon:   #f5e642;
+      --lemon-2: #fff38a;
+      --bubble:  #ff6eb4;
+      --bubble-2:#ffb8d8;
+      --plum:    #2a1a2e;
+      --silver:  #c9c3b4;
+      --char:    #8a8478;
+      --char-2:  #5a554c;
+
+      /* type */
+      --ff-disp:  'Archivo Black', system-ui, sans-serif;
+      --ff-edit:  'Fraunces', ui-serif, Georgia, serif;
+      --ff-mono:  'Space Mono', ui-monospace, monospace;
+
+      /* layout */
+      --max: 78rem;
+      --gutter: clamp(1.25rem, 3.5vw, 2.5rem);
     }
+
+    /* reset */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: #aaa; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-    ::selection { background: var(--yellow); color: #000; }
-    ::-webkit-scrollbar { width: 3px; }
-    ::-webkit-scrollbar-thumb { background: var(--yellow); border-radius: 2px; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      background: var(--ink); color: var(--bone-3);
+      font-family: var(--ff-edit);
+      font-variation-settings: "opsz" 14, "SOFT" 50, "WONK" 0;
+      font-feature-settings: "ss01","ss02","liga";
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: clip;
+      cursor: none;
+    }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; color: inherit; background: none; border: 0; cursor: none; }
+    ::selection { background: var(--lemon); color: var(--ink); }
+    ::-webkit-scrollbar { width: 4px; height: 4px; }
+    ::-webkit-scrollbar-track { background: var(--ink); }
+    ::-webkit-scrollbar-thumb { background: var(--lemon); border-radius: 2px; }
 
-    /* ─── NAV ───────────────────────────────────────────────────── */
+    /* section switching — light blocks get their own bg + colors */
+    .is-light {
+      background: var(--bone);
+      color: var(--char-2);
+    }
+    .is-light ::selection { background: var(--ink); color: var(--bone); }
+
+    /* container */
+    .wrap { max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
+
+    /* type utilities */
+    .disp { font-family: var(--ff-disp); letter-spacing: -0.015em; line-height: 0.82; text-transform: uppercase; }
+    .edit { font-family: var(--ff-edit); font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1; font-style: italic; }
+    .mono { font-family: var(--ff-mono); text-transform: uppercase; letter-spacing: 0.26em; font-size: 0.65rem; }
+    .mono-xs { font-family: var(--ff-mono); text-transform: uppercase; letter-spacing: 0.22em; font-size: 0.56rem; }
+
+    /* reveal */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.9s cubic-bezier(.2,.7,.2,1), transform 0.9s cubic-bezier(.2,.7,.2,1); }
+    .reveal.in { opacity: 1; transform: none; }
+    .reveal-stack > * { opacity: 0; transform: translateY(14px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal-stack.in > *:nth-child(1) { opacity:1; transform:none; transition-delay: 0ms; }
+    .reveal-stack.in > *:nth-child(2) { opacity:1; transform:none; transition-delay: 80ms; }
+    .reveal-stack.in > *:nth-child(3) { opacity:1; transform:none; transition-delay: 160ms; }
+    .reveal-stack.in > *:nth-child(4) { opacity:1; transform:none; transition-delay: 240ms; }
+    .reveal-stack.in > *:nth-child(5) { opacity:1; transform:none; transition-delay: 320ms; }
+    .reveal-stack.in > *:nth-child(6) { opacity:1; transform:none; transition-delay: 400ms; }
+
+    /* ─── CUSTOM CURSOR ──────────────────────────────────────────── */
+    .cursor {
+      position: fixed; top: 0; left: 0;
+      width: 1px; height: 1px;
+      pointer-events: none; z-index: 9999;
+      mix-blend-mode: difference;
+      will-change: transform;
+    }
+    .cursor-dot, .cursor-ring {
+      position: absolute; border-radius: 50%;
+      left: 50%; top: 50%;
+      transition: transform 0.18s ease, background-color 0.18s ease, border-color 0.18s ease, width 0.22s ease, height 0.22s ease;
+      transform: translate(-50%, -50%);
+    }
+    .cursor-dot  { width: 6px; height: 6px; background: var(--bone); }
+    .cursor-ring { width: 34px; height: 34px; border: 1px solid var(--bone); }
+    .cursor.hover .cursor-dot  { width: 10px; height: 10px; background: var(--lemon); }
+    .cursor.hover .cursor-ring { width: 52px; height: 52px; border-color: var(--lemon); }
+    .cursor.press .cursor-ring { transform: translate(-50%, -50%) scale(0.85); }
+    @media (hover: none), (pointer: coarse) {
+      body { cursor: auto; }
+      button, a { cursor: pointer; }
+      .cursor { display: none; }
+    }
+
+    /* ─── NAV ────────────────────────────────────────────────────── */
     .nav {
-      position: fixed; inset-block-start: 0; inset-inline: 0; z-index: 100;
-      padding: 1.25rem 2rem; display: flex; align-items: center; justify-content: space-between;
-      transition: all 0.4s ease;
+      position: fixed; inset-block-start: 0; inset-inline: 0; z-index: 50;
+      padding: 1.1rem clamp(1rem, 3vw, 2rem);
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background 0.4s, backdrop-filter 0.4s, border-color 0.4s;
+      border-bottom: 1px solid transparent;
     }
-    .nav.scrolled { background: rgba(0,0,0,0.96); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
-    .nav-logo {
-      font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 0.15em;
-      color: var(--white); text-decoration: none; display: flex; align-items: center; gap: 0.1em;
-    }
-    .nav-logo .pink { color: var(--pink); }
-    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-    .nav-links a { font-family: 'Space Mono', monospace; font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.28em; color: var(--dim2); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--white); }
-    .nav-cta {
-      font-family: 'Space Mono', monospace; font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.2em;
-      background: var(--yellow); color: #000; padding: 0.6rem 1.4rem;
-      border-radius: 2px; text-decoration: none; font-weight: 700; transition: all 0.2s;
-    }
-    .nav-cta:hover { background: var(--white); }
+    .nav.scrolled { background: rgba(11,10,12,0.88); backdrop-filter: blur(18px) saturate(160%); border-bottom-color: rgba(255,255,255,0.06); }
+    .nav.on-light.scrolled { background: rgba(243,236,225,0.88); border-bottom-color: rgba(11,10,12,0.08); }
 
-    /* ─── HERO ──────────────────────────────────────────────────── */
-    .hero {
-      position: relative; min-height: 100vh; display: flex; align-items: center;
-      overflow: hidden; padding-top: 80px;
+    .logo {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      font-family: var(--ff-disp); font-size: 1.05rem; letter-spacing: 0.12em;
+      color: var(--bone); text-transform: uppercase;
     }
-    .hero-bg { position: absolute; inset: 0; background: #000; }
+    .nav.on-light .logo { color: var(--ink); }
+    .logo-bow { width: 22px; height: 18px; color: var(--bubble); }
+
+    .nav-links { display: flex; gap: clamp(1rem, 3vw, 2.25rem); list-style: none; align-items: center; }
+    .nav-links a {
+      font-family: var(--ff-mono); font-size: 0.58rem;
+      text-transform: uppercase; letter-spacing: 0.3em;
+      color: var(--silver); position: relative; padding: 0.4rem 0;
+    }
+    .nav.on-light .nav-links a { color: var(--char-2); }
+    .nav-links a::after {
+      content: ""; position: absolute; left: 0; right: 100%; bottom: 0;
+      height: 1px; background: var(--lemon);
+      transition: right 0.3s cubic-bezier(.2,.7,.2,1);
+    }
+    .nav-links a:hover { color: var(--bone); }
+    .nav.on-light .nav-links a:hover { color: var(--ink); }
+    .nav-links a:hover::after { right: 0; }
+
+    .nav-cta {
+      font-family: var(--ff-mono); font-size: 0.58rem;
+      text-transform: uppercase; letter-spacing: 0.22em; font-weight: 700;
+      background: var(--lemon); color: var(--ink);
+      padding: 0.65rem 1.1rem; border-radius: 999px;
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      transition: background 0.2s, transform 0.2s, color 0.2s;
+    }
+    .nav-cta:hover { background: var(--bone); transform: translateY(-1px); }
+    .nav-cta .live-dot {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--bubble);
+      box-shadow: 0 0 0 0 rgba(255,110,180, 0.7);
+      animation: live 1.8s ease-in-out infinite;
+    }
+    @keyframes live {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255,110,180,0.6); }
+      50% { box-shadow: 0 0 0 6px rgba(255,110,180,0); }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links { display: none; }
+    }
+
+    /* ─── HERO ───────────────────────────────────────────────────── */
+    .hero {
+      position: relative; min-height: 100vh;
+      padding: 6.5rem 0 3.5rem;
+      overflow: hidden;
+      background: radial-gradient(ellipse 90% 60% at 10% 0%, rgba(245,230,66,0.07), transparent 50%),
+                  radial-gradient(ellipse 80% 50% at 90% 100%, rgba(255,110,180,0.05), transparent 55%),
+                  var(--ink);
+    }
     .hero-grid {
       position: absolute; inset: 0;
       background-image:
-        linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
-      background-size: 60px 60px;
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 80px 80px;
+      mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, #000 40%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, #000 40%, transparent 80%);
     }
-    /* Diagonal split — yellow right half, pink accent top-left */
-    .hero-right-panel {
-      position: absolute; right: 0; top: 0; bottom: 0; width: 42%;
-      background: linear-gradient(160deg, rgba(245,230,66,0.04) 0%, rgba(245,230,66,0.01) 100%);
-      border-left: 1px solid rgba(245,230,66,0.08);
-    }
-    .hero-glow-pink {
-      position: absolute; top: -10%; left: -5%;
-      width: 60vmin; height: 60vmin; border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,110,180,0.06), transparent 70%);
-      filter: blur(60px);
-    }
-    .hero-glow-y {
-      position: absolute; bottom: 10%; right: 20%;
-      width: 40vmin; height: 40vmin; border-radius: 50%;
-      background: radial-gradient(circle, rgba(245,230,66,0.05), transparent 70%);
-      filter: blur(80px);
-    }
-    .hero-content { position: relative; z-index: 2; padding: 3rem 2rem 4rem; max-width: 72rem; margin-inline: auto; width: 100%; }
 
-    .hero-chips {
-      display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2.5rem;
-      animation: fadeUp 0.8s ease both;
+    /* big lemon splash behind type */
+    .hero-splash {
+      position: absolute;
+      width: min(72vw, 60rem); aspect-ratio: 1;
+      right: -12%; top: 10%;
+      color: var(--lemon);
+      opacity: 0.98;
+      filter: blur(0.2px);
+      pointer-events: none;
+      animation: drift-splash 22s ease-in-out infinite alternate;
     }
-    .chip {
-      font-family: 'Space Mono', monospace; font-size: 0.55rem;
-      text-transform: uppercase; letter-spacing: 0.25em;
-      border: 1px solid; border-radius: 100px;
-      padding: 0.35rem 0.9rem;
+    .hero-splash svg { width: 100%; height: 100%; }
+    @keyframes drift-splash {
+      0%   { transform: translate(0,0) rotate(0deg); }
+      100% { transform: translate(-2.5vw, 2vw) rotate(7deg); }
     }
-    .chip-yellow { border-color: rgba(245,230,66,0.25); color: var(--yellow); background: var(--y-dim); }
-    .chip-pink { border-color: rgba(255,110,180,0.25); color: var(--pink); background: var(--p-dim); }
-    .chip-white { border-color: var(--border); color: var(--dim3); }
+
+    /* pink fur blur */
+    .hero-fur {
+      position: absolute;
+      width: 44vmin; height: 44vmin; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,110,180,0.35), transparent 65%);
+      filter: blur(70px);
+      left: -6vw; bottom: -8vw;
+      pointer-events: none;
+    }
+
+    /* bow that floats near the wordmark */
+    .hero-bow {
+      position: absolute;
+      width: clamp(90px, 13vw, 180px); aspect-ratio: 1;
+      right: clamp(6%, 14%, 20%); top: clamp(140px, 22%, 260px);
+      color: var(--bubble);
+      pointer-events: none;
+      filter: drop-shadow(0 6px 30px rgba(255,110,180,0.45));
+      transform-origin: 50% 50%;
+      will-change: transform;
+      z-index: 3;
+    }
+    .hero-bow svg { width: 100%; height: 100%; }
+
+    /* floating rhinestones */
+    .hero-stone {
+      position: absolute;
+      color: var(--bone);
+      pointer-events: none;
+      opacity: 0.78;
+      will-change: transform, opacity;
+      z-index: 2;
+    }
+    .hero-stone.s1 { width: 22px; top: 18%; left: 42%; animation: twinkle 3.2s ease-in-out infinite; }
+    .hero-stone.s2 { width: 14px; top: 40%; left: 70%; color: var(--lemon); animation: twinkle 2.6s 0.7s ease-in-out infinite; }
+    .hero-stone.s3 { width: 28px; top: 62%; left: 28%; color: var(--bubble); animation: twinkle 4.1s 0.3s ease-in-out infinite; }
+    .hero-stone.s4 { width: 16px; top: 74%; left: 58%; animation: twinkle 3.6s 1.1s ease-in-out infinite; }
+    .hero-stone.s5 { width: 20px; top: 30%; left: 12%; color: var(--lemon); animation: twinkle 2.9s 0.5s ease-in-out infinite; }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; transform: scale(0.82) rotate(0deg); }
+      50%      { opacity: 1;   transform: scale(1.08) rotate(18deg); }
+    }
+
+    .hero-inner {
+      position: relative; z-index: 4;
+      max-width: var(--max); margin-inline: auto; padding: 0 var(--gutter);
+      display: grid; gap: clamp(1.5rem, 3.2vw, 2.5rem);
+      min-height: calc(100vh - 10rem);
+      align-content: center;
+    }
+
+    .hero-eyebrow {
+      display: flex; align-items: center; gap: 0.9rem; flex-wrap: wrap;
+    }
+    .hero-chip {
+      font-family: var(--ff-mono);
+      font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.28em;
+      padding: 0.38rem 0.85rem; border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 999px; color: var(--bone-3);
+      display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .hero-chip.lemon { border-color: rgba(245,230,66,0.35); color: var(--lemon); background: rgba(245,230,66,0.06); }
+    .hero-chip.bubble { border-color: rgba(255,110,180,0.35); color: var(--bubble); background: rgba(255,110,180,0.06); }
+    .hero-chip .d { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
 
     .hero-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(5.5rem, 18vw, 15rem);
-      letter-spacing: -0.02em; line-height: 0.85;
-      color: var(--white); margin-bottom: 1.5rem;
-      animation: fadeUp 0.8s 0.08s ease both;
+      font-family: var(--ff-disp);
+      color: var(--bone);
+      font-size: clamp(4.2rem, 15vw, 13.5rem);
+      line-height: 0.82;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
     }
-    .hero-title .y { color: var(--yellow); }
-    .hero-title .p { color: var(--pink); }
-
-    .hero-tagline {
-      font-family: 'Space Mono', monospace; font-size: 0.75rem;
-      letter-spacing: 0.4em; text-transform: uppercase; color: var(--dim3);
-      margin-bottom: 2rem; animation: fadeUp 0.8s 0.14s ease both;
+    .hero-title .l1 { display: block; }
+    .hero-title .l2 {
+      display: block;
+      font-family: var(--ff-edit);
+      font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+      font-weight: 500;
+      font-style: italic;
+      color: var(--bubble);
+      text-transform: lowercase;
+      letter-spacing: -0.03em;
+      margin-left: clamp(0.5rem, 3vw, 3.5rem);
+      line-height: 0.95;
     }
-    .hero-sub {
-      font-size: 1.05rem; line-height: 1.75; color: var(--dim2);
-      max-width: 440px; margin-bottom: 2.5rem;
-      animation: fadeUp 0.8s 0.2s ease both;
+    .hero-title .l2 .dot { color: var(--lemon); }
+    .hero-title .l3 {
+      display: block;
+      color: var(--bone);
+      text-indent: clamp(2rem, 8vw, 8rem);
+    }
+    .hero-title .l3 em {
+      font-family: var(--ff-edit); font-style: italic;
+      font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+      color: var(--lemon); font-weight: 500; text-transform: none;
     }
 
-    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeUp 0.8s 0.28s ease both; margin-bottom: 3.5rem; }
-    .btn-y { display: inline-block; background: var(--yellow); color: #000; font-family: 'Space Mono', monospace; font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.22em; padding: 1rem 2rem; border-radius: 2px; text-decoration: none; transition: all 0.22s; }
-    .btn-y:hover { background: #fff; box-shadow: 0 0 30px var(--y-glow); }
-    .btn-pk { display: inline-block; border: 1px solid rgba(255,110,180,0.25); background: var(--p-dim); color: var(--pink); font-family: 'Space Mono', monospace; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.22em; padding: 1rem 2rem; border-radius: 2px; text-decoration: none; transition: all 0.22s; }
-    .btn-pk:hover { border-color: rgba(255,110,180,0.5); background: rgba(255,110,180,0.12); }
-    .btn-wh { display: inline-block; border: 1px solid var(--border); color: var(--dim3); font-family: 'Space Mono', monospace; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.22em; padding: 1rem 2rem; border-radius: 2px; text-decoration: none; transition: all 0.22s; }
-    .btn-wh:hover { border-color: rgba(255,255,255,0.2); color: var(--white); }
-
-    .hero-stats {
-      display: flex; flex-wrap: wrap; gap: 2.5rem;
-      border-top: 1px solid var(--border); padding-top: 2rem;
-      animation: fadeUp 0.8s 0.36s ease both;
+    .hero-tag {
+      font-family: var(--ff-mono);
+      font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.34em;
+      color: var(--char);
     }
-    .stat-n { font-family: 'Bebas Neue', sans-serif; font-size: 2.75rem; letter-spacing: 0.05em; display: block; }
-    .stat-n.y { color: var(--yellow); }
-    .stat-n.p { color: var(--pink); }
-    .stat-l { font-family: 'Space Mono', monospace; font-size: 0.52rem; text-transform: uppercase; letter-spacing: 0.22em; color: var(--dim); margin-top: 0.15rem; }
+    .hero-tag .div { color: var(--bubble); margin-inline: 0.75rem; }
 
-    /* ─── MARQUEE ────────────────────────────────────────────────── */
-    .marquee-wrap {
-      overflow: hidden; border-block: 1px solid var(--border);
-      padding: 0.8rem 0;
-      -webkit-mask: linear-gradient(90deg, transparent, #fff 6%, #fff 94%, transparent);
-      mask: linear-gradient(90deg, transparent, #fff 6%, #fff 94%, transparent);
+    .hero-grid-foot {
+      display: grid; grid-template-columns: 1fr auto; gap: 2rem;
+      align-items: end;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 1.6rem;
     }
-    .marquee-track { display: flex; width: max-content; animation: mq 28s linear infinite; }
-    .mq-item { display: flex; align-items: center; gap: 1rem; margin-inline: 2rem; white-space: nowrap; font-family: 'Bebas Neue', sans-serif; font-size: 1.15rem; letter-spacing: 0.2em; color: var(--dim); }
-    .mq-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
-    .mq-dot.y { background: var(--yellow); }
-    .mq-dot.p { background: var(--pink); }
-    @keyframes mq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @media (max-width: 720px) { .hero-grid-foot { grid-template-columns: 1fr; } }
 
-    /* ─── SECTIONS ───────────────────────────────────────────────── */
-    .section { max-width: 72rem; margin-inline: auto; padding: 7rem 2rem; }
-    .s-label { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.6rem; }
-    .s-line { flex-shrink: 0; width: 28px; height: 1px; }
-    .s-line.y { background: var(--yellow); }
-    .s-line.p { background: var(--pink); }
-    .s-tag { font-family: 'Space Mono', monospace; font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.3em; }
-    .s-tag.y { color: var(--yellow); }
-    .s-tag.p { color: var(--pink); }
-    .s-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 6vw, 5rem); color: var(--white); letter-spacing: 0.02em; line-height: 1; margin-bottom: 0.4rem; }
+    .hero-lede {
+      max-width: 40ch;
+      font-family: var(--ff-edit);
+      font-size: clamp(1rem, 1.2vw, 1.2rem);
+      line-height: 1.5; color: var(--bone-3);
+      font-variation-settings: "opsz" 14, "SOFT" 50, "WONK" 0;
+    }
+    .hero-lede em {
+      font-style: italic; color: var(--bone);
+      font-variation-settings: "opsz" 14, "SOFT" 100, "WONK" 1;
+    }
+    .hero-ctas { display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center; }
 
-    /* ─── DROPS GRID ─────────────────────────────────────────────── */
-    .drops-grid {
-      display: grid; gap: 1.5rem;
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      padding: 0.95rem 1.4rem; border-radius: 999px;
+      font-family: var(--ff-mono); font-size: 0.6rem;
+      text-transform: uppercase; letter-spacing: 0.24em;
+      transition: transform 0.22s, background 0.22s, color 0.22s, border-color 0.22s, box-shadow 0.22s;
+      white-space: nowrap;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn.lemon { background: var(--lemon); color: var(--ink); font-weight: 700; }
+    .btn.lemon:hover { background: var(--bone); box-shadow: 0 14px 40px rgba(245,230,66,0.25); }
+    .btn.bubble { background: transparent; color: var(--bubble); border: 1px solid rgba(255,110,180,0.45); }
+    .btn.bubble:hover { background: rgba(255,110,180,0.08); border-color: var(--bubble); }
+    .btn.ghost { color: var(--bone-3); border: 1px solid rgba(255,255,255,0.14); }
+    .btn.ghost:hover { border-color: var(--bone); color: var(--bone); }
+    .btn.ink { background: var(--ink); color: var(--bone); }
+    .btn.ink:hover { background: var(--plum); }
+    .btn .arrow { display: inline-block; transition: transform 0.22s; }
+    .btn:hover .arrow { transform: translateX(3px); }
+
+    /* scroll hint */
+    .hero-scroll {
+      position: absolute; left: 50%; bottom: 1.6rem; transform: translateX(-50%);
+      font-family: var(--ff-mono); font-size: 0.48rem;
+      text-transform: uppercase; letter-spacing: 0.3em;
+      color: var(--char); display: flex; align-items: center; gap: 0.6rem;
+      z-index: 5;
+    }
+    .hero-scroll .bar {
+      width: 1px; height: 28px; background: linear-gradient(to bottom, transparent, var(--lemon));
+      animation: scrollbar 1.8s ease-in-out infinite;
+    }
+    @keyframes scrollbar { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+
+    /* ─── TICKER (lemon strip, bright) ───────────────────────────── */
+    .ticker {
+      position: relative;
+      background: var(--lemon); color: var(--ink);
+      overflow: hidden;
+      border-block: 1px solid var(--ink);
+      padding: 0.9rem 0;
+    }
+    .ticker-track { display: flex; width: max-content; animation: tick 42s linear infinite; }
+    .ticker-item {
+      display: inline-flex; align-items: center; gap: 1rem;
+      margin-inline: 1.5rem; white-space: nowrap;
+      font-family: var(--ff-disp); font-size: 1.35rem; letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .ticker-item.italic { font-family: var(--ff-edit); font-style: italic; font-weight: 500; font-size: 1.6rem; letter-spacing: -0.02em; text-transform: lowercase; font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1; }
+    .ticker-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--ink); flex-shrink: 0; }
+    .ticker-bow { width: 28px; height: 22px; color: var(--bubble); flex-shrink: 0; }
+    @keyframes tick { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ─── FEATURE: CURRENT DROP ──────────────────────────────────── */
+    .feature {
+      padding: clamp(5rem, 10vw, 8rem) 0;
+      background: var(--ink);
+      position: relative;
+      overflow: hidden;
+    }
+    .feature-wrap {
+      max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter);
+    }
+    .feat-head {
+      display: grid; grid-template-columns: 1fr auto; gap: 1.5rem;
+      align-items: end; margin-bottom: 2.5rem;
+    }
+    @media (max-width: 680px) { .feat-head { grid-template-columns: 1fr; } }
+
+    .section-tag {
+      display: inline-flex; align-items: center; gap: 0.8rem;
+      font-family: var(--ff-mono); font-size: 0.58rem;
+      text-transform: uppercase; letter-spacing: 0.34em;
+      color: var(--lemon);
+    }
+    .section-tag .line { width: 32px; height: 1px; background: currentColor; }
+    .section-tag.bubble { color: var(--bubble); }
+    .section-tag.ink { color: var(--ink); }
+
+    .section-title {
+      font-family: var(--ff-disp);
+      color: var(--bone);
+      font-size: clamp(2.5rem, 7vw, 6rem);
+      line-height: 0.9; letter-spacing: -0.01em;
+      text-transform: uppercase;
+      margin-top: 0.4rem;
+    }
+    .is-light .section-title { color: var(--ink); }
+    .section-title em {
+      font-family: var(--ff-edit); font-style: italic;
+      font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+      font-weight: 500; color: var(--bubble);
+      text-transform: lowercase; letter-spacing: -0.02em;
+    }
+
+    .section-nav {
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .section-nav a {
+      font-family: var(--ff-mono); font-size: 0.54rem;
+      text-transform: uppercase; letter-spacing: 0.26em;
+      color: var(--char-2); border-bottom: 1px solid transparent;
+      padding-bottom: 3px; transition: color 0.2s, border-color 0.2s;
+    }
+    .section-nav a:hover { color: var(--bone); border-bottom-color: var(--lemon); }
+    .is-light .section-nav a:hover { color: var(--ink); }
+
+    /* big feature card for current drop — magazine cover */
+    .feat-card {
+      position: relative;
+      display: grid; grid-template-columns: 1.1fr 1fr; gap: 0;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px; overflow: hidden;
+      background: linear-gradient(135deg, rgba(245,230,66,0.06), rgba(255,110,180,0.04)), var(--ink-2);
+      min-height: 560px;
+    }
+    @media (max-width: 820px) {
+      .feat-card { grid-template-columns: 1fr; min-height: 0; }
+    }
+
+    .feat-visual {
+      position: relative; overflow: hidden;
+      background:
+        radial-gradient(ellipse 70% 60% at 30% 20%, rgba(245,230,66,0.14), transparent 55%),
+        radial-gradient(ellipse 50% 60% at 80% 80%, rgba(255,110,180,0.1), transparent 60%),
+        linear-gradient(135deg, var(--ink-2), var(--ink-3));
+      display: flex; align-items: center; justify-content: center;
+      min-height: 420px;
+    }
+    .feat-visual-inner {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .feat-visual svg.art-knit { width: 90%; height: 90%; color: var(--lemon); opacity: 0.18; }
+
+    .feat-visual .feat-bow {
+      position: absolute; width: 40%; max-width: 220px;
+      left: 8%; top: 12%;
+      color: var(--bubble);
+      animation: sway 9s ease-in-out infinite;
+      filter: drop-shadow(0 6px 20px rgba(255,110,180,0.4));
+    }
+    @keyframes sway {
+      0%, 100% { transform: rotate(-6deg) translateY(0); }
+      50%      { transform: rotate(6deg) translateY(-8px); }
+    }
+    .feat-visual .feat-stone {
+      position: absolute; color: var(--bone);
+      animation: twinkle 3s ease-in-out infinite;
+    }
+    .feat-visual .feat-stone.a { width: 26px; bottom: 18%; left: 40%; animation-delay: 0.2s; }
+    .feat-visual .feat-stone.b { width: 18px; top: 30%; right: 22%; color: var(--lemon); animation-delay: 0.8s; }
+    .feat-visual .feat-stone.c { width: 32px; bottom: 30%; right: 12%; color: var(--bubble); animation-delay: 1.4s; }
+
+    .feat-sticker {
+      position: absolute; right: 1.2rem; top: 1.2rem;
+      width: clamp(100px, 12vw, 140px); aspect-ratio: 1;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--bone);
+      z-index: 3;
+      animation: spin-slow 26s linear infinite;
+    }
+    .feat-sticker svg { width: 100%; height: 100%; }
+    @keyframes spin-slow { to { transform: rotate(360deg); } }
+    .feat-sticker-core {
+      position: absolute; inset: 26%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--lemon);
+      animation: spin-slow 26s linear infinite reverse;
+    }
+    .feat-sticker-core svg { width: 60%; height: 60%; }
+
+    .feat-body {
+      padding: clamp(1.8rem, 3.5vw, 3rem);
+      display: flex; flex-direction: column; justify-content: space-between; gap: 2rem;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.015), transparent 40%);
+    }
+    .feat-corners {
+      display: flex; justify-content: space-between; font-family: var(--ff-mono);
+      font-size: 0.52rem; text-transform: uppercase; letter-spacing: 0.26em;
+      color: var(--char);
+    }
+    .feat-title {
+      font-family: var(--ff-disp);
+      color: var(--bone);
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      line-height: 0.9; letter-spacing: -0.01em;
+      text-transform: uppercase;
+    }
+    .feat-title .bunski {
+      font-family: var(--ff-edit); font-style: italic;
+      font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+      font-weight: 500; color: var(--lemon);
+      text-transform: none; letter-spacing: -0.02em;
+    }
+    .feat-desc {
+      font-family: var(--ff-edit); font-size: 1.02rem; line-height: 1.55;
+      color: var(--bone-3); max-width: 34ch;
+    }
+    .feat-meta {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem 0.5rem;
+      border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1rem;
+    }
+    .feat-meta-cell .k { font-family: var(--ff-mono); font-size: 0.48rem; text-transform: uppercase; letter-spacing: 0.22em; color: var(--char); display: block; margin-bottom: 0.3rem; }
+    .feat-meta-cell .v { font-family: var(--ff-disp); color: var(--bone); font-size: 1.05rem; letter-spacing: 0.04em; text-transform: uppercase; }
+    .feat-meta-cell.live .v { color: var(--lemon); }
+    .feat-meta-cell.pink .v { color: var(--bubble); }
+
+    .feat-ctas { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+
+    /* ─── ARCHIVE GRID ───────────────────────────────────────────── */
+    .archive {
+      padding: clamp(4rem, 9vw, 7rem) 0;
+      background: var(--ink);
+    }
+    .archive-wrap { max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
+
+    .archive-grid {
+      display: grid; gap: 1.25rem;
       grid-template-columns: repeat(3, 1fr);
       margin-top: 3rem;
     }
-    @media (max-width: 900px) { .drops-grid { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 600px) { .drops-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 900px) { .archive-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .archive-grid { grid-template-columns: 1fr; } }
 
-    .drop-card {
-      position: relative; overflow: hidden; border-radius: 8px;
-      border: 1px solid var(--border); aspect-ratio: 3/4;
+    .drop {
+      position: relative; overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px; aspect-ratio: 4/5;
       display: flex; flex-direction: column; justify-content: flex-end;
-      padding: 1.75rem; cursor: pointer; transition: all 0.4s ease;
-      background: var(--s1);
+      background: var(--ink-2);
+      transition: transform 0.5s cubic-bezier(.2,.7,.2,1), border-color 0.3s;
     }
-    .drop-card:hover { border-color: rgba(255,255,255,0.12); transform: translateY(-4px); box-shadow: 0 20px 50px rgba(0,0,0,0.6); }
-
-    /* card-specific backgrounds */
-    .drop-card.live {
-      background:
-        radial-gradient(ellipse 70% 60% at 30% 20%, rgba(245,230,66,0.06), transparent 60%),
-        radial-gradient(ellipse 60% 50% at 80% 80%, rgba(255,110,180,0.04), transparent 60%),
-        var(--s1);
-    }
-    .drop-card.live .drop-art-bg { background: linear-gradient(135deg, rgba(245,230,66,0.04) 0%, rgba(0,0,0,0) 60%); }
-    .drop-card.sold-1 {
-      background: radial-gradient(ellipse 80% 70% at 60% 30%, rgba(120,80,255,0.05), transparent 65%), var(--s1);
-    }
-    .drop-card.sold-2 {
-      background: radial-gradient(ellipse 80% 70% at 40% 70%, rgba(255,110,180,0.05), transparent 65%), var(--s1);
-    }
-    .drop-card.sold-3 {
-      background: radial-gradient(ellipse 80% 70% at 70% 50%, rgba(245,230,66,0.04), transparent 60%), var(--s1);
-    }
-    .drop-card.coming {
-      background: radial-gradient(ellipse 60% 60% at 50% 40%, rgba(255,255,255,0.02), transparent 70%), var(--s1);
-      border-style: dashed; opacity: 0.75;
+    .drop:hover { border-color: rgba(255,255,255,0.2); transform: translateY(-6px); }
+    .drop-art { position: absolute; inset: 0; overflow: hidden; }
+    .drop-body { position: relative; z-index: 4; padding: 1.5rem 1.4rem 1.4rem; }
+    .drop-body::before {
+      content: ""; position: absolute; left: 0; right: 0; top: -60px; bottom: 0;
+      background: linear-gradient(to top, rgba(11,10,12,0.92) 0%, rgba(11,10,12,0.55) 65%, transparent 100%);
+      pointer-events: none; z-index: -1;
     }
 
-    .drop-art {
+    .drop-badge {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      padding: 0.28rem 0.7rem; border-radius: 999px;
+      font-family: var(--ff-mono); font-size: 0.5rem;
+      text-transform: uppercase; letter-spacing: 0.25em;
+      border: 1px solid; margin-bottom: 0.7rem;
+    }
+    .drop-badge.live   { color: var(--lemon); border-color: rgba(245,230,66,0.4); background: rgba(245,230,66,0.08); }
+    .drop-badge.live::before { content: ""; width: 5px; height: 5px; background: var(--lemon); border-radius: 50%; animation: pulse 1.6s ease-in-out infinite; }
+    .drop-badge.sold   { color: var(--char); border-color: rgba(255,255,255,0.1); background: rgba(255,255,255,0.02); }
+    .drop-badge.coming { color: var(--bubble); border-color: rgba(255,110,180,0.35); background: rgba(255,110,180,0.06); }
+
+    .drop-no    { font-family: var(--ff-mono); font-size: 0.5rem; text-transform: uppercase; letter-spacing: 0.26em; color: var(--char); margin-bottom: 0.3rem; }
+    .drop-name  { font-family: var(--ff-disp); color: var(--bone); font-size: 1.55rem; letter-spacing: 0.04em; line-height: 1; text-transform: uppercase; }
+    .drop-name em { font-family: var(--ff-edit); font-style: italic; font-weight: 500; color: var(--bubble); font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1; text-transform: lowercase; letter-spacing: -0.02em; }
+    .drop-sub   { font-family: var(--ff-edit); font-size: 0.85rem; color: var(--char); margin-top: 0.25rem; }
+    @keyframes pulse { 0%,100% { opacity:1; transform: scale(1);} 50% { opacity: 0.35; transform: scale(0.6); } }
+
+    /* per-drop art: KNIT weave (BUNSKI/07) */
+    .art-knit-bg {
       position: absolute; inset: 0;
-      display: flex; align-items: center; justify-content: center;
-      overflow: hidden; pointer-events: none;
+      background:
+        radial-gradient(ellipse 60% 40% at 30% 20%, rgba(245,230,66,0.22), transparent 55%),
+        radial-gradient(ellipse 50% 60% at 80% 80%, rgba(255,110,180,0.12), transparent 60%),
+        linear-gradient(160deg, rgba(245,230,66,0.04), transparent 60%);
     }
-    .drop-art-num {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(8rem, 20vw, 14rem);
-      line-height: 1; letter-spacing: -0.04em;
-      color: rgba(255,255,255,0.025);
-      user-select: none;
-      transition: all 0.5s;
+    .art-knit-tile {
+      position: absolute; inset: -4%;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44'><g fill='none' stroke='rgba(245,230,66,0.28)' stroke-width='1.6' stroke-linecap='round'><path d='M2 14 Q 8 4 14 14 Q 20 24 26 14 Q 32 4 38 14'/><path d='M2 30 Q 8 20 14 30 Q 20 40 26 30 Q 32 20 38 30'/></g></svg>");
+      background-size: 44px 44px;
+      opacity: 0.5;
+      mix-blend-mode: screen;
     }
-    .drop-card:hover .drop-art-num { color: rgba(255,255,255,0.04); transform: scale(1.05); }
 
-    /* grid texture overlay */
-    .drop-grid-over {
+    /* MOHAIR (06) — soft fuzzy blur */
+    .art-mohair {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 40% 30%, rgba(255,110,180,0.25), transparent 60%),
+        radial-gradient(ellipse 50% 70% at 70% 70%, rgba(255,110,180,0.15), transparent 60%),
+        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(245,230,66,0.1), transparent 60%),
+        var(--ink-2);
+      filter: blur(1px);
+    }
+    .art-mohair::before {
+      content: ""; position: absolute; inset: 0;
+      background-image: repeating-radial-gradient(circle at 30% 40%, rgba(255,255,255,0.04) 0 1px, transparent 1px 5px),
+                        repeating-radial-gradient(circle at 70% 70%, rgba(255,255,255,0.03) 0 1px, transparent 1px 4px);
+      mix-blend-mode: overlay;
+    }
+
+    /* RHINESTONE (05) — faceted gem cluster */
+    .art-rhinestone {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 50%, rgba(255,110,180,0.14), transparent 55%),
+        linear-gradient(150deg, #1a0f22, var(--ink-2));
+    }
+    .art-rhinestone svg { position: absolute; }
+    .art-rhinestone .rs { color: var(--bone); animation: twinkle 3s ease-in-out infinite; }
+    .art-rhinestone .rs.a { width: 50px; top: 14%; left: 18%; color: var(--bubble); animation-delay: 0.2s; }
+    .art-rhinestone .rs.b { width: 80px; top: 24%; left: 50%; animation-delay: 0.8s; }
+    .art-rhinestone .rs.c { width: 36px; top: 56%; left: 28%; color: var(--lemon); animation-delay: 1.3s; }
+    .art-rhinestone .rs.d { width: 64px; top: 42%; left: 62%; color: var(--bubble); animation-delay: 0.5s; }
+
+    /* Y2K KNIT (04) — chrome gradient */
+    .art-y2k {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(135deg, rgba(245,230,66,0.1), rgba(255,110,180,0.14) 30%, rgba(192,180,220,0.12) 60%, transparent 90%),
+        linear-gradient(to bottom, var(--ink-2), var(--plum));
+    }
+    .art-y2k::before {
+      content: ""; position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'><g fill='rgba(255,255,255,0.06)'><path d='M40 0 L42 38 L80 40 L42 42 L40 80 L38 42 L0 40 L38 38 Z'/></g></svg>");
+      background-size: 80px 80px;
+    }
+
+    /* CLOUD FLEECE (03) — puffy clouds */
+    .art-cloud {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 40% at 30% 70%, rgba(245,230,66,0.08), transparent 55%),
+        radial-gradient(ellipse 60% 50% at 70% 30%, rgba(255,110,180,0.1), transparent 55%),
+        linear-gradient(to bottom, var(--ink-2), var(--ink-3));
+    }
+    .art-cloud svg { position: absolute; color: rgba(245,230,66,0.18); }
+    .art-cloud svg.a { width: 55%; left: 6%; top: 16%; animation: drift 14s ease-in-out infinite; }
+    .art-cloud svg.b { width: 40%; right: 4%; top: 42%; color: rgba(255,110,180,0.16); animation: drift 18s ease-in-out 1s infinite; }
+    .art-cloud svg.c { width: 65%; left: 12%; bottom: 14%; color: rgba(255,255,255,0.06); animation: drift 22s ease-in-out 0.5s infinite; }
+    @keyframes drift {
+      0%, 100% { transform: translateX(0); }
+      50%      { transform: translateX(4%); }
+    }
+
+    /* DROP 008 — REDACTED */
+    .art-redacted {
+      position: absolute; inset: 0;
+      background: linear-gradient(140deg, var(--ink-3), var(--ink-2));
+    }
+    .art-redacted::before {
+      content: "CLASSIFIED / VOL.008 / CLASSIFIED / VOL.008 / CLASSIFIED / VOL.008 / CLASSIFIED / VOL.008 / CLASSIFIED / VOL.008 / CLASSIFIED / VOL.008 / CLASSIFIED / VOL.008 /";
+      position: absolute; inset: 0; padding: 1.5rem;
+      font-family: var(--ff-mono); font-size: 0.6rem;
+      color: rgba(255,110,180,0.22); letter-spacing: 0.18em;
+      word-spacing: 0.4em; line-height: 1.6; text-transform: uppercase;
+      overflow: hidden;
+    }
+    .art-redacted::after {
+      content: ""; position: absolute; left: 12%; right: 12%; top: 20%;
+      height: 24px; background: var(--bubble);
+      transform: rotate(-5deg);
+      box-shadow: 0 60px 0 -4px rgba(255,110,180,0.7), 0 120px 0 -4px rgba(255,110,180,0.5), 0 180px 0 -4px rgba(255,110,180,0.3);
+    }
+    .drop.coming .drop-name { color: var(--bubble); }
+    .drop.coming .drop-name .q { font-family: var(--ff-edit); font-style: italic; color: var(--bone); font-weight: 500; font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1; }
+
+    /* ─── AESTHETIC (LIGHT SECTION) ──────────────────────────────── */
+    .aesthetic {
+      background: var(--bone);
+      color: var(--ink);
+      padding: clamp(6rem, 12vw, 10rem) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .aesthetic::before {
+      content: ""; position: absolute; inset: 0;
+      background-image:
+        radial-gradient(circle at 100% 0%, rgba(255,110,180,0.12), transparent 40%),
+        radial-gradient(circle at 0% 100%, rgba(245,230,66,0.14), transparent 40%);
+      pointer-events: none;
+    }
+    .aesthetic-wrap { position: relative; max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
+
+    .aesthetic-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 5rem);
+      align-items: start; margin-top: 3rem;
+    }
+    @media (max-width: 820px) { .aesthetic-grid { grid-template-columns: 1fr; } }
+
+    .quote {
+      font-family: var(--ff-edit); font-style: italic;
+      font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1; font-weight: 400;
+      font-size: clamp(2.2rem, 4.5vw, 4.2rem);
+      line-height: 1.02; color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+    .quote em { color: var(--bubble); font-style: italic; }
+    .quote .y { background: var(--lemon); padding: 0 0.2em; }
+    .quote-attr {
+      margin-top: 2rem; font-family: var(--ff-mono); font-size: 0.55rem;
+      text-transform: uppercase; letter-spacing: 0.3em; color: var(--char-2);
+    }
+
+    .glyphs {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    }
+    .glyph {
+      position: relative;
+      background: rgba(11,10,12,0.03);
+      border: 1px solid rgba(11,10,12,0.1);
+      border-radius: 14px;
+      padding: 1.6rem 1.4rem;
+      overflow: hidden;
+      transition: transform 0.3s, background 0.3s, border-color 0.3s;
+    }
+    .glyph:hover { transform: translateY(-4px); background: rgba(11,10,12,0.05); border-color: rgba(11,10,12,0.18); }
+    .glyph-art {
+      width: 70px; height: 70px; margin-bottom: 1rem;
+    }
+    .glyph.bow .glyph-art { color: var(--bubble); }
+    .glyph.stone .glyph-art { color: var(--ink); }
+    .glyph.cloud .glyph-art { color: var(--bubble); }
+    .glyph.sparkle .glyph-art { color: var(--ink); }
+
+    .glyph-name {
+      font-family: var(--ff-disp); font-size: 1.1rem; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--ink); margin-bottom: 0.5rem;
+    }
+    .glyph-desc { font-family: var(--ff-edit); font-size: 0.88rem; color: var(--char-2); line-height: 1.55; }
+    .glyph-num {
+      position: absolute; top: 1rem; right: 1rem;
+      font-family: var(--ff-mono); font-size: 0.48rem; color: var(--char-2);
+      letter-spacing: 0.2em; text-transform: uppercase;
+    }
+
+    /* ─── PHILOSOPHY ─────────────────────────────────────────────── */
+    .phil {
+      background: var(--ink);
+      padding: clamp(5rem, 10vw, 8rem) 0;
+      position: relative; overflow: hidden;
+    }
+    .phil::before {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(255,110,180,0.06), transparent 60%);
+      pointer-events: none;
+    }
+    .phil-wrap { position: relative; max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
+
+    .phil-grid {
+      display: grid; grid-template-columns: 5fr 7fr; gap: clamp(2rem, 5vw, 4rem);
+      margin-top: 3rem; align-items: start;
+    }
+    @media (max-width: 900px) { .phil-grid { grid-template-columns: 1fr; } }
+
+    /* mandala */
+    .mandala {
+      position: relative; aspect-ratio: 1; border-radius: 18px;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(245,230,66,0.07), transparent 60%),
+        linear-gradient(150deg, var(--ink-2), var(--ink-3));
+      border: 1px solid rgba(255,255,255,0.08);
+      overflow: hidden;
+    }
+    .mandala-grid {
       position: absolute; inset: 0;
       background-image:
         linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
-      background-size: 30px 30px;
-      opacity: 0.5;
-    }
-    .drop-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 50%, transparent 100%); }
-
-    .drop-content { position: relative; z-index: 3; }
-    .drop-badge {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      font-family: 'Space Mono', monospace; font-size: 0.52rem;
-      text-transform: uppercase; letter-spacing: 0.25em; margin-bottom: 0.6rem;
-      border: 1px solid; border-radius: 100px; padding: 0.2rem 0.6rem;
-    }
-    .drop-badge.live-badge { color: var(--yellow); border-color: rgba(245,230,66,0.3); background: var(--y-dim); }
-    .drop-badge.live-badge::before { content: ""; width: 5px; height: 5px; background: var(--yellow); border-radius: 50%; animation: pulse 2s ease infinite; }
-    .drop-badge.sold-badge { color: var(--dim2); border-color: var(--border); background: rgba(255,255,255,0.02); }
-    .drop-badge.coming-badge { color: var(--pink); border-color: rgba(255,110,180,0.25); background: var(--p-dim); }
-    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.6)} }
-
-    .drop-num-label { font-family: 'Space Mono', monospace; font-size: 0.5rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--dim); margin-bottom: 0.25rem; }
-    .drop-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.9rem; letter-spacing: 0.05em; line-height: 1; margin-bottom: 0.3rem; transition: color 0.3s; }
-    .drop-card.live .drop-title { color: var(--yellow); }
-    .drop-card:not(.live) .drop-title { color: var(--white); }
-    .drop-card:not(.live):hover .drop-title { color: var(--yellow); }
-    .drop-sub { font-size: 0.78rem; color: var(--dim2); line-height: 1.5; }
-
-    /* ─── EDITORIAL SHOWCASE ─────────────────────────────────────── */
-    .editorial { background: var(--s1); border-block: 1px solid var(--border); }
-    .editorial-grid {
-      display: grid; grid-template-columns: 1fr 1fr 1fr;
-      gap: 1px; background: var(--border);
-      margin-top: 3rem; border-radius: 8px; overflow: hidden;
-    }
-    @media(max-width:768px){ .editorial-grid { grid-template-columns: 1fr; } }
-    .edit-cell {
-      background: var(--s1); padding: 2.5rem 2rem;
-      display: flex; flex-direction: column; gap: 0.75rem;
-      position: relative; overflow: hidden;
-      transition: background 0.3s;
-    }
-    .edit-cell:hover { background: var(--s2); }
-    .edit-cell-icon {
-      font-family: 'Bebas Neue', sans-serif; font-size: 4rem;
-      line-height: 1; letter-spacing: 0.02em;
-    }
-    .edit-cell-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; color: var(--white); letter-spacing: 0.05em; }
-    .edit-cell-desc { font-size: 0.85rem; line-height: 1.65; color: var(--dim2); }
-    .edit-cell-glow {
-      position: absolute; top: -50%; right: -30%;
-      width: 200%; height: 200%; border-radius: 50%;
-      opacity: 0; transition: opacity 0.4s;
-    }
-    .edit-cell:hover .edit-cell-glow { opacity: 1; }
-
-    /* ─── PHILOSOPHY ─────────────────────────────────────────────── */
-    .phil-section { background: #000; }
-    .phil-grid { display: grid; gap: 4rem; grid-template-columns: 1fr 1fr; margin-top: 4rem; align-items: center; }
-    @media (max-width: 768px) { .phil-grid { grid-template-columns: 1fr; } }
-
-    .phil-visual {
-      position: relative; aspect-ratio: 1;
-      border: 1px solid var(--border); border-radius: 8px;
-      overflow: hidden; background: var(--s1);
-    }
-    .phil-vis-inner {
-      position: absolute; inset: 0;
-      display: flex; align-items: center; justify-content: center;
-      flex-direction: column; gap: 0.5rem;
-    }
-    /* Layered geometric art */
-    .phil-geo {
-      position: absolute; inset: 0;
-    }
-    .phil-geo-ring {
-      position: absolute; border-radius: 50%;
-      border: 1px solid;
-    }
-    .phil-geo-ring:nth-child(1) { inset: 15%; border-color: rgba(245,230,66,0.08); }
-    .phil-geo-ring:nth-child(2) { inset: 25%; border-color: rgba(255,110,180,0.06); }
-    .phil-geo-ring:nth-child(3) { inset: 35%; border-color: rgba(245,230,66,0.04); }
-    .phil-geo-ring:nth-child(4) { inset: 45%; border-color: rgba(255,110,180,0.08); border-width: 2px; }
-    .phil-geo-cross {
-      position: absolute; inset: 0;
-      background-image: linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
       background-size: 40px 40px;
     }
-    .phil-vis-text {
-      position: relative; z-index: 2; text-align: center;
+    .mandala-ring {
+      position: absolute; border-radius: 50%; border: 1px solid;
+      transform-origin: center;
     }
-    .phil-vis-big { font-family: 'Bebas Neue', sans-serif; font-size: 4rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.06); line-height: 1; }
-    .phil-vis-sub { font-family: 'Space Mono', monospace; font-size: 0.52rem; text-transform: uppercase; letter-spacing: 0.4em; color: rgba(255,110,180,0.35); }
-    .phil-corner { position: absolute; font-family: 'Space Mono', monospace; font-size: 0.45rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--dim); }
-    .phil-corner.tl { top: 1rem; left: 1rem; }
-    .phil-corner.br { bottom: 1rem; right: 1rem; }
+    .mandala-ring.r1 { inset: 8%;  border-color: rgba(255,255,255,0.05); animation: rot 60s linear infinite; }
+    .mandala-ring.r2 { inset: 18%; border-color: rgba(245,230,66,0.18); border-style: dashed; animation: rot 40s linear infinite reverse; }
+    .mandala-ring.r3 { inset: 30%; border-color: rgba(255,110,180,0.2); animation: rot 50s linear infinite; }
+    .mandala-ring.r4 { inset: 42%; border-color: rgba(245,230,66,0.1); border-width: 1px; }
+    @keyframes rot { to { transform: rotate(360deg); } }
 
-    .phil-list { display: flex; flex-direction: column; gap: 1.25rem; }
-    .phil-item {
-      padding: 1.5rem; border: 1px solid var(--border); border-radius: 6px;
-      transition: all 0.3s; background: var(--s1);
+    .mandala-glyphs { position: absolute; inset: 0; color: var(--lemon); }
+    .mandala-gl {
+      position: absolute; transform-origin: center;
+      color: var(--lemon);
     }
-    .phil-item:hover { border-color: rgba(245,230,66,0.18); background: var(--y-dim); transform: translateX(6px); }
-    .phil-item-head { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.4rem; }
-    .phil-item-num { font-family: 'Space Mono', monospace; font-size: 0.5rem; text-transform: uppercase; letter-spacing: 0.25em; color: var(--yellow); flex-shrink: 0; }
-    .phil-item-title { font-size: 0.95rem; font-weight: 600; color: var(--white); }
-    .phil-item-desc { font-size: 0.82rem; line-height: 1.65; color: var(--dim2); }
+    .mandala-gl svg { width: 100%; height: 100%; }
+    .mandala-gl.top    { top: 5%; left: 50%; transform: translateX(-50%); width: 48px; color: var(--bubble); }
+    .mandala-gl.right  { top: 50%; right: 5%; transform: translateY(-50%); width: 44px; }
+    .mandala-gl.bottom { bottom: 5%; left: 50%; transform: translateX(-50%); width: 56px; color: var(--bone); }
+    .mandala-gl.left   { top: 50%; left: 5%; transform: translateY(-50%); width: 44px; color: var(--bubble); }
 
-    /* ─── SOCIAL / IG ────────────────────────────────────────────── */
-    .ig-section { background: var(--s1); border-block: 1px solid var(--border); }
-    .ig-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 1px; background: var(--border); margin-top: 3rem;
-      border-radius: 6px; overflow: hidden;
-    }
-    @media(max-width:640px){ .ig-grid { grid-template-columns: repeat(2, 1fr); } }
-    .ig-cell {
-      aspect-ratio: 1; background: var(--s2);
-      display: flex; align-items: center; justify-content: center;
-      position: relative; overflow: hidden; cursor: pointer;
-      transition: all 0.3s;
-    }
-    .ig-cell:hover { background: var(--s3); }
-    .ig-cell-inner {
+    .mandala-center {
       position: absolute; inset: 0;
-      display: flex; align-items: center; justify-content: center;
-      flex-direction: column; gap: 0.5rem;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center;
     }
-    .ig-cell-text {
-      font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem;
-      letter-spacing: 0.1em; color: rgba(255,255,255,0.04);
-      text-align: center; line-height: 1.1;
+    .mandala-word {
+      font-family: var(--ff-disp); color: var(--bone);
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      letter-spacing: 0.06em; line-height: 0.95; text-transform: uppercase;
     }
-    .ig-cell-hover {
-      position: absolute; inset: 0;
-      display: flex; align-items: center; justify-content: center;
-      background: rgba(0,0,0,0.7); opacity: 0; transition: opacity 0.3s;
+    .mandala-word .p { color: var(--bubble); font-family: var(--ff-edit); font-style: italic; font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1; font-weight: 500; text-transform: lowercase; letter-spacing: -0.02em; }
+    .mandala-foot {
+      margin-top: 0.75rem; font-family: var(--ff-mono); font-size: 0.5rem;
+      text-transform: uppercase; letter-spacing: 0.32em; color: var(--char);
     }
-    .ig-cell:hover .ig-cell-hover { opacity: 1; }
-    .ig-cell-hover-text { font-family: 'Space Mono', monospace; font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--yellow); }
+    .mandala-corner {
+      position: absolute; font-family: var(--ff-mono); font-size: 0.46rem;
+      text-transform: uppercase; letter-spacing: 0.24em; color: var(--char);
+    }
+    .mandala-corner.tl { top: 1rem; left: 1rem; }
+    .mandala-corner.tr { top: 1rem; right: 1rem; color: var(--lemon); }
+    .mandala-corner.bl { bottom: 1rem; left: 1rem; color: var(--bubble); }
+    .mandala-corner.br { bottom: 1rem; right: 1rem; }
 
-    /* ─── CTA ────────────────────────────────────────────────────── */
-    .cta-section { position: relative; overflow: hidden; padding: 9rem 2rem; text-align: center; }
-    .cta-bg {
+    .principles { display: flex; flex-direction: column; gap: 0; border-block: 1px solid rgba(255,255,255,0.08); }
+    .prin {
+      position: relative;
+      display: grid; grid-template-columns: auto 1fr auto; gap: 1.5rem;
+      align-items: start;
+      padding: 1.8rem 0.4rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: padding 0.4s, background 0.4s;
+    }
+    .prin:last-child { border-bottom: 0; }
+    .prin:hover { padding-inline: 1rem; background: rgba(255,255,255,0.02); }
+    .prin-n {
+      font-family: var(--ff-disp); color: var(--lemon);
+      font-size: 1.4rem; letter-spacing: 0.04em; line-height: 1;
+    }
+    .prin-body { max-width: 54ch; }
+    .prin-title {
+      font-family: var(--ff-disp); color: var(--bone);
+      font-size: clamp(1.4rem, 2.2vw, 2rem); letter-spacing: -0.005em;
+      line-height: 1; text-transform: uppercase; margin-bottom: 0.6rem;
+    }
+    .prin-title em {
+      font-family: var(--ff-edit); font-style: italic;
+      font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1; font-weight: 500;
+      color: var(--bubble); text-transform: lowercase; letter-spacing: -0.02em;
+    }
+    .prin-desc { font-family: var(--ff-edit); font-size: 0.98rem; line-height: 1.55; color: var(--bone-3); }
+    .prin-tag { font-family: var(--ff-mono); font-size: 0.5rem; text-transform: uppercase; letter-spacing: 0.26em; color: var(--char); align-self: start; padding-top: 0.3rem; }
+
+    @media (max-width: 680px) {
+      .prin { grid-template-columns: auto 1fr; }
+      .prin-tag { grid-column: 1 / -1; }
+    }
+
+    /* ─── LOOKBOOK TEASE ─────────────────────────────────────────── */
+    .lookbook {
+      padding: clamp(4rem, 8vw, 6rem) 0 clamp(5rem, 10vw, 8rem);
+      background: var(--ink);
+      overflow: hidden;
+    }
+    .lookbook-head { max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); margin-bottom: 2.5rem; }
+    .lookbook-track {
+      display: flex; gap: 1.25rem; padding: 0 var(--gutter) 1rem;
+      overflow-x: auto; scroll-snap-type: x mandatory;
+      scrollbar-width: thin;
+    }
+    .lookbook-track::-webkit-scrollbar { height: 3px; }
+    .look-card {
+      flex-shrink: 0;
+      width: min(78vw, 26rem);
+      aspect-ratio: 4/5;
+      border-radius: 14px; overflow: hidden;
+      position: relative;
+      scroll-snap-align: start;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .look-art { position: absolute; inset: 0; }
+    .look-foot {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 1.4rem; background: linear-gradient(to top, rgba(11,10,12,0.95) 0%, transparent 100%);
+      z-index: 2;
+    }
+    .look-title {
+      font-family: var(--ff-disp); color: var(--bone);
+      font-size: 1.3rem; letter-spacing: 0.04em; text-transform: uppercase;
+    }
+    .look-title em { font-family: var(--ff-edit); font-style: italic; color: var(--lemon); font-weight: 500; font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1; text-transform: lowercase; letter-spacing: -0.02em; }
+    .look-sub { font-family: var(--ff-mono); font-size: 0.5rem; text-transform: uppercase; letter-spacing: 0.26em; color: var(--char); margin-top: 0.4rem; }
+
+    /* ─── FEED (LIGHT) ───────────────────────────────────────────── */
+    .feed {
+      background: var(--bone-2);
+      color: var(--ink);
+      padding: clamp(5rem, 10vw, 8rem) 0;
+      position: relative;
+    }
+    .feed-wrap { max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
+
+    .feed-head {
+      display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: end;
+      margin-bottom: 2.5rem;
+    }
+    @media (max-width: 720px) { .feed-head { grid-template-columns: 1fr; } }
+    .feed-handle {
+      font-family: var(--ff-edit); font-style: italic; font-weight: 500;
+      font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+      font-size: clamp(2.4rem, 6vw, 5rem); color: var(--ink);
+      letter-spacing: -0.02em; line-height: 1;
+    }
+    .feed-handle .at { color: var(--bubble); }
+
+    .feed-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px;
+      background: var(--ink); border-radius: 12px; overflow: hidden;
+      padding: 4px;
+    }
+    @media (max-width: 720px) { .feed-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    .feed-cell {
+      aspect-ratio: 1; background: var(--ink-2);
+      position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      transition: transform 0.3s;
+    }
+    .feed-cell:hover { transform: scale(1.02); }
+    .feed-cell-art { position: absolute; inset: 0; }
+    .feed-cell-over {
       position: absolute; inset: 0;
+      background: rgba(11,10,12,0.78); color: var(--lemon);
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.35rem;
+      opacity: 0; transition: opacity 0.3s;
+      padding: 0.8rem; text-align: center;
+    }
+    .feed-cell:hover .feed-cell-over { opacity: 1; }
+    .feed-cell-title { font-family: var(--ff-disp); font-size: 1rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--bone); }
+    .feed-cell-link { font-family: var(--ff-mono); font-size: 0.5rem; text-transform: uppercase; letter-spacing: 0.26em; color: var(--lemon); }
+
+    .feed-cell.bunski .feed-cell-art { background: radial-gradient(ellipse 60% 60% at 40% 40%, rgba(245,230,66,0.4), transparent 60%), linear-gradient(135deg, var(--ink-2), #1a170f); }
+    .feed-cell.bunski .feed-cell-art::before { content:""; position:absolute; inset:0; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><g fill='none' stroke='rgba(245,230,66,0.4)' stroke-width='1.4' stroke-linecap='round'><path d='M2 10 Q 6 2 10 10 Q 14 18 18 10 Q 22 2 26 10 Q 30 18 32 10'/><path d='M2 22 Q 6 14 10 22 Q 14 30 18 22 Q 22 14 26 22 Q 30 30 32 22'/></g></svg>"); background-size: 32px 32px; }
+
+    .feed-cell.mohair .feed-cell-art {
       background:
-        radial-gradient(ellipse 70% 50% at 30% 60%, rgba(245,230,66,0.04), transparent 60%),
-        radial-gradient(ellipse 60% 40% at 70% 40%, rgba(255,110,180,0.03), transparent 60%),
-        var(--bg);
+        radial-gradient(ellipse 70% 60% at 30% 30%, rgba(255,110,180,0.6), transparent 60%),
+        radial-gradient(ellipse 50% 60% at 70% 70%, rgba(255,110,180,0.35), transparent 60%),
+        var(--plum);
+      filter: blur(1.5px);
     }
-    .cta-inner { position: relative; z-index: 2; max-width: 620px; margin-inline: auto; }
-    .cta-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3.5rem, 11vw, 9rem); color: var(--white); line-height: 0.88; letter-spacing: 0.01em; margin-bottom: 1.5rem; }
-    .cta-title .y { color: var(--yellow); }
-    .cta-title .p { color: var(--pink); }
 
-    .form-row { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; margin-bottom: 1rem; }
-    .form-email {
-      flex: 1; min-width: 200px; max-width: 280px;
-      padding: 1rem 1.25rem; background: var(--s1);
-      border: 1px solid var(--border); border-radius: 2px;
-      color: #fff; font-family: 'Space Mono', monospace; font-size: 0.72rem;
-      outline: none; transition: border-color 0.2s;
+    .feed-cell.rhine .feed-cell-art {
+      background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(255,110,180,0.14), transparent 55%), linear-gradient(145deg, #1a0f22, var(--ink-2));
     }
-    .form-email:focus { border-color: rgba(245,230,66,0.4); }
-    .form-email::placeholder { color: var(--dim); }
+    .feed-cell.rhine .feed-cell-art svg {
+      position: absolute; animation: twinkle 2.5s ease-in-out infinite;
+    }
+    .feed-cell.rhine .feed-cell-art svg.a { width: 30%; top: 15%; left: 15%; color: var(--bone); }
+    .feed-cell.rhine .feed-cell-art svg.b { width: 22%; top: 45%; left: 55%; color: var(--bubble); animation-delay: 0.6s; }
+    .feed-cell.rhine .feed-cell-art svg.c { width: 26%; bottom: 10%; left: 30%; color: var(--lemon); animation-delay: 1.2s; }
+
+    .feed-cell.y2k .feed-cell-art {
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,110,180,0.14) 40%, rgba(245,230,66,0.1) 80%),
+        linear-gradient(to bottom, #2a1a2e, var(--ink-2));
+    }
+    .feed-cell.y2k .feed-cell-art::before { content:""; position:absolute; inset:0; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'><path d='M25 0 L27 23 L50 25 L27 27 L25 50 L23 27 L0 25 L23 23 Z' fill='rgba(255,255,255,0.15)'/></svg>"); background-size: 50px 50px; }
+
+    /* ─── CTA (LIGHT) ────────────────────────────────────────────── */
+    .cta {
+      background: var(--bone);
+      color: var(--ink);
+      padding: clamp(6rem, 12vw, 10rem) 0;
+      position: relative; overflow: hidden;
+    }
+    .cta::before {
+      content:""; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 20% 20%, rgba(245,230,66,0.3), transparent 50%),
+        radial-gradient(ellipse 60% 50% at 80% 80%, rgba(255,110,180,0.22), transparent 50%);
+      pointer-events: none;
+    }
+    .cta-wrap {
+      position: relative; max-width: 60rem; margin-inline: auto; padding-inline: var(--gutter);
+      text-align: center;
+    }
+
+    .cta-title {
+      font-family: var(--ff-disp); color: var(--ink);
+      font-size: clamp(3rem, 10vw, 8rem); line-height: 0.88; letter-spacing: -0.02em;
+      text-transform: uppercase; margin-bottom: 1rem;
+    }
+    .cta-title em {
+      font-family: var(--ff-edit); font-style: italic; font-weight: 500;
+      font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+      color: var(--bubble); text-transform: lowercase; letter-spacing: -0.02em;
+    }
+    .cta-title .hl { background: var(--lemon); padding: 0 0.15em; border-radius: 6px; }
+    .cta-lede {
+      font-family: var(--ff-edit); font-size: 1.1rem; line-height: 1.55;
+      color: var(--char-2); max-width: 44ch; margin: 0 auto 2.2rem;
+    }
+    .cta-form {
+      display: flex; gap: 0.5rem; max-width: 30rem; margin: 0 auto;
+      flex-wrap: wrap; justify-content: center;
+    }
+    .cta-email {
+      flex: 1 1 14rem; padding: 1rem 1.2rem;
+      background: transparent; border: 1px solid rgba(11,10,12,0.3);
+      border-radius: 999px;
+      font-family: var(--ff-mono); font-size: 0.68rem; letter-spacing: 0.18em;
+      color: var(--ink); outline: none;
+      transition: border-color 0.2s;
+    }
+    .cta-email:focus { border-color: var(--ink); }
+    .cta-email::placeholder { color: var(--char); text-transform: uppercase; }
+    .cta-submit { background: var(--ink); color: var(--bone); font-weight: 700; }
+    .cta-submit:hover { background: var(--plum); }
+    .cta-fine {
+      margin-top: 1.2rem; font-family: var(--ff-mono); font-size: 0.5rem;
+      text-transform: uppercase; letter-spacing: 0.3em; color: var(--char-2);
+    }
 
     /* ─── FOOTER ─────────────────────────────────────────────────── */
-    .footer { border-top: 1px solid var(--border); padding: 3.5rem 2rem 2rem; }
-    .footer-inner { max-width: 72rem; margin-inline: auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; }
-    @media(max-width:640px){ .footer-inner { grid-template-columns: 1fr; } }
-    .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 0.15em; color: var(--white); margin-bottom: 0.75rem; }
-    .footer-logo span { color: var(--pink); }
-    .footer-desc { font-size: 0.82rem; line-height: 1.7; color: var(--dim); max-width: 240px; }
-    .footer-social { display: flex; gap: 0.75rem; margin-top: 1.25rem; }
-    .footer-social a {
-      width: 34px; height: 34px; border-radius: 50%;
-      border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--dim2); text-decoration: none;
-      transition: all 0.2s; font-size: 0.75rem;
+    .footer {
+      background: var(--ink); color: var(--bone-3);
+      padding: 4rem 0 2rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
     }
-    .footer-social a:hover { border-color: rgba(245,230,66,0.3); color: var(--yellow); background: var(--y-dim); }
-    .footer-heading { font-family: 'Space Mono', monospace; font-size: 0.52rem; text-transform: uppercase; letter-spacing: 0.3em; color: var(--yellow); margin-bottom: 1rem; }
-    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
-    .footer-links a { font-size: 0.82rem; color: var(--dim); text-decoration: none; transition: color 0.2s; }
-    .footer-links a:hover { color: var(--white); }
-    .footer-bottom { max-width: 72rem; margin-inline: auto; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border2); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-    .footer-copy { font-family: 'Space Mono', monospace; font-size: 0.48rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--dim); }
+    .footer-wrap { max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
 
-    /* ─── UTILS ──────────────────────────────────────────────────── */
-    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal.visible { opacity: 1; transform: none; }
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
-    @media (max-width: 640px) { .nav-links { display: none; } }
+    .footer-top {
+      display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    @media (max-width: 820px) { .footer-top { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .footer-top { grid-template-columns: 1fr; } }
+
+    .footer-brand {
+      display: flex; flex-direction: column; gap: 1rem;
+    }
+    .footer-brand .logo { font-size: 1.5rem; }
+    .footer-brand .logo-bow { width: 32px; height: 26px; }
+    .footer-desc {
+      font-family: var(--ff-edit); font-size: 0.95rem; line-height: 1.55;
+      color: var(--char); max-width: 30ch;
+    }
+    .footer-desc em { color: var(--bone); font-style: italic; }
+
+    .footer-social { display: flex; gap: 0.6rem; }
+    .footer-social a {
+      width: 40px; height: 40px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.12);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--bone-3); transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+    }
+    .footer-social a:hover {
+      color: var(--ink); background: var(--lemon); border-color: var(--lemon);
+      transform: translateY(-2px);
+    }
+
+    .footer-col h4 {
+      font-family: var(--ff-mono); font-size: 0.52rem;
+      text-transform: uppercase; letter-spacing: 0.3em; color: var(--lemon);
+      margin-bottom: 1.2rem;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+    .footer-col a {
+      font-family: var(--ff-edit); font-size: 0.88rem; color: var(--char);
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--bone); }
+
+    .footer-bottom {
+      margin-top: 2rem;
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; align-items: center;
+    }
+    .footer-copy {
+      font-family: var(--ff-mono); font-size: 0.5rem;
+      text-transform: uppercase; letter-spacing: 0.22em; color: var(--char-2);
+    }
+    .footer-copy em {
+      font-family: var(--ff-edit); font-style: italic; color: var(--bubble);
+      text-transform: none; letter-spacing: 0;
+    }
+
+    /* ─── REDUCED MOTION ─────────────────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+      .cursor { display: none !important; }
+      body { cursor: auto; }
+      .hero-splash, .hero-stone, .mandala-ring, .feat-sticker, .ticker-track { animation: none !important; }
+    }
   </style>
 </head>
+
 <body>
 
-  <nav class="nav" id="nav">
-    <a href="#" class="nav-logo">PLUSH<span class="pink">TRAP</span></a>
-    <ul class="nav-links">
-      <li><a href="#drops">Drops</a></li>
-      <li><a href="#philosophy">Story</a></li>
-      <li><a href="#follow">Follow</a></li>
-    </ul>
-    <a href="#drops" class="nav-cta">Shop Drops</a>
-  </nav>
+  <!-- ═══════════════════════════════════════════════════════════
+       SVG sprite sheet — glyph library (reusable via <use>)
+       ═══════════════════════════════════════════════════════════ -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <defs>
+      <!-- bow -->
+      <symbol id="g-bow" viewBox="0 0 200 160">
+        <g fill="currentColor">
+          <path d="M30 40 Q 10 80 30 120 Q 70 130 95 88 Q 95 82 95 78 Q 70 28 30 40 Z"/>
+          <path d="M170 40 Q 190 80 170 120 Q 130 130 105 88 Q 105 82 105 78 Q 130 28 170 40 Z"/>
+          <rect x="87" y="64" width="26" height="34" rx="8"/>
+          <path d="M88 98 Q 78 130 68 152 L 94 144 L 100 102 Z"/>
+          <path d="M112 98 Q 122 130 132 152 L 106 144 L 100 102 Z"/>
+        </g>
+        <g stroke="rgba(255,255,255,0.55)" stroke-width="2.5" fill="none" stroke-linecap="round">
+          <path d="M42 56 Q 25 80 42 104"/>
+          <path d="M158 56 Q 175 80 158 104"/>
+        </g>
+      </symbol>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-grid"></div>
-    <div class="hero-right-panel"></div>
-    <div class="hero-glow-pink"></div>
-    <div class="hero-glow-y"></div>
-    <div class="hero-content">
-      <div class="hero-chips">
-        <span class="chip chip-yellow">Limited Drops</span>
-        <span class="chip chip-pink">Kawaii Streetwear</span>
-        <span class="chip chip-white">Tempe AZ · Est. 2018</span>
-      </div>
-      <h1 class="hero-title">
-        Wear<br/>
-        the <span class="y">Wild</span><span class="p">—</span><br/>
-        ness.
-      </h1>
-      <p class="hero-tagline">Kawaii + Street · Built by SMAT</p>
-      <p class="hero-sub">
-        Plushtrap is built on one rule: make what you can't find in the store.
-        Every piece is crafted for those who refuse to blend in.
-      </p>
-      <div class="hero-ctas">
-        <a href="#drops" class="btn-y">Current Drop</a>
-        <a href="https://www.instagram.com/plushtrap_" target="_blank" rel="noopener" class="btn-pk">@plushtrap_</a>
-        <a href="#philosophy" class="btn-wh">Our Story</a>
-      </div>
-      <div class="hero-stats">
-        <div><span class="stat-n y">7</span><span class="stat-l">Drops Released</span></div>
-        <div><span class="stat-n y">100%</span><span class="stat-l">Limited Qty</span></div>
-        <div><span class="stat-n p">0</span><span class="stat-l">Restocks. Ever.</span></div>
-      </div>
-    </div>
-  </section>
+      <!-- rhinestone / gem -->
+      <symbol id="g-stone" viewBox="0 0 80 100">
+        <g stroke="currentColor" stroke-width="1.6" fill="none">
+          <polygon points="40,4 68,22 76,50 60,86 20,86 4,50 12,22"/>
+          <line x1="40" y1="4"  x2="40" y2="50"/>
+          <line x1="40" y1="50" x2="12" y2="22"/>
+          <line x1="40" y1="50" x2="68" y2="22"/>
+          <line x1="40" y1="50" x2="4"  y2="50"/>
+          <line x1="40" y1="50" x2="76" y2="50"/>
+          <line x1="40" y1="50" x2="20" y2="86"/>
+          <line x1="40" y1="50" x2="60" y2="86"/>
+        </g>
+        <circle cx="40" cy="50" r="3" fill="currentColor"/>
+      </symbol>
 
-  <!-- MARQUEE -->
-  <div class="marquee-wrap">
-    <div class="marquee-track" id="mq"></div>
+      <!-- cloud -->
+      <symbol id="g-cloud" viewBox="0 0 200 100">
+        <path fill="currentColor" d="M40 72 Q 18 72 18 50 Q 18 24 50 28 Q 60 8 86 10 Q 112 5 122 30 Q 156 22 166 52 Q 188 56 182 78 Q 180 92 160 92 L 55 92 Q 40 92 40 72 Z"/>
+      </symbol>
+
+      <!-- sparkle (4-point) -->
+      <symbol id="g-sparkle" viewBox="0 0 60 60">
+        <path fill="currentColor" d="M30 0 L33 27 L60 30 L33 33 L30 60 L27 33 L0 30 L27 27 Z"/>
+      </symbol>
+
+      <!-- bunny -->
+      <symbol id="g-bunny" viewBox="0 0 80 100">
+        <g fill="currentColor">
+          <ellipse cx="26" cy="26" rx="8" ry="22"/>
+          <ellipse cx="54" cy="26" rx="8" ry="22"/>
+          <circle cx="40" cy="66" r="28"/>
+        </g>
+        <g fill="#0b0a0c">
+          <circle cx="30" cy="62" r="2.5"/>
+          <circle cx="50" cy="62" r="2.5"/>
+          <path d="M37 72 L 43 72 L 40 75 Z"/>
+        </g>
+        <g fill="rgba(255,110,180,0.55)">
+          <circle cx="24" cy="72" r="4"/>
+          <circle cx="56" cy="72" r="4"/>
+        </g>
+      </symbol>
+
+      <!-- big lemon splash (organic blob) -->
+      <symbol id="g-splash" viewBox="0 0 400 400">
+        <path fill="currentColor" d="M215 40 Q 300 30 340 90 Q 385 150 370 220 Q 360 290 290 340 Q 220 380 150 350 Q 80 320 50 250 Q 20 180 60 110 Q 100 40 215 40 Z"/>
+      </symbol>
+
+      <!-- circular text sticker: outer ring -->
+      <symbol id="g-seal" viewBox="0 0 200 200">
+        <defs>
+          <path id="seal-path" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/>
+        </defs>
+        <circle cx="100" cy="100" r="86" fill="none" stroke="currentColor" stroke-width="1" opacity="0.35"/>
+        <circle cx="100" cy="100" r="72" fill="none" stroke="currentColor" stroke-width="0.6" stroke-dasharray="2 3" opacity="0.6"/>
+        <text font-family="Space Mono, monospace" font-size="11" letter-spacing="5" fill="currentColor" text-transform="uppercase">
+          <textPath href="#seal-path" startOffset="0%">
+            PLUSHTRAP · DROP 007 · BUNSKI ALLKNIT · SPRING 2026 · TEMPE AZ ·
+          </textPath>
+        </text>
+      </symbol>
+
+      <!-- IG icon -->
+      <symbol id="i-ig" viewBox="0 0 24 24">
+        <rect x="2.5" y="2.5" width="19" height="19" rx="5" stroke="currentColor" stroke-width="1.7" fill="none"/>
+        <circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.7" fill="none"/>
+        <circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/>
+      </symbol>
+
+      <!-- TikTok -->
+      <symbol id="i-tt" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M19.6 6.7a4.8 4.8 0 01-3.8-4.2V2h-3.5v13.7a2.9 2.9 0 11-2.9-2.9c.3 0 .5 0 .8.1V9a6.3 6.3 0 108.2 6.2V8.7a8.2 8.2 0 004.8 1.5V6.8a4.8 4.8 0 01-3.6-.1z"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
   </div>
 
-  <!-- DROPS -->
-  <section class="section" id="drops">
-    <div class="s-label reveal"><span class="s-line y"></span><span class="s-tag y">Current &amp; Archive</span></div>
-    <h2 class="s-title reveal">The Drops</h2>
-    <p style="color:var(--dim2);font-size:0.88rem;max-width:500px;line-height:1.7;" class="reveal">Every collection is limited. Once it's gone, it's gone. No reruns. No restocks. That's the rule.</p>
+  <!-- ═══════════════════════════════════════════════════════════ NAV ═══ -->
+  <nav class="nav" id="nav">
+    <a href="#" class="logo" data-hover>
+      <svg class="logo-bow" viewBox="0 0 200 160"><use href="#g-bow"/></svg>
+      <span>Plushtrap</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#drop" data-hover>Current Drop</a></li>
+      <li><a href="#archive" data-hover>Archive</a></li>
+      <li><a href="#aesthetic" data-hover>The Aesthetic</a></li>
+      <li><a href="#philosophy" data-hover>Philosophy</a></li>
+      <li><a href="#feed" data-hover>Feed</a></li>
+    </ul>
+    <a href="#drop" class="nav-cta" data-hover>
+      <span class="live-dot"></span>
+      Live Now
+    </a>
+  </nav>
 
-    <div class="drops-grid">
+  <!-- ═══════════════════════════════════════════════════════════ HERO ═══ -->
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-fur" aria-hidden="true"></div>
+    <div class="hero-splash" aria-hidden="true">
+      <svg viewBox="0 0 400 400"><use href="#g-splash"/></svg>
+    </div>
+    <div class="hero-bow" id="heroBow" aria-hidden="true">
+      <svg viewBox="0 0 200 160"><use href="#g-bow"/></svg>
+    </div>
+    <svg class="hero-stone s1" viewBox="0 0 60 60" aria-hidden="true"><use href="#g-sparkle"/></svg>
+    <svg class="hero-stone s2" viewBox="0 0 60 60" aria-hidden="true"><use href="#g-sparkle"/></svg>
+    <svg class="hero-stone s3" viewBox="0 0 80 100" aria-hidden="true"><use href="#g-stone"/></svg>
+    <svg class="hero-stone s4" viewBox="0 0 60 60" aria-hidden="true"><use href="#g-sparkle"/></svg>
+    <svg class="hero-stone s5" viewBox="0 0 80 100" aria-hidden="true"><use href="#g-stone"/></svg>
 
-      <!-- DROP 07 — LIVE -->
-      <div class="drop-card live reveal">
-        <div class="drop-art"><span class="drop-art-num">07</span></div>
-        <div class="drop-grid-over"></div>
-        <div class="drop-overlay"></div>
-        <div class="drop-content">
-          <div class="drop-badge live-badge">Live Now</div>
-          <div class="drop-num-label">Drop 007</div>
-          <div class="drop-title">BUNSKI ALLKNIT</div>
-          <div class="drop-sub">Knitwear · 34 pieces · Spring 2026</div>
+    <div class="hero-inner reveal-stack">
+      <div class="hero-eyebrow">
+        <span class="hero-chip lemon"><span class="d"></span>Vol. 07 / Live</span>
+        <span class="hero-chip bubble"><span class="d"></span>Kawaii × Street</span>
+        <span class="hero-chip">Tempe, AZ · Est. 2018</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="l1">Plush</span>
+        <span class="l2">trap<span class="dot">.</span></span>
+        <span class="l3">Wear the <em>wildness</em></span>
+      </h1>
+
+      <p class="hero-tag">Capsule N°07<span class="div">×</span>BUNSKI ALLKNIT<span class="div">×</span>34 Pieces<span class="div">×</span>No Restocks</p>
+
+      <div class="hero-grid-foot">
+        <p class="hero-lede">
+          Plushtrap is built on one rule: <em>make what you can't find in the store.</em>
+          Each drop is hand-specced by SMAT, capped, and gone forever when it sells. Kawaii details, streetwear bones, zero apologies.
+        </p>
+        <div class="hero-ctas">
+          <a href="#drop" class="btn lemon" data-hover>Shop Drop 07 <span class="arrow">→</span></a>
+          <a href="https://www.instagram.com/plushtrap_" target="_blank" rel="noopener" class="btn bubble" data-hover>@plushtrap_</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll"><span>Scroll</span><span class="bar"></span></div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════ TICKER ═══ -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track" id="ticker"></div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════ CURRENT DROP ═══ -->
+  <section class="feature" id="drop">
+    <div class="feature-wrap">
+      <div class="feat-head reveal">
+        <div>
+          <span class="section-tag"><span class="line"></span>Live Now / Vol. 07</span>
+          <h2 class="section-title">The Current <em>capsule.</em></h2>
+        </div>
+        <div class="section-nav">
+          <a href="#archive" data-hover>Archive →</a>
         </div>
       </div>
 
-      <!-- DROP 06 — SOLD -->
-      <div class="drop-card sold-1 reveal">
-        <div class="drop-art"><span class="drop-art-num">06</span></div>
-        <div class="drop-grid-over"></div>
-        <div class="drop-overlay"></div>
-        <div class="drop-content">
-          <div class="drop-badge sold-badge">Sold Out</div>
-          <div class="drop-num-label">Drop 006</div>
-          <div class="drop-title">MOHAIR SETS</div>
-          <div class="drop-sub">Premium Knitwear · 20 pieces</div>
+      <article class="feat-card reveal">
+        <div class="feat-visual">
+          <!-- giant faint knit tile -->
+          <div class="art-knit-bg"></div>
+          <div class="art-knit-tile" style="opacity:0.7"></div>
+          <!-- bow -->
+          <div class="feat-bow">
+            <svg viewBox="0 0 200 160"><use href="#g-bow"/></svg>
+          </div>
+          <!-- sparkles -->
+          <svg class="feat-stone a" viewBox="0 0 60 60"><use href="#g-sparkle"/></svg>
+          <svg class="feat-stone b" viewBox="0 0 80 100"><use href="#g-stone"/></svg>
+          <svg class="feat-stone c" viewBox="0 0 60 60"><use href="#g-sparkle"/></svg>
+          <!-- rotating seal sticker -->
+          <div class="feat-sticker" aria-hidden="true">
+            <svg viewBox="0 0 200 200"><use href="#g-seal"/></svg>
+            <div class="feat-sticker-core">
+              <svg viewBox="0 0 200 160"><use href="#g-bow"/></svg>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <!-- DROP 05 — SOLD -->
-      <div class="drop-card sold-2 reveal">
-        <div class="drop-art"><span class="drop-art-num">05</span></div>
-        <div class="drop-grid-over"></div>
-        <div class="drop-overlay"></div>
-        <div class="drop-content">
-          <div class="drop-badge sold-badge">Sold Out</div>
-          <div class="drop-num-label">Drop 005</div>
-          <div class="drop-title">RHINESTONE SETS</div>
-          <div class="drop-sub">Statement Pieces · 15 pieces</div>
+        <div class="feat-body">
+          <div class="feat-corners">
+            <span>Drop N°07 / 2026</span>
+            <span>Live Now</span>
+          </div>
+
+          <div>
+            <h3 class="feat-title">Bunski<br/><span class="bunski">allknit.</span></h3>
+            <p class="feat-desc">A dense-gauge cotton knit set — cropped pullover and low-rise flare — rendered in lemon pop and bone cream. Plushtrap's heaviest knit to date, finished with a rhinestone bunny patch at the hem. Made for heat, noise, and the last warm night of spring.</p>
+          </div>
+
+          <div class="feat-meta">
+            <div class="feat-meta-cell live"><span class="k">Status</span><span class="v">Live Now</span></div>
+            <div class="feat-meta-cell"><span class="k">Units</span><span class="v">34 Pcs</span></div>
+            <div class="feat-meta-cell pink"><span class="k">Season</span><span class="v">SS '26</span></div>
+          </div>
+
+          <div class="feat-ctas">
+            <a href="#" class="btn lemon" data-hover>Shop Now <span class="arrow">→</span></a>
+            <a href="#" class="btn ghost" data-hover>Lookbook</a>
+          </div>
         </div>
-      </div>
-
-      <!-- DROP 04 — SOLD -->
-      <div class="drop-card sold-3 reveal">
-        <div class="drop-art"><span class="drop-art-num">04</span></div>
-        <div class="drop-grid-over"></div>
-        <div class="drop-overlay"></div>
-        <div class="drop-content">
-          <div class="drop-badge sold-badge">Sold Out</div>
-          <div class="drop-num-label">Drop 004</div>
-          <div class="drop-title">Y2K KNIT</div>
-          <div class="drop-sub">Retro Knitwear · Archive</div>
-        </div>
-      </div>
-
-      <!-- DROP 03 — SOLD -->
-      <div class="drop-card sold-1 reveal">
-        <div class="drop-art"><span class="drop-art-num">03</span></div>
-        <div class="drop-grid-over"></div>
-        <div class="drop-overlay"></div>
-        <div class="drop-content">
-          <div class="drop-badge sold-badge">Sold Out</div>
-          <div class="drop-num-label">Drop 003</div>
-          <div class="drop-title">CLOUD FLEECE</div>
-          <div class="drop-sub">Heavyweight Fleece · Archive</div>
-        </div>
-      </div>
-
-      <!-- COMING NEXT -->
-      <div class="drop-card coming reveal">
-        <div class="drop-art"><span class="drop-art-num">08</span></div>
-        <div class="drop-grid-over"></div>
-        <div class="drop-overlay"></div>
-        <div class="drop-content">
-          <div class="drop-badge coming-badge">Coming Soon</div>
-          <div class="drop-num-label">Drop 008</div>
-          <div class="drop-title">???</div>
-          <div class="drop-sub">Summer 2026 · Join waitlist</div>
-        </div>
-      </div>
-
+      </article>
     </div>
   </section>
 
-  <!-- EDITORIAL / WHAT IS PLUSHTRAP -->
-  <section class="editorial" id="what">
-    <div class="section">
-      <div class="s-label reveal"><span class="s-line p"></span><span class="s-tag p">The Aesthetic</span></div>
-      <h2 class="s-title reveal">Kawaii<br/>Meets Street.</h2>
-      <div class="editorial-grid reveal">
-
-        <div class="edit-cell">
-          <div class="edit-cell-glow" style="background: radial-gradient(circle at 80% 0%, rgba(245,230,66,0.06), transparent 70%);"></div>
-          <div class="edit-cell-icon" style="color:var(--yellow);">KNIT</div>
-          <div class="edit-cell-title">Hand-Crafted Texture</div>
-          <p class="edit-cell-desc">Each knit collection starts with a swatch, not a mood board. Premium yarns, original stitch patterns, no synthetic shortcuts.</p>
+  <!-- ═══════════════════════════════════════════════════════════ ARCHIVE ═══ -->
+  <section class="archive" id="archive">
+    <div class="archive-wrap">
+      <div class="feat-head reveal">
+        <div>
+          <span class="section-tag bubble"><span class="line"></span>Archive / Vol. 01–06</span>
+          <h2 class="section-title">Sold. <em>gone.</em></h2>
         </div>
-
-        <div class="edit-cell">
-          <div class="edit-cell-glow" style="background: radial-gradient(circle at 20% 100%, rgba(255,110,180,0.06), transparent 70%);"></div>
-          <div class="edit-cell-icon" style="color:var(--pink);">WILD</div>
-          <div class="edit-cell-title">No Trend Chasing</div>
-          <p class="edit-cell-desc">We design what we'd actually wear. Kawaii details — bows, pastels, playful silhouettes — grafted onto streetwear that holds its own.</p>
+        <div class="section-nav">
+          <a href="#drop" data-hover>← Current</a>
         </div>
+      </div>
 
-        <div class="edit-cell">
-          <div class="edit-cell-glow" style="background: radial-gradient(circle at 50% 0%, rgba(245,230,66,0.04), transparent 70%);"></div>
-          <div class="edit-cell-icon" style="color:rgba(255,255,255,0.25);">EDGE</div>
-          <div class="edit-cell-title">Built for the Streets</div>
-          <p class="edit-cell-desc">Tempe origin, Arizona attitude. Pieces that move — literally. Built for heat, noise, and the energy of a city that doesn't sleep.</p>
+      <div class="archive-grid">
+
+        <!-- 06 MOHAIR -->
+        <a href="#" class="drop reveal">
+          <div class="drop-art"><div class="art-mohair"></div></div>
+          <div class="drop-body">
+            <span class="drop-badge sold">Sold Out</span>
+            <span class="drop-no">Drop N°06 · SS '26</span>
+            <h3 class="drop-name">Mohair <em>sets.</em></h3>
+            <p class="drop-sub">Premium mohair · 20 pcs · gone in 9 hours</p>
+          </div>
+        </a>
+
+        <!-- 05 RHINESTONE -->
+        <a href="#" class="drop reveal">
+          <div class="drop-art">
+            <div class="art-rhinestone">
+              <svg class="rs a" viewBox="0 0 80 100"><use href="#g-stone"/></svg>
+              <svg class="rs b" viewBox="0 0 80 100"><use href="#g-stone"/></svg>
+              <svg class="rs c" viewBox="0 0 60 60"><use href="#g-sparkle"/></svg>
+              <svg class="rs d" viewBox="0 0 80 100"><use href="#g-stone"/></svg>
+            </div>
+          </div>
+          <div class="drop-body">
+            <span class="drop-badge sold">Sold Out</span>
+            <span class="drop-no">Drop N°05 · FW '25</span>
+            <h3 class="drop-name">Rhinestone <em>sets.</em></h3>
+            <p class="drop-sub">Statement co-ords · 15 pcs · archive</p>
+          </div>
+        </a>
+
+        <!-- 04 Y2K -->
+        <a href="#" class="drop reveal">
+          <div class="drop-art"><div class="art-y2k"></div></div>
+          <div class="drop-body">
+            <span class="drop-badge sold">Sold Out</span>
+            <span class="drop-no">Drop N°04 · SS '25</span>
+            <h3 class="drop-name">Y2K <em>knit.</em></h3>
+            <p class="drop-sub">Chrome-treated knitwear · archive</p>
+          </div>
+        </a>
+
+        <!-- 03 CLOUD FLEECE -->
+        <a href="#" class="drop reveal">
+          <div class="drop-art">
+            <div class="art-cloud">
+              <svg class="a" viewBox="0 0 200 100"><use href="#g-cloud"/></svg>
+              <svg class="b" viewBox="0 0 200 100"><use href="#g-cloud"/></svg>
+              <svg class="c" viewBox="0 0 200 100"><use href="#g-cloud"/></svg>
+            </div>
+          </div>
+          <div class="drop-body">
+            <span class="drop-badge sold">Sold Out</span>
+            <span class="drop-no">Drop N°03 · FW '24</span>
+            <h3 class="drop-name">Cloud <em>fleece.</em></h3>
+            <p class="drop-sub">Heavyweight fleece · 38 pcs · archive</p>
+          </div>
+        </a>
+
+        <!-- 02 — synthetic placeholder, matched to brand -->
+        <a href="#" class="drop reveal">
+          <div class="drop-art">
+            <div class="art-mohair" style="filter:blur(2px); background: radial-gradient(ellipse 60% 60% at 60% 30%, rgba(245,230,66,0.28), transparent 55%), radial-gradient(ellipse 50% 50% at 30% 70%, rgba(255,110,180,0.18), transparent 55%), linear-gradient(135deg,#1a170f,var(--ink-3));"></div>
+          </div>
+          <div class="drop-body">
+            <span class="drop-badge sold">Sold Out</span>
+            <span class="drop-no">Drop N°02 · SS '24</span>
+            <h3 class="drop-name">Ribbon <em>cargo.</em></h3>
+            <p class="drop-sub">Ribboned cargo set · 22 pcs · archive</p>
+          </div>
+        </a>
+
+        <!-- 08 COMING SOON -->
+        <div class="drop coming reveal" aria-label="Drop 008 coming soon">
+          <div class="drop-art"><div class="art-redacted"></div></div>
+          <div class="drop-body">
+            <span class="drop-badge coming">Coming Summer '26</span>
+            <span class="drop-no">Drop N°08 · Classified</span>
+            <h3 class="drop-name"><span class="q">???</span></h3>
+            <p class="drop-sub">Waitlist opens soon · No clues yet</p>
+          </div>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- PHILOSOPHY -->
-  <section class="phil-section" id="philosophy">
-    <div class="section">
-      <div class="s-label reveal"><span class="s-line y"></span><span class="s-tag y">Philosophy</span></div>
-      <h2 class="s-title reveal">Built Different.</h2>
+  <!-- ═══════════════════════════════════════════════════════════ AESTHETIC (LIGHT) ═══ -->
+  <section class="aesthetic is-light" id="aesthetic">
+    <div class="aesthetic-wrap">
+      <div class="feat-head reveal">
+        <div>
+          <span class="section-tag ink"><span class="line"></span>The Aesthetic</span>
+          <h2 class="section-title">Kawaii × <em>street.</em></h2>
+        </div>
+      </div>
+
+      <div class="aesthetic-grid">
+        <blockquote class="quote reveal">
+          <em>We're not making clothes.</em> We're <span class="y">making the thing you</span> couldn't find — the piece you drew on your notebook in 8th grade and never saw in the store.
+          <div class="quote-attr">— SMAT, Founder · Tempe, AZ</div>
+        </blockquote>
+
+        <div class="glyphs reveal">
+          <div class="glyph bow">
+            <span class="glyph-num">01 / Bow</span>
+            <svg class="glyph-art" viewBox="0 0 200 160"><use href="#g-bow"/></svg>
+            <h3 class="glyph-name">Ribbon & Bow</h3>
+            <p class="glyph-desc">Kawaii anchor. Every capsule carries one — sewn, embroidered, or hardware.</p>
+          </div>
+          <div class="glyph stone">
+            <span class="glyph-num">02 / Stone</span>
+            <svg class="glyph-art" viewBox="0 0 80 100"><use href="#g-stone"/></svg>
+            <h3 class="glyph-name">Rhinestone Grid</h3>
+            <p class="glyph-desc">Hand-set in wild geometry. The fastest way to say "this is not that."</p>
+          </div>
+          <div class="glyph cloud">
+            <span class="glyph-num">03 / Cloud</span>
+            <svg class="glyph-art" viewBox="0 0 200 100"><use href="#g-cloud"/></svg>
+            <h3 class="glyph-name">Puff & Fleece</h3>
+            <p class="glyph-desc">Built for heat-out desert nights. Heavyweight feel, featherweight silhouette.</p>
+          </div>
+          <div class="glyph sparkle">
+            <span class="glyph-num">04 / Spark</span>
+            <svg class="glyph-art" viewBox="0 0 60 60"><use href="#g-sparkle"/></svg>
+            <h3 class="glyph-name">Four-Point Star</h3>
+            <p class="glyph-desc">Applied sparingly — a signal that the piece is done. Plushtrap's final stitch.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════ PHILOSOPHY ═══ -->
+  <section class="phil" id="philosophy">
+    <div class="phil-wrap">
+      <div class="feat-head reveal">
+        <div>
+          <span class="section-tag"><span class="line"></span>Philosophy / 04 Principles</span>
+          <h2 class="section-title">Built <em>different.</em></h2>
+        </div>
+      </div>
+
       <div class="phil-grid">
-
-        <div class="phil-visual reveal">
-          <div class="phil-geo">
-            <div class="phil-geo-cross"></div>
-            <div class="phil-geo-ring"></div>
-            <div class="phil-geo-ring"></div>
-            <div class="phil-geo-ring"></div>
-            <div class="phil-geo-ring"></div>
+        <div class="mandala reveal">
+          <div class="mandala-grid"></div>
+          <div class="mandala-ring r1"></div>
+          <div class="mandala-ring r2"></div>
+          <div class="mandala-ring r3"></div>
+          <div class="mandala-ring r4"></div>
+          <div class="mandala-glyphs">
+            <div class="mandala-gl top"><svg viewBox="0 0 200 160"><use href="#g-bow"/></svg></div>
+            <div class="mandala-gl right"><svg viewBox="0 0 80 100"><use href="#g-stone"/></svg></div>
+            <div class="mandala-gl bottom"><svg viewBox="0 0 200 100"><use href="#g-cloud"/></svg></div>
+            <div class="mandala-gl left"><svg viewBox="0 0 60 60"><use href="#g-sparkle"/></svg></div>
           </div>
-          <div class="phil-vis-inner">
-            <div class="phil-vis-text">
-              <div class="phil-vis-big">PLUSH<br/>TRAP</div>
-              <div class="phil-vis-sub">Est. 2018 · Tempe AZ</div>
-            </div>
+          <div class="mandala-center">
+            <div class="mandala-word">Plush<br/><span class="p">trap.</span></div>
+            <div class="mandala-foot">Est. 2018 · Tempe AZ</div>
           </div>
-          <div class="phil-corner tl">07 Collections</div>
-          <div class="phil-corner br">0 Restocks</div>
+          <div class="mandala-corner tl">07 capsules</div>
+          <div class="mandala-corner tr">0 restocks</div>
+          <div class="mandala-corner bl">hand-spec</div>
+          <div class="mandala-corner br">one operator</div>
         </div>
 
-        <div class="phil-list">
-          <div class="phil-item reveal">
-            <div class="phil-item-head">
-              <span class="phil-item-num">01</span>
-              <span class="phil-item-title">Scarcity by Design</span>
+        <div class="principles">
+          <article class="prin reveal">
+            <span class="prin-n">01</span>
+            <div class="prin-body">
+              <h3 class="prin-title">Scarcity by <em>design.</em></h3>
+              <p class="prin-desc">Every drop is capped — not for hype, but because each piece takes real time to make right. Quantities are printed on the tag. When it's gone, it's gone.</p>
             </div>
-            <p class="phil-item-desc">Every drop is capped. Not for hype — because each piece takes real time to make right. When it's gone, it's gone.</p>
-          </div>
-          <div class="phil-item reveal">
-            <div class="phil-item-head">
-              <span class="phil-item-num">02</span>
-              <span class="phil-item-title">Precision Construction</span>
+            <span class="prin-tag">doctrine</span>
+          </article>
+          <article class="prin reveal">
+            <span class="prin-n">02</span>
+            <div class="prin-body">
+              <h3 class="prin-title">Precision <em>construction.</em></h3>
+              <p class="prin-desc">SMAT-drafted tech packs. Manufacturer-direct sourcing, no middle-man. Every seam, every stitch, every silhouette earns its place or it doesn't ship.</p>
             </div>
-            <p class="phil-item-desc">SMAT-designed tech packs. Manufacturer-direct sourcing. Every seam, every stitch, every silhouette earns its place.</p>
-          </div>
-          <div class="phil-item reveal">
-            <div class="phil-item-head">
-              <span class="phil-item-num">03</span>
-              <span class="phil-item-title">No Trend Chasing</span>
+            <span class="prin-tag">process</span>
+          </article>
+          <article class="prin reveal">
+            <span class="prin-n">03</span>
+            <div class="prin-body">
+              <h3 class="prin-title">No trend <em>chasing.</em></h3>
+              <p class="prin-desc">We design what we'd actually wear. If it doesn't excite us, we don't make it. Kawaii and street coexist without compromise, because the culture we're from refuses to pick one.</p>
             </div>
-            <p class="phil-item-desc">We design what we'd actually wear. If it doesn't excite us, we don't make it. Kawaii and street can coexist without compromise.</p>
-          </div>
-          <div class="phil-item reveal">
-            <div class="phil-item-head">
-              <span class="phil-item-num">04</span>
-              <span class="phil-item-title">Independent by Nature</span>
+            <span class="prin-tag">attitude</span>
+          </article>
+          <article class="prin reveal">
+            <span class="prin-n">04</span>
+            <div class="prin-body">
+              <h3 class="prin-title">Independent by <em>nature.</em></h3>
+              <p class="prin-desc">No investors. No licensing. SMAT Designs-owned from concept to delivery. Built to last — not to flip, not to be acquired, not to dilute.</p>
             </div>
-            <p class="phil-item-desc">No investors. No brand licensing. SMAT Designs-owned from concept to delivery. Built to last, not to flip.</p>
-          </div>
+            <span class="prin-tag">ownership</span>
+          </article>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOLLOW / INSTAGRAM -->
-  <section class="ig-section" id="follow">
-    <div class="section" style="padding-bottom:5rem;">
-      <div class="s-label reveal"><span class="s-line p"></span><span class="s-tag p">The Feed</span></div>
-      <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:0.5rem;">
-        <h2 class="s-title reveal">@plushtrap_</h2>
-        <a href="https://www.instagram.com/plushtrap_" target="_blank" rel="noopener" class="btn-pk reveal" style="margin-bottom:0.4rem;">Follow on IG</a>
+  <!-- ═══════════════════════════════════════════════════════════ LOOKBOOK TEASE ═══ -->
+  <section class="lookbook">
+    <div class="lookbook-head reveal">
+      <span class="section-tag bubble"><span class="line"></span>Lookbook / 2026</span>
+      <h2 class="section-title">Style <em>moments.</em></h2>
+    </div>
+    <div class="lookbook-track">
+      <div class="look-card">
+        <div class="look-art" style="background: radial-gradient(ellipse 70% 60% at 40% 30%, rgba(245,230,66,0.4), transparent 55%), linear-gradient(135deg,#1a170f,var(--ink-2));"></div>
+        <div class="look-foot">
+          <div class="look-title">BUNSKI <em>hem.</em></div>
+          <div class="look-sub">Detail · Spring 2026</div>
+        </div>
       </div>
-      <div class="ig-grid reveal">
-        <div class="ig-cell"><div class="ig-cell-inner"><div class="ig-cell-text">BUNSKI<br/>ALLKNIT</div></div><div class="ig-cell-hover"><span class="ig-cell-hover-text">View on IG ↗</span></div></div>
-        <div class="ig-cell"><div class="ig-cell-inner"><div class="ig-cell-text">MOHAIR<br/>SETS</div></div><div class="ig-cell-hover"><span class="ig-cell-hover-text">View on IG ↗</span></div></div>
-        <div class="ig-cell"><div class="ig-cell-inner"><div class="ig-cell-text">RHINE<br/>STONE</div></div><div class="ig-cell-hover"><span class="ig-cell-hover-text">View on IG ↗</span></div></div>
-        <div class="ig-cell"><div class="ig-cell-inner"><div class="ig-cell-text">Y2K<br/>KNIT</div></div><div class="ig-cell-hover"><span class="ig-cell-hover-text">View on IG ↗</span></div></div>
+      <div class="look-card">
+        <div class="look-art" style="background: radial-gradient(ellipse 60% 70% at 50% 50%, rgba(255,110,180,0.4), transparent 60%), var(--plum); filter: blur(1px);"></div>
+        <div class="look-foot">
+          <div class="look-title">Mohair <em>haze.</em></div>
+          <div class="look-sub">Texture · 06</div>
+        </div>
       </div>
-      <p style="font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.25em;color:var(--dim);text-align:center;margin-top:1.5rem;" class="reveal">Tag us · #plushtrap · #smatdesigns</p>
+      <div class="look-card">
+        <div class="look-art" style="background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,110,180,0.3) 40%, rgba(245,230,66,0.18) 80%), linear-gradient(to bottom,#2a1a2e,var(--ink-2));"></div>
+        <div class="look-foot">
+          <div class="look-title">Chrome <em>ribbon.</em></div>
+          <div class="look-sub">Y2K · archive</div>
+        </div>
+      </div>
+      <div class="look-card">
+        <div class="look-art" style="background: radial-gradient(ellipse 70% 60% at 30% 70%, rgba(245,230,66,0.18), transparent 55%), radial-gradient(ellipse 60% 50% at 70% 30%, rgba(255,110,180,0.22), transparent 55%), linear-gradient(to bottom,var(--ink-2),var(--ink-3));"></div>
+        <div class="look-foot">
+          <div class="look-title">Cloud <em>daze.</em></div>
+          <div class="look-sub">Fleece · 03</div>
+        </div>
+      </div>
+      <div class="look-card">
+        <div class="look-art" style="background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(255,110,180,0.24), transparent 55%), linear-gradient(145deg, #1a0f22, var(--ink-2));">
+          <svg style="position:absolute;top:15%;left:18%;width:30%;color:var(--bone);" viewBox="0 0 80 100"><use href="#g-stone"/></svg>
+          <svg style="position:absolute;top:45%;left:55%;width:22%;color:var(--bubble);" viewBox="0 0 80 100"><use href="#g-stone"/></svg>
+          <svg style="position:absolute;bottom:10%;left:30%;width:26%;color:var(--lemon);" viewBox="0 0 60 60"><use href="#g-sparkle"/></svg>
+        </div>
+        <div class="look-foot">
+          <div class="look-title">Stone <em>set.</em></div>
+          <div class="look-sub">Hardware · 05</div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- CTA — DON'T MISS THE DROP -->
-  <section class="cta-section">
-    <div class="cta-bg"></div>
-    <div class="cta-inner">
-      <h2 class="cta-title">Don't<br/>miss the<br/><span class="y">drop<span class="p">.</span></span></h2>
-      <form id="nf" class="form-row">
-        <input type="email" class="form-email" placeholder="your@email.com" autocomplete="email" />
-        <button type="submit" class="btn-y" style="cursor:pointer;border:none;">Notify Me</button>
+  <!-- ═══════════════════════════════════════════════════════════ FEED (LIGHT) ═══ -->
+  <section class="feed is-light" id="feed">
+    <div class="feed-wrap">
+      <div class="feed-head reveal">
+        <div>
+          <span class="section-tag ink"><span class="line"></span>The Feed</span>
+          <h2 class="feed-handle"><span class="at">@</span>plushtrap_</h2>
+        </div>
+        <a href="https://www.instagram.com/plushtrap_" target="_blank" rel="noopener" class="btn ink" data-hover>Follow on Instagram <span class="arrow">→</span></a>
+      </div>
+
+      <div class="feed-grid reveal">
+        <a href="https://www.instagram.com/plushtrap_" target="_blank" rel="noopener" class="feed-cell bunski" data-hover>
+          <div class="feed-cell-art"></div>
+          <div class="feed-cell-over">
+            <span class="feed-cell-title">Bunski</span>
+            <span class="feed-cell-link">View on IG ↗</span>
+          </div>
+        </a>
+        <a href="https://www.instagram.com/plushtrap_" target="_blank" rel="noopener" class="feed-cell mohair" data-hover>
+          <div class="feed-cell-art"></div>
+          <div class="feed-cell-over">
+            <span class="feed-cell-title">Mohair</span>
+            <span class="feed-cell-link">View on IG ↗</span>
+          </div>
+        </a>
+        <a href="https://www.instagram.com/plushtrap_" target="_blank" rel="noopener" class="feed-cell rhine" data-hover>
+          <div class="feed-cell-art">
+            <svg class="a" viewBox="0 0 80 100"><use href="#g-stone"/></svg>
+            <svg class="b" viewBox="0 0 80 100"><use href="#g-stone"/></svg>
+            <svg class="c" viewBox="0 0 60 60"><use href="#g-sparkle"/></svg>
+          </div>
+          <div class="feed-cell-over">
+            <span class="feed-cell-title">Rhinestone</span>
+            <span class="feed-cell-link">View on IG ↗</span>
+          </div>
+        </a>
+        <a href="https://www.instagram.com/plushtrap_" target="_blank" rel="noopener" class="feed-cell y2k" data-hover>
+          <div class="feed-cell-art"></div>
+          <div class="feed-cell-over">
+            <span class="feed-cell-title">Y2K Knit</span>
+            <span class="feed-cell-link">View on IG ↗</span>
+          </div>
+        </a>
+      </div>
+      <p style="text-align:center; margin-top:1.75rem;" class="mono-xs reveal">Tag us · #plushtrap · #smatdesigns</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════ CTA (LIGHT) ═══ -->
+  <section class="cta is-light">
+    <div class="cta-wrap reveal">
+      <h2 class="cta-title">Don't<br/>miss<br/>the <em>drop<span class="hl">.</span></em></h2>
+      <p class="cta-lede">We only email when something drops. That's it. No "warming up," no resends, no filler. Get on the list or trust the algorithm.</p>
+      <form id="nf" class="cta-form">
+        <input type="email" class="cta-email" placeholder="your@email.com" autocomplete="email" required />
+        <button type="submit" class="btn cta-submit" data-hover>Notify Me <span class="arrow">→</span></button>
       </form>
-      <p style="font-family:'Space Mono',monospace;font-size:0.52rem;text-transform:uppercase;letter-spacing:0.22em;color:var(--dim);">Drop alerts only · No spam · Unsubscribe anytime</p>
+      <p class="cta-fine">Drop alerts only · No spam · Unsubscribe anytime</p>
     </div>
   </section>
 
+  <!-- ═══════════════════════════════════════════════════════════ FOOTER ═══ -->
   <footer class="footer">
-    <div class="footer-inner">
-      <div>
-        <div class="footer-logo">PLUSH<span>TRAP</span></div>
-        <p class="footer-desc">Kawaii streetwear from Tempe, AZ. Limited drops. No restocks. Built by SMAT Designs.</p>
-        <div class="footer-social">
-          <a href="https://www.instagram.com/plushtrap_" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
-          </a>
-          <a href="https://www.tiktok.com/@plushtrap_" target="_blank" rel="noopener" aria-label="TikTok">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.2 8.2 0 004.79 1.53V6.75a4.85 4.85 0 01-1.02-.06z"/></svg>
-          </a>
+    <div class="footer-wrap">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="logo"><svg class="logo-bow" viewBox="0 0 200 160"><use href="#g-bow"/></svg><span>Plushtrap</span></span>
+          <p class="footer-desc">Kawaii streetwear from Tempe, AZ. <em>Limited drops. No restocks.</em> Built by SMAT Designs, one operator, one rule: make what you can't find.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/plushtrap_" target="_blank" rel="noopener" aria-label="Instagram" data-hover>
+              <svg width="16" height="16" viewBox="0 0 24 24"><use href="#i-ig"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@plushtrap_" target="_blank" rel="noopener" aria-label="TikTok" data-hover>
+              <svg width="16" height="16" viewBox="0 0 24 24"><use href="#i-tt"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Drops</h4>
+          <ul>
+            <li><a href="#drop" data-hover>N°07 — Bunski Allknit</a></li>
+            <li><a href="#archive" data-hover>N°06 — Mohair Sets</a></li>
+            <li><a href="#archive" data-hover>N°05 — Rhinestone Sets</a></li>
+            <li><a href="#archive" data-hover>Full Archive</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Brand</h4>
+          <ul>
+            <li><a href="#aesthetic" data-hover>The Aesthetic</a></li>
+            <li><a href="#philosophy" data-hover>Philosophy</a></li>
+            <li><a href="#feed" data-hover>Instagram</a></li>
+            <li><a href="mailto:hello@plushtrap.com" data-hover>Press / Wholesale</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Next</h4>
+          <ul>
+            <li><a href="#drop" data-hover>Shop Drop 07</a></li>
+            <li><a href="#cta" data-hover>Waitlist</a></li>
+            <li><a href="mailto:hello@plushtrap.com" data-hover>Contact</a></li>
+          </ul>
         </div>
       </div>
-      <div>
-        <div class="footer-heading">Drops</div>
-        <ul class="footer-links">
-          <li><a href="#drops">Drop 007 — BUNSKI ALLKNIT</a></li>
-          <li><a href="#drops">Drop 006 — MOHAIR SETS</a></li>
-          <li><a href="#drops">Drop 005 — RHINESTONE SETS</a></li>
-          <li><a href="#drops">Archive</a></li>
-        </ul>
+
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2026 Plushtrap · SMAT Designs · Tempe, AZ</span>
+        <span class="footer-copy"><em>all drops final sale.</em> no restocks, ever.</span>
       </div>
-      <div>
-        <div class="footer-heading">Brand</div>
-        <ul class="footer-links">
-          <li><a href="#philosophy">Philosophy</a></li>
-          <li><a href="https://www.instagram.com/plushtrap_" target="_blank" rel="noopener">Instagram</a></li>
-          <li><a href="mailto:hello@plushtrap.com">Contact</a></li>
-          <li><a href="#follow">Waitlist</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span class="footer-copy">© 2026 Plushtrap · SMAT Designs · Tempe, AZ</span>
-      <span class="footer-copy">All drops are final sale. No restocks, ever.</span>
     </div>
   </footer>
 
   <script>
-    // Scroll nav
-    window.addEventListener('scroll', () => {
-      document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
-    }, { passive: true });
+    (function () {
+      "use strict";
+      const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Marquee
-    const mq = document.getElementById('mq');
-    const words = [
-      { t: 'PLUSHTRAP', c: 'y' }, { t: 'KAWAII STREETWEAR', c: 'p' }, { t: 'LIMITED DROPS', c: 'y' },
-      { t: 'SMAT DESIGNS', c: 'p' }, { t: 'NO RESTOCKS', c: 'y' }, { t: 'BUILT DIFFERENT', c: 'p' },
-      { t: 'TEMPE AZ', c: 'y' }, { t: 'CRAFTED NOT COPIED', c: 'p' }, { t: 'EST. 2018', c: 'y' },
-    ];
-    const d = [...words, ...words];
-    mq.innerHTML = d.map(w => `<span class="mq-item"><span class="mq-dot ${w.c}"></span>${w.t}</span>`).join('');
-
-    // Reveal on scroll
-    const obs = new IntersectionObserver(es => {
-      es.forEach((e, i) => {
-        if (e.isIntersecting) {
-          setTimeout(() => e.target.classList.add('visible'), i * 60);
-          obs.unobserve(e.target);
+      /* ──────────── nav scroll + light-mode detection ──────────── */
+      const nav = document.getElementById('nav');
+      const lightSections = Array.from(document.querySelectorAll('.is-light'));
+      function onScroll() {
+        nav.classList.toggle('scrolled', window.scrollY > 40);
+        // is the nav overlapping a light section?
+        const navRect = nav.getBoundingClientRect();
+        const navBand = navRect.bottom;
+        let onLight = false;
+        for (const s of lightSections) {
+          const r = s.getBoundingClientRect();
+          if (r.top <= navBand && r.bottom > navBand) { onLight = true; break; }
         }
-      });
-    }, { threshold: 0.08 });
-    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+        nav.classList.toggle('on-light', onLight);
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
 
-    // IG cell links
-    document.querySelectorAll('.ig-cell').forEach(cell => {
-      cell.addEventListener('click', () => window.open('https://www.instagram.com/plushtrap_', '_blank', 'noopener'));
-    });
+      /* ──────────── ticker fill ──────────── */
+      const ticker = document.getElementById('ticker');
+      if (ticker) {
+        const items = [
+          { kind:'disp',  t:'Plushtrap' },
+          { kind:'ital',  t:'built different' },
+          { kind:'disp',  t:'Drop 07 Live' },
+          { kind:'ital',  t:'kawaii × street' },
+          { kind:'disp',  t:'No Restocks' },
+          { kind:'ital',  t:'wear the wildness' },
+          { kind:'disp',  t:'Tempe AZ' },
+          { kind:'ital',  t:'made by smat' },
+          { kind:'disp',  t:'Est. 2018' }
+        ];
+        const frag = items.concat(items).concat(items).map((it, i) => {
+          const bow = (i % 3 === 1) ? '<svg class="ticker-bow" viewBox="0 0 200 160"><use href="#g-bow"/></svg>' : '<span class="ticker-dot"></span>';
+          const cls = it.kind === 'ital' ? 'ticker-item italic' : 'ticker-item';
+          return `<span class="${cls}">${bow}${it.t}</span>`;
+        }).join('');
+        ticker.innerHTML = frag;
+      }
 
-    // Email form
-    document.getElementById('nf').addEventListener('submit', e => {
-      e.preventDefault();
-      const btn = e.target.querySelector('button');
-      btn.textContent = "✓ You're on the list!";
-      btn.style.background = 'rgba(255,255,255,0.1)';
-      btn.style.color = '#aaa';
-      btn.style.cursor = 'default';
-      btn.disabled = true;
-    });
+      /* ──────────── custom cursor ──────────── */
+      if (!reduced && matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        const cursor = document.getElementById('cursor');
+        let x = window.innerWidth / 2, y = window.innerHeight / 2;
+        let tx = x, ty = y;
+        document.addEventListener('mousemove', e => { tx = e.clientX; ty = e.clientY; }, { passive: true });
+        document.addEventListener('mousedown', () => cursor.classList.add('press'));
+        document.addEventListener('mouseup',   () => cursor.classList.remove('press'));
+        (function loop() {
+          x += (tx - x) * 0.2;
+          y += (ty - y) * 0.2;
+          cursor.style.transform = `translate(${x}px, ${y}px)`;
+          requestAnimationFrame(loop);
+        })();
+
+        // hover state for interactive elements
+        const hoverables = 'a, button, [data-hover], input[type=email], .drop, .feed-cell, .look-card, .glyph, .prin';
+        document.addEventListener('mouseover', e => {
+          if (e.target.closest(hoverables)) cursor.classList.add('hover');
+        });
+        document.addEventListener('mouseout', e => {
+          if (e.target.closest(hoverables)) cursor.classList.remove('hover');
+        });
+      } else {
+        const c = document.getElementById('cursor');
+        if (c) c.remove();
+        document.body.style.cursor = 'auto';
+      }
+
+      /* ──────────── hero bow parallax (scroll + mouse) ──────────── */
+      const bow = document.getElementById('heroBow');
+      if (bow && !reduced) {
+        let mx = 0, my = 0;
+        window.addEventListener('mousemove', e => {
+          mx = (e.clientX / window.innerWidth  - 0.5);
+          my = (e.clientY / window.innerHeight - 0.5);
+        }, { passive: true });
+        (function tick() {
+          const y = window.scrollY;
+          const rot = y * 0.05 + mx * 8;
+          const ty = -y * 0.18 + my * 10;
+          const tx = mx * 18;
+          bow.style.transform = `translate(${tx}px, ${ty}px) rotate(${rot}deg)`;
+          requestAnimationFrame(tick);
+        })();
+      }
+
+      /* ──────────── reveal on scroll ──────────── */
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('in');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.reveal, .reveal-stack').forEach(el => obs.observe(el));
+
+      /* ──────────── magnetic-ish nudge on primary CTAs ──────────── */
+      if (!reduced) {
+        document.querySelectorAll('.btn').forEach(btn => {
+          btn.addEventListener('mousemove', e => {
+            const r = btn.getBoundingClientRect();
+            const dx = (e.clientX - (r.left + r.width/2)) / r.width;
+            const dy = (e.clientY - (r.top  + r.height/2)) / r.height;
+            btn.style.transform = `translate(${dx * 6}px, ${dy * 4 - 1}px)`;
+          });
+          btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+        });
+      }
+
+      /* ──────────── email form ──────────── */
+      const form = document.getElementById('nf');
+      if (form) {
+        form.addEventListener('submit', e => {
+          e.preventDefault();
+          const btn = form.querySelector('button');
+          btn.innerHTML = '✓ You\'re on the list';
+          btn.style.background = 'rgba(11,10,12,0.12)';
+          btn.style.color = '#0b0a0c';
+          btn.disabled = true;
+        });
+      }
+    })();
   </script>
 </body>
 </html>
