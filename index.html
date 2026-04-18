@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="dark light" />
-  <title>Plushtrap — Kawaii Streetwear / Vol. 07 BUNSKI ALLKNIT / Live Now</title>
-  <meta name="description" content="Plushtrap — kawaii-streetwear drops from Tempe, AZ. Limited runs. No restocks. Built by SMAT Designs. Vol. 07 BUNSKI ALLKNIT live now." />
+  <title>Plushtrap — Kawaii Streetwear / Lovers Lane Drop / Live Now</title>
+  <meta name="description" content="Plushtrap — kawaii-streetwear drops from Tempe, AZ. Balaclavas, bundles, beanies, beauty. Limited runs. No restocks. The Lovers Lane drop is live." />
   <meta name="theme-color" content="#0b0a0c" />
-  <meta property="og:title" content="Plushtrap — Vol. 07 BUNSKI ALLKNIT" />
-  <meta property="og:description" content="Limited drops. No restocks. Kawaii × street." />
+  <meta property="og:title" content="Plushtrap — Lovers Lane Drop" />
+  <meta property="og:description" content="Bonnie & Clyde, Cuffed & Cozy, Red Flag, Kawaii Crush — the Lovers Lane bundles are live. Kawaii × street." />
   <meta property="og:image" content="https://plushtrap.com/og.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
 
@@ -576,7 +576,23 @@
       transition: transform 0.5s cubic-bezier(.2,.7,.2,1), border-color 0.3s;
     }
     .drop:hover { border-color: rgba(255,255,255,0.2); transform: translateY(-6px); }
-    .drop-art { position: absolute; inset: 0; overflow: hidden; }
+    .drop-art { position: absolute; inset: 0; overflow: hidden; background: var(--ink-3); }
+    .drop-art img, .look-art img, .feat-visual-img, .feed-cell-art img {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.8s cubic-bezier(.2,.7,.2,1), filter 0.5s;
+    }
+    .drop:hover .drop-art img, .look-card:hover .look-art img { transform: scale(1.05); }
+    .feed-cell:hover .feed-cell-art img { transform: scale(1.04); filter: saturate(1.15); }
+    .drop-art::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(160deg, transparent 40%, rgba(11,10,12,0.45) 100%);
+      pointer-events: none; z-index: 1;
+    }
+    .look-art::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 55%, rgba(11,10,12,0.55) 100%);
+      pointer-events: none;
+    }
     .drop-body { position: relative; z-index: 4; padding: 1.5rem 1.4rem 1.4rem; }
     .drop-body::before {
       content: ""; position: absolute; left: 0; right: 0; top: -60px; bottom: 0;
@@ -1203,7 +1219,7 @@
         <circle cx="100" cy="100" r="72" fill="none" stroke="currentColor" stroke-width="0.6" stroke-dasharray="2 3" opacity="0.6"/>
         <text font-family="Space Mono, monospace" font-size="11" letter-spacing="5" fill="currentColor" text-transform="uppercase">
           <textPath href="#seal-path" startOffset="0%">
-            PLUSHTRAP · DROP 007 · BUNSKI ALLKNIT · SPRING 2026 · TEMPE AZ ·
+            PLUSHTRAP · LOVERS LANE DROP · BONNIE &amp; CLYDE · SPRING 2026 · TEMPE AZ ·
           </textPath>
         </text>
       </symbol>
@@ -1236,7 +1252,7 @@
     </a>
     <ul class="nav-links">
       <li><a href="#drop" data-hover>Current Drop</a></li>
-      <li><a href="#archive" data-hover>Archive</a></li>
+      <li><a href="#archive" data-hover>The Collection</a></li>
       <li><a href="#aesthetic" data-hover>The Aesthetic</a></li>
       <li><a href="#philosophy" data-hover>Philosophy</a></li>
       <li><a href="#feed" data-hover>Feed</a></li>
@@ -1265,7 +1281,7 @@
 
     <div class="hero-inner reveal-stack">
       <div class="hero-eyebrow">
-        <span class="hero-chip lemon"><span class="d"></span>Vol. 07 / Live</span>
+        <span class="hero-chip lemon"><span class="d"></span>Lovers Lane / Live</span>
         <span class="hero-chip bubble"><span class="d"></span>Kawaii × Street</span>
         <span class="hero-chip">Tempe, AZ · Est. 2018</span>
       </div>
@@ -1276,15 +1292,15 @@
         <span class="l3">Wear the <em>wildness</em></span>
       </h1>
 
-      <p class="hero-tag">Capsule N°07<span class="div">×</span>BUNSKI ALLKNIT<span class="div">×</span>34 Pieces<span class="div">×</span>No Restocks</p>
+      <p class="hero-tag">Lovers Lane Drop<span class="div">×</span>Bonnie &amp; Clyde<span class="div">×</span>4 Bundles Live<span class="div">×</span>No Restocks</p>
 
       <div class="hero-grid-foot">
         <p class="hero-lede">
           Plushtrap is built on one rule: <em>make what you can't find in the store.</em>
-          Each drop is hand-specced by SMAT, capped, and gone forever when it sells. Kawaii details, streetwear bones, zero apologies.
+          Balaclavas, bundles, bunny beanies, acrylic chains — each hand-specced by SMAT, capped, and gone forever when it sells. Kawaii details, streetwear bones, zero apologies.
         </p>
         <div class="hero-ctas">
-          <a href="#drop" class="btn lemon" data-hover>Shop Drop 07 <span class="arrow">→</span></a>
+          <a href="https://plushtrap.com/products/bonnie-clyde-bundle-lovers-lane-drop" target="_blank" rel="noopener" class="btn lemon" data-hover>Shop The Drop <span class="arrow">→</span></a>
           <a href="https://www.instagram.com/plushtrap_" target="_blank" rel="noopener" class="btn bubble" data-hover>@plushtrap_</a>
         </div>
       </div>
@@ -1313,13 +1329,8 @@
 
       <article class="feat-card reveal">
         <div class="feat-visual">
-          <!-- giant faint knit tile -->
-          <div class="art-knit-bg"></div>
-          <div class="art-knit-tile" style="opacity:0.7"></div>
-          <!-- bow -->
-          <div class="feat-bow">
-            <svg viewBox="0 0 200 160"><use href="#g-bow"/></svg>
-          </div>
+          <!-- real product hero image -->
+          <img class="feat-visual-img" src="assets/products/bonnie-clyde-bundle-lovers-lane-drop.png" alt="Bonnie &amp; Clyde Bundle — Lovers Lane Drop" loading="eager" fetchpriority="high" />
           <!-- sparkles -->
           <svg class="feat-stone a" viewBox="0 0 60 60"><use href="#g-sparkle"/></svg>
           <svg class="feat-stone b" viewBox="0 0 80 100"><use href="#g-stone"/></svg>
@@ -1335,24 +1346,24 @@
 
         <div class="feat-body">
           <div class="feat-corners">
-            <span>Drop N°07 / 2026</span>
+            <span>Lovers Lane / 2026</span>
             <span>Live Now</span>
           </div>
 
           <div>
-            <h3 class="feat-title">Bunski<br/><span class="bunski">allknit.</span></h3>
-            <p class="feat-desc">A dense-gauge cotton knit set — cropped pullover and low-rise flare — rendered in lemon pop and bone cream. Plushtrap's heaviest knit to date, finished with a rhinestone bunny patch at the hem. Made for heat, noise, and the last warm night of spring.</p>
+            <h3 class="feat-title">Bonnie<br/><span class="bunski">&amp; clyde.</span></h3>
+            <p class="feat-desc">The flagship Lovers Lane bundle: two Bunski balaclavas, twin acrylic chains, matching bunny-ear fleece beanies. Built to be worn in pairs — or worn loudly, alone. Hand-specced by SMAT, priced as a set because the duo is the point.</p>
           </div>
 
           <div class="feat-meta">
             <div class="feat-meta-cell live"><span class="k">Status</span><span class="v">Live Now</span></div>
-            <div class="feat-meta-cell"><span class="k">Units</span><span class="v">34 Pcs</span></div>
+            <div class="feat-meta-cell"><span class="k">Price</span><span class="v">$96</span></div>
             <div class="feat-meta-cell pink"><span class="k">Season</span><span class="v">SS '26</span></div>
           </div>
 
           <div class="feat-ctas">
-            <a href="#" class="btn lemon" data-hover>Shop Now <span class="arrow">→</span></a>
-            <a href="#" class="btn ghost" data-hover>Lookbook</a>
+            <a href="https://plushtrap.com/products/bonnie-clyde-bundle-lovers-lane-drop" target="_blank" rel="noopener" class="btn lemon" data-hover>Shop Bundle <span class="arrow">→</span></a>
+            <a href="#archive" class="btn ghost" data-hover>The Collection</a>
           </div>
         </div>
       </article>
@@ -1364,96 +1375,93 @@
     <div class="archive-wrap">
       <div class="feat-head reveal">
         <div>
-          <span class="section-tag bubble"><span class="line"></span>Archive / Vol. 01–06</span>
-          <h2 class="section-title">Sold. <em>gone.</em></h2>
+          <span class="section-tag bubble"><span class="line"></span>The Collection / Live</span>
+          <h2 class="section-title">Shop the <em>signatures.</em></h2>
         </div>
         <div class="section-nav">
-          <a href="#drop" data-hover>← Current</a>
+          <a href="#drop" data-hover>← Current Drop</a>
         </div>
       </div>
 
       <div class="archive-grid">
 
-        <!-- 06 MOHAIR -->
-        <a href="#" class="drop reveal">
-          <div class="drop-art"><div class="art-mohair"></div></div>
-          <div class="drop-body">
-            <span class="drop-badge sold">Sold Out</span>
-            <span class="drop-no">Drop N°06 · SS '26</span>
-            <h3 class="drop-name">Mohair <em>sets.</em></h3>
-            <p class="drop-sub">Premium mohair · 20 pcs · gone in 9 hours</p>
-          </div>
-        </a>
-
-        <!-- 05 RHINESTONE -->
-        <a href="#" class="drop reveal">
+        <!-- Red Flag Bundle -->
+        <a href="https://plushtrap.com/products/red-flag-bundle-lovers-lane-drop" target="_blank" rel="noopener" class="drop reveal">
           <div class="drop-art">
-            <div class="art-rhinestone">
-              <svg class="rs a" viewBox="0 0 80 100"><use href="#g-stone"/></svg>
-              <svg class="rs b" viewBox="0 0 80 100"><use href="#g-stone"/></svg>
-              <svg class="rs c" viewBox="0 0 60 60"><use href="#g-sparkle"/></svg>
-              <svg class="rs d" viewBox="0 0 80 100"><use href="#g-stone"/></svg>
-            </div>
+            <img src="assets/products/red-flag-bundle-lovers-lane-drop.png" alt="Red Flag Bundle" loading="lazy" />
           </div>
           <div class="drop-body">
-            <span class="drop-badge sold">Sold Out</span>
-            <span class="drop-no">Drop N°05 · FW '25</span>
-            <h3 class="drop-name">Rhinestone <em>sets.</em></h3>
-            <p class="drop-sub">Statement co-ords · 15 pcs · archive</p>
+            <span class="drop-badge live">In Stock</span>
+            <span class="drop-no">Lovers Lane · Bundle</span>
+            <h3 class="drop-name">Red Flag <em>bundle.</em></h3>
+            <p class="drop-sub">Balaclava + chain + beanie · $75</p>
           </div>
         </a>
 
-        <!-- 04 Y2K -->
-        <a href="#" class="drop reveal">
-          <div class="drop-art"><div class="art-y2k"></div></div>
-          <div class="drop-body">
-            <span class="drop-badge sold">Sold Out</span>
-            <span class="drop-no">Drop N°04 · SS '25</span>
-            <h3 class="drop-name">Y2K <em>knit.</em></h3>
-            <p class="drop-sub">Chrome-treated knitwear · archive</p>
-          </div>
-        </a>
-
-        <!-- 03 CLOUD FLEECE -->
-        <a href="#" class="drop reveal">
+        <!-- Camo BunSki Balaclava -->
+        <a href="https://plushtrap.com/products/preorder-snow-camo-bunski" target="_blank" rel="noopener" class="drop reveal">
           <div class="drop-art">
-            <div class="art-cloud">
-              <svg class="a" viewBox="0 0 200 100"><use href="#g-cloud"/></svg>
-              <svg class="b" viewBox="0 0 200 100"><use href="#g-cloud"/></svg>
-              <svg class="c" viewBox="0 0 200 100"><use href="#g-cloud"/></svg>
-            </div>
+            <img src="assets/products/camo-bunski-balaclava-snow-woods-camo-bunny-ear-ski-mask-for.jpg" alt="Camo BunSki Balaclava" loading="lazy" />
           </div>
           <div class="drop-body">
-            <span class="drop-badge sold">Sold Out</span>
-            <span class="drop-no">Drop N°03 · FW '24</span>
-            <h3 class="drop-name">Cloud <em>fleece.</em></h3>
-            <p class="drop-sub">Heavyweight fleece · 38 pcs · archive</p>
+            <span class="drop-badge live">In Stock</span>
+            <span class="drop-no">Signature · Balaclava</span>
+            <h3 class="drop-name">Camo <em>bunski.</em></h3>
+            <p class="drop-sub">Snow &amp; woods camo · from $40</p>
           </div>
         </a>
 
-        <!-- 02 — synthetic placeholder, matched to brand -->
-        <a href="#" class="drop reveal">
+        <!-- Pink Bunski 3-Hole Balaclava -->
+        <a href="https://plushtrap.com/products/preorder-pink-bunski-3-hole-balaclava" target="_blank" rel="noopener" class="drop reveal">
           <div class="drop-art">
-            <div class="art-mohair" style="filter:blur(2px); background: radial-gradient(ellipse 60% 60% at 60% 30%, rgba(245,230,66,0.28), transparent 55%), radial-gradient(ellipse 50% 50% at 30% 70%, rgba(255,110,180,0.18), transparent 55%), linear-gradient(135deg,#1a170f,var(--ink-3));"></div>
+            <img src="assets/products/pink-bunski-3-hole-balaclava-bunny-ear-ski-mask-for-kawaii-f.png" alt="Pink Bunski 3-Hole Balaclava" loading="lazy" />
           </div>
           <div class="drop-body">
-            <span class="drop-badge sold">Sold Out</span>
-            <span class="drop-no">Drop N°02 · SS '24</span>
-            <h3 class="drop-name">Ribbon <em>cargo.</em></h3>
-            <p class="drop-sub">Ribboned cargo set · 22 pcs · archive</p>
+            <span class="drop-badge live">In Stock</span>
+            <span class="drop-no">Signature · Kawaii</span>
+            <h3 class="drop-name">Pink <em>bunski.</em></h3>
+            <p class="drop-sub">3-hole bunny ear ski mask · $30</p>
           </div>
         </a>
 
-        <!-- 08 COMING SOON -->
-        <div class="drop coming reveal" aria-label="Drop 008 coming soon">
-          <div class="drop-art"><div class="art-redacted"></div></div>
-          <div class="drop-body">
-            <span class="drop-badge coming">Coming Summer '26</span>
-            <span class="drop-no">Drop N°08 · Classified</span>
-            <h3 class="drop-name"><span class="q">???</span></h3>
-            <p class="drop-sub">Waitlist opens soon · No clues yet</p>
+        <!-- Satin Lined Bunny Beanie Balaclava -->
+        <a href="https://plushtrap.com/products/preorder-black-bunny-beanie" target="_blank" rel="noopener" class="drop reveal">
+          <div class="drop-art">
+            <img src="assets/products/satin-lined-bunny-beanie-balaclava-kawaii-ears-hat-for-hair-.jpg" alt="Satin Lined Bunny Beanie Balaclava" loading="lazy" />
           </div>
-        </div>
+          <div class="drop-body">
+            <span class="drop-badge live">In Stock</span>
+            <span class="drop-no">2-in-1 · Hair safe</span>
+            <h3 class="drop-name">Satin <em>lined.</em></h3>
+            <p class="drop-sub">Beanie → balaclava · $40</p>
+          </div>
+        </a>
+
+        <!-- Zit Happens Killa Bunny Acne Patches -->
+        <a href="https://plushtrap.com/products/zit-happens-killa-bunny-acne-patches-plush-trap-collab-mirror-case-for-bold-breakout-defense" target="_blank" rel="noopener" class="drop reveal">
+          <div class="drop-art">
+            <img src="assets/products/zit-happens-killa-bunny-acne-patches-plush-trap-collab-hydro.png" alt="Zit Happens Killa Bunny Acne Patches" loading="lazy" />
+          </div>
+          <div class="drop-body">
+            <span class="drop-badge live">Collab</span>
+            <span class="drop-no">Beauty · Hydrocolloid</span>
+            <h3 class="drop-name">Zit <em>happens.</em></h3>
+            <p class="drop-sub">Killa bunny acne patches · $30</p>
+          </div>
+        </a>
+
+        <!-- Kawaii Crush Bundle -->
+        <a href="https://plushtrap.com/products/kawaii-crush-bundle-lovers-lane-drop" target="_blank" rel="noopener" class="drop reveal">
+          <div class="drop-art">
+            <img src="assets/products/kawaii-crush-bundle-lovers-lane-drop.png" alt="Kawaii Crush Bundle" loading="lazy" />
+          </div>
+          <div class="drop-body">
+            <span class="drop-badge live">In Stock</span>
+            <span class="drop-no">Lovers Lane · Bundle</span>
+            <h3 class="drop-name">Kawaii <em>crush.</em></h3>
+            <p class="drop-sub">Starter stack for the soft set · $60</p>
+          </div>
+        </a>
 
       </div>
     </div>
@@ -1583,45 +1591,55 @@
       <h2 class="section-title">Style <em>moments.</em></h2>
     </div>
     <div class="lookbook-track">
-      <div class="look-card">
-        <div class="look-art" style="background: radial-gradient(ellipse 70% 60% at 40% 30%, rgba(245,230,66,0.4), transparent 55%), linear-gradient(135deg,#1a170f,var(--ink-2));"></div>
+      <a href="https://plushtrap.com/products/cuffed-cozy-lovers-lane-drop" target="_blank" rel="noopener" class="look-card" data-hover>
+        <div class="look-art"><img src="assets/products/cuffed-cozy-lovers-lane-drop.png" alt="Cuffed &amp; Cozy Bundle" loading="lazy" /></div>
         <div class="look-foot">
-          <div class="look-title">BUNSKI <em>hem.</em></div>
-          <div class="look-sub">Detail · Spring 2026</div>
+          <div class="look-title">Cuffed &amp; <em>cozy.</em></div>
+          <div class="look-sub">Lovers Lane · $96</div>
         </div>
-      </div>
-      <div class="look-card">
-        <div class="look-art" style="background: radial-gradient(ellipse 60% 70% at 50% 50%, rgba(255,110,180,0.4), transparent 60%), var(--plum); filter: blur(1px);"></div>
+      </a>
+      <a href="https://plushtrap.com/products/lonely-hearts-club-bundle-lovers-lane-drop" target="_blank" rel="noopener" class="look-card" data-hover>
+        <div class="look-art"><img src="assets/products/lonely-hearts-club-bundle-lovers-lane-drop.png" alt="Lonely Hearts Club Bundle" loading="lazy" /></div>
         <div class="look-foot">
-          <div class="look-title">Mohair <em>haze.</em></div>
-          <div class="look-sub">Texture · 06</div>
+          <div class="look-title">Lonely <em>hearts.</em></div>
+          <div class="look-sub">Bundle · $66</div>
         </div>
-      </div>
-      <div class="look-card">
-        <div class="look-art" style="background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,110,180,0.3) 40%, rgba(245,230,66,0.18) 80%), linear-gradient(to bottom,#2a1a2e,var(--ink-2));"></div>
+      </a>
+      <a href="https://plushtrap.com/products/new-colors-fleece-bunny-beanie" target="_blank" rel="noopener" class="look-card" data-hover>
+        <div class="look-art"><img src="assets/products/fleece-bunny-beanie-red-navy-blue-grey-kawaii-winter-hats-wi.jpg" alt="Fleece Bunny Beanie" loading="lazy" /></div>
         <div class="look-foot">
-          <div class="look-title">Chrome <em>ribbon.</em></div>
-          <div class="look-sub">Y2K · archive</div>
+          <div class="look-title">Fleece <em>bunny.</em></div>
+          <div class="look-sub">Beanie · $40</div>
         </div>
-      </div>
-      <div class="look-card">
-        <div class="look-art" style="background: radial-gradient(ellipse 70% 60% at 30% 70%, rgba(245,230,66,0.18), transparent 55%), radial-gradient(ellipse 60% 50% at 70% 30%, rgba(255,110,180,0.22), transparent 55%), linear-gradient(to bottom,var(--ink-2),var(--ink-3));"></div>
+      </a>
+      <a href="https://plushtrap.com/products/12-knyplsh-plush-trap-saffy-creatives-limited-200-pc-plushie" target="_blank" rel="noopener" class="look-card" data-hover>
+        <div class="look-art"><img src="assets/products/12-limited-edition-plushie-plush-trap-x-saffy-creatives-coll.jpg" alt="12&quot; Limited Edition Plushie" loading="lazy" /></div>
         <div class="look-foot">
-          <div class="look-title">Cloud <em>daze.</em></div>
-          <div class="look-sub">Fleece · 03</div>
+          <div class="look-title">12" <em>plushie.</em></div>
+          <div class="look-sub">Saffy C · collab · $60</div>
         </div>
-      </div>
-      <div class="look-card">
-        <div class="look-art" style="background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(255,110,180,0.24), transparent 55%), linear-gradient(145deg, #1a0f22, var(--ink-2));">
-          <svg style="position:absolute;top:15%;left:18%;width:30%;color:var(--bone);" viewBox="0 0 80 100"><use href="#g-stone"/></svg>
-          <svg style="position:absolute;top:45%;left:55%;width:22%;color:var(--bubble);" viewBox="0 0 80 100"><use href="#g-stone"/></svg>
-          <svg style="position:absolute;bottom:10%;left:30%;width:26%;color:var(--lemon);" viewBox="0 0 60 60"><use href="#g-sparkle"/></svg>
-        </div>
+      </a>
+      <a href="https://plushtrap.com/products/occulted-stockings" target="_blank" rel="noopener" class="look-card" data-hover>
+        <div class="look-art"><img src="assets/products/occulted-stockings-mystical-nylon-blend-tights-for-alt-fashi.jpg" alt="Occulted Stockings" loading="lazy" /></div>
         <div class="look-foot">
-          <div class="look-title">Stone <em>set.</em></div>
-          <div class="look-sub">Hardware · 05</div>
+          <div class="look-title">Occulted <em>tights.</em></div>
+          <div class="look-sub">Alt fashion · $25</div>
         </div>
-      </div>
+      </a>
+      <a href="https://plushtrap.com/products/distressed-black-bunski-balaclava" target="_blank" rel="noopener" class="look-card" data-hover>
+        <div class="look-art"><img src="assets/products/distressed-black-bunski-balaclava-hand-woven-1-hole-ski-mask.jpg" alt="Distressed Black Bunski Balaclava" loading="lazy" /></div>
+        <div class="look-foot">
+          <div class="look-title">Distressed <em>bunski.</em></div>
+          <div class="look-sub">Hand-woven · $50</div>
+        </div>
+      </a>
+      <a href="https://plushtrap.com/products/preorder-furry-sad-bag" target="_blank" rel="noopener" class="look-card" data-hover>
+        <div class="look-art"><img src="assets/products/furry-red-faux-fur-tote-bag-golden-arch-statement-handbag-fo.jpg" alt="Furry Red Faux Fur Tote Bag" loading="lazy" /></div>
+        <div class="look-foot">
+          <div class="look-title">Red <em>fur tote.</em></div>
+          <div class="look-sub">Y2K · statement · $60</div>
+        </div>
+      </a>
     </div>
   </section>
 
@@ -1638,14 +1656,18 @@
 
       <div class="feed-grid reveal">
         <a href="https://www.instagram.com/plushtrap_" target="_blank" rel="noopener" class="feed-cell bunski" data-hover>
-          <div class="feed-cell-art"></div>
+          <div class="feed-cell-art">
+            <img src="assets/products/black-bunski-3-hole-balaclava-bunny-ear-ski-mask-for-streetw.png" alt="Black Bunski — 3-hole bunny ear balaclava" loading="lazy" />
+          </div>
           <div class="feed-cell-over">
             <span class="feed-cell-title">Bunski</span>
             <span class="feed-cell-link">View on IG ↗</span>
           </div>
         </a>
         <a href="https://www.instagram.com/plushtrap_" target="_blank" rel="noopener" class="feed-cell mohair" data-hover>
-          <div class="feed-cell-art"></div>
+          <div class="feed-cell-art">
+            <img src="assets/products/kawaii-winter-bundle-2-bunny-beanies-cannabis-plushie-save-1.png" alt="Kawaii Winter Bundle — fluffy bunny beanies" loading="lazy" />
+          </div>
           <div class="feed-cell-over">
             <span class="feed-cell-title">Mohair</span>
             <span class="feed-cell-link">View on IG ↗</span>
@@ -1653,6 +1675,7 @@
         </a>
         <a href="https://www.instagram.com/plushtrap_" target="_blank" rel="noopener" class="feed-cell rhine" data-hover>
           <div class="feed-cell-art">
+            <img src="assets/products/y2k-jewelry-stack-cuban-link-necklace-choker-bracelet-bundle.png" alt="Y2K Jewelry Stack — clear cuban link bundle" loading="lazy" />
             <svg class="a" viewBox="0 0 80 100"><use href="#g-stone"/></svg>
             <svg class="b" viewBox="0 0 80 100"><use href="#g-stone"/></svg>
             <svg class="c" viewBox="0 0 60 60"><use href="#g-sparkle"/></svg>
@@ -1663,7 +1686,9 @@
           </div>
         </a>
         <a href="https://www.instagram.com/plushtrap_" target="_blank" rel="noopener" class="feed-cell y2k" data-hover>
-          <div class="feed-cell-art"></div>
+          <div class="feed-cell-art">
+            <img src="assets/products/festival-essentials-pack-bunny-beanie-pink-bunski-contact-le.png" alt="Festival Essentials Pack — Y2K kawaii kit" loading="lazy" />
+          </div>
           <div class="feed-cell-over">
             <span class="feed-cell-title">Y2K Knit</span>
             <span class="feed-cell-link">View on IG ↗</span>
@@ -1770,13 +1795,13 @@
         const items = [
           { kind:'disp',  t:'Plushtrap' },
           { kind:'ital',  t:'built different' },
-          { kind:'disp',  t:'Drop 07 Live' },
+          { kind:'disp',  t:'Lovers Lane Live' },
           { kind:'ital',  t:'kawaii × street' },
-          { kind:'disp',  t:'No Restocks' },
+          { kind:'disp',  t:'Bonnie & Clyde' },
           { kind:'ital',  t:'wear the wildness' },
-          { kind:'disp',  t:'Tempe AZ' },
+          { kind:'disp',  t:'No Restocks' },
           { kind:'ital',  t:'made by smat' },
-          { kind:'disp',  t:'Est. 2018' }
+          { kind:'disp',  t:'Tempe AZ · Est. 2018' }
         ];
         const frag = items.concat(items).concat(items).map((it, i) => {
           const bow = (i % 3 === 1) ? '<svg class="ticker-bow" viewBox="0 0 200 160"><use href="#g-bow"/></svg>' : '<span class="ticker-dot"></span>';
