@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plushtrap — Wear the Wildness.</title>
+  <meta name="description" content="Plushtrap is a premium streetwear brand built on imagination, craftsmanship, and edge. Limited drops. Uncompromising quality." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:       #000;
+      --s1:       #0a0a0a;
+      --s2:       #111;
+      --white:    #fff;
+      --yellow:   #f5e642;
+      --y-dim:    rgba(245,230,66,0.1);
+      --y-glow:   rgba(245,230,66,0.3);
+      --dim:      #444;
+      --dim2:     #666;
+      --border:   rgba(255,255,255,0.06);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: #ccc; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    ::selection { background: var(--yellow); color: #000; }
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-thumb { background: var(--yellow); }
+
+    /* NAV */
+    .nav {
+      position: fixed; inset-block-start: 0; inset-inline: 0; z-index: 100;
+      padding: 1.5rem 2rem; display: flex; align-items: center; justify-content: space-between;
+      transition: all 0.4s ease;
+    }
+    .nav.scrolled { background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.15em; color: var(--white); text-decoration: none; }
+    .nav-logo span { color: var(--yellow); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-family: 'Space Mono', monospace; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.25em; color: var(--dim2); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta { font-family: 'Space Mono', monospace; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.2em; background: var(--yellow); color: #000; padding: 0.6rem 1.4rem; border-radius: 2px; text-decoration: none; font-weight: 700; transition: all 0.2s; }
+    .nav-cta:hover { background: #fff; }
+
+    /* HERO */
+    .hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, #0a0a0a 0%, #000 100%);
+    }
+    /* Grid lines */
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 80px 80px;
+    }
+    /* Yellow diagonal stripe */
+    .hero-stripe {
+      position: absolute; right: 0; top: 0; bottom: 0; width: 45%;
+      background: linear-gradient(135deg, transparent 30%, rgba(245,230,66,0.03) 100%);
+      border-left: 1px solid rgba(245,230,66,0.06);
+    }
+    .hero-content { position: relative; z-index: 2; padding: 2rem; max-width: 72rem; margin-inline: auto; width: 100%; }
+    .hero-eyebrow {
+      font-family: 'Space Mono', monospace; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.35em; color: var(--dim2);
+      margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem;
+      animation: fadeUp 0.8s ease both;
+    }
+    .hero-eyebrow::before { content: ""; width: 24px; height: 1px; background: var(--yellow); }
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(5rem, 16vw, 14rem);
+      letter-spacing: -0.02em; line-height: 0.88;
+      color: var(--white); margin-bottom: 2rem;
+      animation: fadeUp 0.8s 0.1s ease both;
+    }
+    .hero-title .accent { color: var(--yellow); }
+    .hero-sub {
+      font-size: 1.05rem; line-height: 1.7; color: var(--dim2);
+      max-width: 480px; margin-bottom: 2.5rem;
+      animation: fadeUp 0.8s 0.2s ease both;
+    }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeUp 0.8s 0.3s ease both; margin-bottom: 4rem; }
+    .btn-y { display: inline-block; background: var(--yellow); color: #000; font-family: 'Space Mono', monospace; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; padding: 1rem 2rem; border-radius: 2px; text-decoration: none; transition: all 0.2s; }
+    .btn-y:hover { background: #fff; box-shadow: 0 0 30px var(--y-glow); }
+    .btn-wh { display: inline-block; border: 1px solid rgba(255,255,255,0.15); color: var(--white); font-family: 'Space Mono', monospace; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.2em; padding: 1rem 2rem; border-radius: 2px; text-decoration: none; transition: all 0.2s; }
+    .btn-wh:hover { border-color: rgba(255,255,255,0.4); background: rgba(255,255,255,0.04); }
+
+    .hero-stats { display: flex; flex-wrap: wrap; gap: 2.5rem; border-top: 1px solid var(--border); padding-top: 2rem; animation: fadeUp 0.8s 0.4s ease both; }
+    .stat-n { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--yellow); letter-spacing: 0.05em; display: block; }
+    .stat-l { font-family: 'Space Mono', monospace; font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.25em; color: var(--dim); margin-top: 0.25rem; }
+
+    /* MARQUEE */
+    .marquee-wrap { overflow: hidden; border-block: 1px solid var(--border); padding: 0.75rem 0; -webkit-mask: linear-gradient(90deg, transparent, #fff 8%, #fff 92%, transparent); mask: linear-gradient(90deg, transparent, #fff 8%, #fff 92%, transparent); }
+    .marquee-track { display: flex; width: max-content; animation: mq 25s linear infinite; }
+    .mq-item { display: flex; align-items: center; gap: 1rem; margin-inline: 2rem; white-space: nowrap; font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 0.2em; color: var(--dim); }
+    .mq-dot { width: 5px; height: 5px; background: var(--yellow); border-radius: 50%; }
+    @keyframes mq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* DROPS */
+    .section { max-width: 72rem; margin-inline: auto; padding: 6rem 2rem; }
+    .s-label { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem; }
+    .s-line { width: 32px; height: 1px; background: var(--yellow); }
+    .s-tag { font-family: 'Space Mono', monospace; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.3em; color: var(--yellow); }
+    .s-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 6vw, 5rem); color: var(--white); letter-spacing: 0.02em; line-height: 1; margin-bottom: 0.5rem; }
+
+    .drops-grid { display: grid; gap: 1px; grid-template-columns: repeat(3, 1fr); margin-top: 3rem; background: var(--border); }
+    @media (max-width: 768px) { .drops-grid { grid-template-columns: 1fr; } }
+    .drop-card {
+      position: relative; overflow: hidden;
+      background: var(--bg); aspect-ratio: 3/4;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 1.5rem; cursor: pointer;
+      transition: all 0.4s ease;
+    }
+    .drop-card:hover .drop-overlay { opacity: 1; }
+    .drop-card:hover .drop-title { color: var(--yellow); }
+    .drop-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 60%, transparent 100%); opacity: 0.6; transition: opacity 0.4s; }
+    .drop-bg { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: var(--s1); }
+    .drop-num { font-family: 'Bebas Neue', sans-serif; font-size: 8rem; color: rgba(255,255,255,0.03); }
+    .drop-content { position: relative; z-index: 2; }
+    .drop-status { font-family: 'Space Mono', monospace; font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.25em; margin-bottom: 0.4rem; }
+    .drop-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.75rem; color: var(--white); letter-spacing: 0.05em; margin-bottom: 0.25rem; transition: color 0.3s; }
+    .drop-sub { font-size: 0.8rem; color: var(--dim2); }
+
+    /* PHILOSOPHY */
+    .phil-section { background: var(--s1); border-block: 1px solid var(--border); }
+    .phil-grid { display: grid; gap: 4rem; grid-template-columns: 1fr 1fr; margin-top: 4rem; align-items: center; }
+    @media (max-width: 768px) { .phil-grid { grid-template-columns: 1fr; } }
+    .phil-visual {
+      aspect-ratio: 1; border: 1px solid var(--border);
+      background: var(--s2); border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Bebas Neue', sans-serif; font-size: 5rem; color: rgba(255,255,255,0.04);
+      letter-spacing: 0.1em; position: relative; overflow: hidden;
+    }
+    .phil-visual::after { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, var(--y-dim), transparent 60%); }
+    .phil-list { display: flex; flex-direction: column; gap: 1.5rem; }
+    .phil-item { padding: 1.5rem; border: 1px solid var(--border); border-radius: 4px; transition: all 0.3s; }
+    .phil-item:hover { border-color: rgba(245,230,66,0.2); background: var(--y-dim); transform: translateX(6px); }
+    .phil-item-num { font-family: 'Space Mono', monospace; font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.25em; color: var(--yellow); margin-bottom: 0.4rem; }
+    .phil-item-title { font-size: 0.95rem; font-weight: 600; color: var(--white); margin-bottom: 0.25rem; }
+    .phil-item-desc { font-size: 0.85rem; line-height: 1.6; color: var(--dim2); }
+
+    /* CTA */
+    .cta-section { position: relative; overflow: hidden; padding: 8rem 2rem; text-align: center; }
+    .cta-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(245,230,66,0.04), transparent 65%), var(--bg); }
+    .cta-inner { position: relative; z-index: 2; max-width: 640px; margin-inline: auto; }
+    .cta-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 10vw, 8rem); color: var(--white); line-height: 0.9; letter-spacing: 0.02em; margin-bottom: 1.5rem; }
+    .cta-title .y { color: var(--yellow); }
+
+    .footer { border-top: 1px solid var(--border); padding: 3rem 2rem; }
+    .footer-inner { max-width: 72rem; margin-inline: auto; display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; align-items: center; }
+    .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 0.15em; color: var(--white); }
+
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+    @media (max-width: 640px) { .nav-links { display: none; } }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <a href="#" class="nav-logo">PLUSH<span>TRAP</span></a>
+    <ul class="nav-links">
+      <li><a href="#drops">Drops</a></li>
+      <li><a href="#philosophy">Philosophy</a></li>
+    </ul>
+    <a href="#drops" class="nav-cta">Shop</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-stripe"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Tempe, AZ · Premium Streetwear · Est. 2018</div>
+      <h1 class="hero-title">
+        Wear<br/>
+        the <span class="accent">Wild</span><br/>
+        ness.
+      </h1>
+      <p class="hero-sub">
+        Plushtrap is built on one rule: make what you can't find in the store.
+        Every piece is crafted for those who refuse to blend in.
+      </p>
+      <div class="hero-ctas">
+        <a href="#drops" class="btn-y">Current Drop</a>
+        <a href="#philosophy" class="btn-wh">Our Story</a>
+      </div>
+      <div class="hero-stats">
+        <div><span class="stat-n">7</span><span class="stat-l">Drops Released</span></div>
+        <div><span class="stat-n">100%</span><span class="stat-l">Limited Qty</span></div>
+        <div><span class="stat-n">0</span><span class="stat-l">Restocks. Ever.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track" id="mq"></div>
+  </div>
+
+  <!-- DROPS -->
+  <section class="section" id="drops">
+    <div class="s-label reveal"><span class="s-line"></span><span class="s-tag">Current &amp; Archive</span></div>
+    <h2 class="s-title reveal">The Drops</h2>
+    <p style="color:var(--dim2);font-size:0.9rem;max-width:480px;margin-bottom:0;" class="reveal">Every collection is limited. Once it's gone, it's gone. No reruns. No restocks.</p>
+    <div class="drops-grid">
+      <div class="drop-card reveal">
+        <div class="drop-bg"><span class="drop-num">07</span></div>
+        <div class="drop-overlay"></div>
+        <div class="drop-content">
+          <div class="drop-status" style="color:var(--yellow);">● Live Now</div>
+          <div class="drop-title">BUNSKI ALLKNIT</div>
+          <div class="drop-sub">Knitwear · 34 pieces · Spring 2026</div>
+        </div>
+      </div>
+      <div class="drop-card reveal">
+        <div class="drop-bg"><span class="drop-num">06</span></div>
+        <div class="drop-overlay"></div>
+        <div class="drop-content">
+          <div class="drop-status" style="color:var(--dim2);">Sold Out</div>
+          <div class="drop-title">MOHAIR SETS</div>
+          <div class="drop-sub">Premium Knitwear · 20 pieces</div>
+        </div>
+      </div>
+      <div class="drop-card reveal">
+        <div class="drop-bg"><span class="drop-num">05</span></div>
+        <div class="drop-overlay"></div>
+        <div class="drop-content">
+          <div class="drop-status" style="color:var(--dim2);">Sold Out</div>
+          <div class="drop-title">RHINESTONE SETS</div>
+          <div class="drop-sub">Statement Pieces · 15 pieces</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section class="phil-section" id="philosophy">
+    <div class="section">
+      <div class="s-label reveal"><span class="s-line"></span><span class="s-tag">Philosophy</span></div>
+      <h2 class="s-title reveal">Built Different.</h2>
+      <div class="phil-grid">
+        <div class="phil-visual reveal">PLUSHTRAP</div>
+        <div class="phil-list">
+          <div class="phil-item reveal">
+            <div class="phil-item-num">01 — Limited</div>
+            <div class="phil-item-title">Scarcity by Design</div>
+            <p class="phil-item-desc">Every drop is capped. Not for hype — because each piece takes real time to make right.</p>
+          </div>
+          <div class="phil-item reveal">
+            <div class="phil-item-num">02 — Crafted</div>
+            <div class="phil-item-title">Precision Construction</div>
+            <p class="phil-item-desc">SMAT-designed tech packs. Manufacturer-direct sourcing. Every seam earns its place.</p>
+          </div>
+          <div class="phil-item reveal">
+            <div class="phil-item-num">03 — Authentic</div>
+            <div class="phil-item-title">No Trend Chasing</div>
+            <p class="phil-item-desc">We design what we'd actually wear. If it doesn't excite us, we don't make it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-bg"></div>
+    <div class="cta-inner">
+      <h2 class="cta-title">Don't<br/>miss the<br/><span class="y">drop.</span></h2>
+      <form id="nf" style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-bottom:1rem;">
+        <input type="email" placeholder="your@email.com" style="flex:1;min-width:200px;max-width:300px;padding:1rem 1.25rem;background:var(--s1);border:1px solid var(--border);border-radius:2px;color:#fff;font-family:'Space Mono',monospace;font-size:0.75rem;outline:none;" onfocus="this.style.borderColor='rgba(245,230,66,0.4)'" onblur="this.style.borderColor='var(--border)'" />
+        <button type="submit" class="btn-y" style="cursor:pointer;border:none;">Notify Me</button>
+      </form>
+      <p style="font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--dim);">Drop alerts only. No spam.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">PLUSHTRAP</span>
+      <span style="font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--dim);">© 2026 Plushtrap · SMAT Designs · Tempe, AZ</span>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    const mq = document.getElementById('mq');
+    const words = ['PLUSHTRAP', 'WEAR THE WILDNESS', 'LIMITED DROPS', 'SMAT DESIGNS', 'NO RESTOCKS', 'BUILT DIFFERENT', 'TEMPE AZ', 'CRAFTED NOT COPIED'];
+    const d = [...words,...words];
+    mq.innerHTML = d.map(w => `<span class="mq-item"><span class="mq-dot"></span>${w}</span>`).join('');
+
+    const obs = new IntersectionObserver(es => {
+      es.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 70); obs.unobserve(e.target); }});
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    document.getElementById('nf').addEventListener('submit', e => {
+      e.preventDefault();
+      const btn = e.target.querySelector('button');
+      btn.textContent = "✓ You're in!";
+      btn.style.background = '#222';
+      btn.style.color = '#aaa';
+      btn.disabled = true;
+    });
+  </script>
+</body>
+</html>
