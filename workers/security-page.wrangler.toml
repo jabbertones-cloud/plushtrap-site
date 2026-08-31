@@ -1,0 +1,6 @@
+name = "plushtrap-security-page"
+main = "security-page.js"
+compatibility_date = "2026-05-21"
+routes = [
+  { pattern = "plushtrap.com/security*", custom_domain = false }
+]

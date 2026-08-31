@@ -1,0 +1,14 @@
+name: Auto Fix CI Failures (Claude) - DISABLED
+
+# This workflow is intentionally disabled by ci-auto-fix-killswitch.
+# Re-enable with: node scripts/ci-auto-fix-killswitch.js --enable
+
+on:
+  workflow_dispatch:
+
+jobs:
+  noop:
+    if: false
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "disabled"

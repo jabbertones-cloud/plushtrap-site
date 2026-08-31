@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,6 +11,8 @@
   <meta property="og:description" content="Bonnie & Clyde, Cuffed & Cozy, Red Flag, Kawaii Crush — the Lovers Lane bundles are live. Kawaii × street." />
   <meta property="og:image" content="https://plushtrap.com/og.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M4Q5BVSD2B"></script>
+  <script defer src="/analytics.js"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -68,6 +70,23 @@
     ::-webkit-scrollbar { width: 4px; height: 4px; }
     ::-webkit-scrollbar-track { background: var(--ink); }
     ::-webkit-scrollbar-thumb { background: var(--lemon); border-radius: 2px; }
+    /* noscript: if JS fails to run, restore system cursor immediately */
+    .no-js body, .no-js button, .no-js a { cursor: auto !important; }
+    .no-js button, .no-js a { cursor: pointer !important; }
+    .no-js .cursor { display: none !important; }
+    #analytics-consent {
+      position: fixed; right: 1rem; bottom: 1rem; z-index: 10000;
+      max-width: 24rem; padding: 1rem; border: 1px solid rgba(255,255,255,.2);
+      background: rgba(11,10,12,.94); color: var(--bone);
+      font-family: var(--ff-edit); box-shadow: 0 24px 60px rgba(0,0,0,.35);
+    }
+    #analytics-consent p { margin: 0 0 .85rem; }
+    #analytics-consent button {
+      margin: 0 .5rem 0 0; padding: .55rem .8rem; border: 1px solid rgba(255,255,255,.35);
+      background: var(--lemon); color: var(--ink); font-family: var(--ff-mono);
+      text-transform: uppercase; letter-spacing: .08em;
+    }
+    #analytics-consent button + button { background: transparent; color: var(--bone); }
 
     /* section switching — light blocks get their own bg + colors */
     .is-light {
@@ -116,6 +135,12 @@
     .cursor.hover .cursor-ring { width: 52px; height: 52px; border-color: var(--lemon); }
     .cursor.press .cursor-ring { transform: translate(-50%, -50%) scale(0.85); }
     @media (hover: none), (pointer: coarse) {
+      body { cursor: auto; }
+      button, a { cursor: pointer; }
+      .cursor { display: none; }
+    }
+    /* JS disabled / failed — system cursor must be visible */
+    @media (scripting: none) {
       body { cursor: auto; }
       button, a { cursor: pointer; }
       .cursor { display: none; }
@@ -1300,7 +1325,7 @@
           Balaclavas, bundles, bunny beanies, acrylic chains — each hand-specced by SMAT, capped, and gone forever when it sells. Kawaii details, streetwear bones, zero apologies.
         </p>
         <div class="hero-ctas">
-          <a href="https://plushtrap.com/products/bonnie-clyde-bundle-lovers-lane-drop" target="_blank" rel="noopener" class="btn lemon" data-hover>Shop The Drop <span class="arrow">→</span></a>
+          <a href="https://plushtrap.com/shop/bonnie-clyde-bundle-lovers-lane-drop" target="_blank" rel="noopener" class="btn lemon" data-hover>Shop The Drop <span class="arrow">→</span></a>
           <a href="https://www.instagram.com/plushtrap_" target="_blank" rel="noopener" class="btn bubble" data-hover>@plushtrap_</a>
         </div>
       </div>
@@ -1362,7 +1387,7 @@
           </div>
 
           <div class="feat-ctas">
-            <a href="https://plushtrap.com/products/bonnie-clyde-bundle-lovers-lane-drop" target="_blank" rel="noopener" class="btn lemon" data-hover>Shop Bundle <span class="arrow">→</span></a>
+            <a href="https://plushtrap.com/shop/bonnie-clyde-bundle-lovers-lane-drop" target="_blank" rel="noopener" class="btn lemon" data-hover>Shop Bundle <span class="arrow">→</span></a>
             <a href="#archive" class="btn ghost" data-hover>The Collection</a>
           </div>
         </div>
@@ -1386,7 +1411,7 @@
       <div class="archive-grid">
 
         <!-- Red Flag Bundle -->
-        <a href="https://plushtrap.com/products/red-flag-bundle-lovers-lane-drop" target="_blank" rel="noopener" class="drop reveal">
+        <a href="https://plushtrap.com/shop/red-flag-bundle-lovers-lane-drop" target="_blank" rel="noopener" class="drop reveal">
           <div class="drop-art">
             <img src="assets/products/red-flag-bundle-lovers-lane-drop.png" alt="Red Flag Bundle" loading="lazy" />
           </div>
@@ -1399,7 +1424,7 @@
         </a>
 
         <!-- Camo BunSki Balaclava -->
-        <a href="https://plushtrap.com/products/preorder-snow-camo-bunski" target="_blank" rel="noopener" class="drop reveal">
+        <a href="https://plushtrap.com/shop/snow-camo-bunski" target="_blank" rel="noopener" class="drop reveal">
           <div class="drop-art">
             <img src="assets/products/camo-bunski-balaclava-snow-woods-camo-bunny-ear-ski-mask-for.jpg" alt="Camo BunSki Balaclava" loading="lazy" />
           </div>
@@ -1412,7 +1437,7 @@
         </a>
 
         <!-- Pink Bunski 3-Hole Balaclava -->
-        <a href="https://plushtrap.com/products/preorder-pink-bunski-3-hole-balaclava" target="_blank" rel="noopener" class="drop reveal">
+        <a href="https://plushtrap.com/shop/pink-bunski-3-hole-balaclava" target="_blank" rel="noopener" class="drop reveal">
           <div class="drop-art">
             <img src="assets/products/pink-bunski-3-hole-balaclava-bunny-ear-ski-mask-for-kawaii-f.png" alt="Pink Bunski 3-Hole Balaclava" loading="lazy" />
           </div>
@@ -1425,7 +1450,7 @@
         </a>
 
         <!-- Satin Lined Bunny Beanie Balaclava -->
-        <a href="https://plushtrap.com/products/preorder-black-bunny-beanie" target="_blank" rel="noopener" class="drop reveal">
+        <a href="https://plushtrap.com/shop/black-bunny-beanie" target="_blank" rel="noopener" class="drop reveal">
           <div class="drop-art">
             <img src="assets/products/satin-lined-bunny-beanie-balaclava-kawaii-ears-hat-for-hair-.jpg" alt="Satin Lined Bunny Beanie Balaclava" loading="lazy" />
           </div>
@@ -1438,7 +1463,7 @@
         </a>
 
         <!-- Zit Happens Killa Bunny Acne Patches -->
-        <a href="https://plushtrap.com/products/zit-happens-killa-bunny-acne-patches-plush-trap-collab-mirror-case-for-bold-breakout-defense" target="_blank" rel="noopener" class="drop reveal">
+        <a href="https://plushtrap.com/shop/zit-happens-killa-bunny-acne-patches-plush-trap-collab-mirror-case-for-bold-breakout-defense" target="_blank" rel="noopener" class="drop reveal">
           <div class="drop-art">
             <img src="assets/products/zit-happens-killa-bunny-acne-patches-plush-trap-collab-hydro.png" alt="Zit Happens Killa Bunny Acne Patches" loading="lazy" />
           </div>
@@ -1451,7 +1476,7 @@
         </a>
 
         <!-- Kawaii Crush Bundle -->
-        <a href="https://plushtrap.com/products/kawaii-crush-bundle-lovers-lane-drop" target="_blank" rel="noopener" class="drop reveal">
+        <a href="https://plushtrap.com/shop/kawaii-crush-bundle-lovers-lane-drop" target="_blank" rel="noopener" class="drop reveal">
           <div class="drop-art">
             <img src="assets/products/kawaii-crush-bundle-lovers-lane-drop.png" alt="Kawaii Crush Bundle" loading="lazy" />
           </div>
@@ -1591,49 +1616,49 @@
       <h2 class="section-title">Style <em>moments.</em></h2>
     </div>
     <div class="lookbook-track">
-      <a href="https://plushtrap.com/products/cuffed-cozy-lovers-lane-drop" target="_blank" rel="noopener" class="look-card" data-hover>
+      <a href="https://plushtrap.com/shop/cuffed-cozy-lovers-lane-drop" target="_blank" rel="noopener" class="look-card" data-hover>
         <div class="look-art"><img src="assets/products/cuffed-cozy-lovers-lane-drop.png" alt="Cuffed &amp; Cozy Bundle" loading="lazy" /></div>
         <div class="look-foot">
           <div class="look-title">Cuffed &amp; <em>cozy.</em></div>
           <div class="look-sub">Lovers Lane · $96</div>
         </div>
       </a>
-      <a href="https://plushtrap.com/products/lonely-hearts-club-bundle-lovers-lane-drop" target="_blank" rel="noopener" class="look-card" data-hover>
+      <a href="https://plushtrap.com/shop/lonely-hearts-club-bundle-lovers-lane-drop" target="_blank" rel="noopener" class="look-card" data-hover>
         <div class="look-art"><img src="assets/products/lonely-hearts-club-bundle-lovers-lane-drop.png" alt="Lonely Hearts Club Bundle" loading="lazy" /></div>
         <div class="look-foot">
           <div class="look-title">Lonely <em>hearts.</em></div>
           <div class="look-sub">Bundle · $66</div>
         </div>
       </a>
-      <a href="https://plushtrap.com/products/new-colors-fleece-bunny-beanie" target="_blank" rel="noopener" class="look-card" data-hover>
+      <a href="https://plushtrap.com/shop/new-colors-fleece-bunny-beanie" target="_blank" rel="noopener" class="look-card" data-hover>
         <div class="look-art"><img src="assets/products/fleece-bunny-beanie-red-navy-blue-grey-kawaii-winter-hats-wi.jpg" alt="Fleece Bunny Beanie" loading="lazy" /></div>
         <div class="look-foot">
           <div class="look-title">Fleece <em>bunny.</em></div>
           <div class="look-sub">Beanie · $40</div>
         </div>
       </a>
-      <a href="https://plushtrap.com/products/12-knyplsh-plush-trap-saffy-creatives-limited-200-pc-plushie" target="_blank" rel="noopener" class="look-card" data-hover>
+      <a href="https://plushtrap.com/shop/12-knyplsh-plush-trap-saffy-creatives-limited-200-pc-plushie" target="_blank" rel="noopener" class="look-card" data-hover>
         <div class="look-art"><img src="assets/products/12-limited-edition-plushie-plush-trap-x-saffy-creatives-coll.jpg" alt="12&quot; Limited Edition Plushie" loading="lazy" /></div>
         <div class="look-foot">
           <div class="look-title">12" <em>plushie.</em></div>
           <div class="look-sub">Saffy C · collab · $60</div>
         </div>
       </a>
-      <a href="https://plushtrap.com/products/occulted-stockings" target="_blank" rel="noopener" class="look-card" data-hover>
+      <a href="https://plushtrap.com/shop/occulted-stockings" target="_blank" rel="noopener" class="look-card" data-hover>
         <div class="look-art"><img src="assets/products/occulted-stockings-mystical-nylon-blend-tights-for-alt-fashi.jpg" alt="Occulted Stockings" loading="lazy" /></div>
         <div class="look-foot">
           <div class="look-title">Occulted <em>tights.</em></div>
           <div class="look-sub">Alt fashion · $25</div>
         </div>
       </a>
-      <a href="https://plushtrap.com/products/distressed-black-bunski-balaclava" target="_blank" rel="noopener" class="look-card" data-hover>
+      <a href="https://plushtrap.com/shop/distressed-black-bunski-balaclava" target="_blank" rel="noopener" class="look-card" data-hover>
         <div class="look-art"><img src="assets/products/distressed-black-bunski-balaclava-hand-woven-1-hole-ski-mask.jpg" alt="Distressed Black Bunski Balaclava" loading="lazy" /></div>
         <div class="look-foot">
           <div class="look-title">Distressed <em>bunski.</em></div>
           <div class="look-sub">Hand-woven · $50</div>
         </div>
       </a>
-      <a href="https://plushtrap.com/products/preorder-furry-sad-bag" target="_blank" rel="noopener" class="look-card" data-hover>
+      <a href="https://plushtrap.com/shop/furry-sad-bag" target="_blank" rel="noopener" class="look-card" data-hover>
         <div class="look-art"><img src="assets/products/furry-red-faux-fur-tote-bag-golden-arch-statement-handbag-fo.jpg" alt="Furry Red Faux Fur Tote Bag" loading="lazy" /></div>
         <div class="look-foot">
           <div class="look-title">Red <em>fur tote.</em></div>
@@ -1766,6 +1791,7 @@
     </div>
   </footer>
 
+  <script>document.documentElement.classList.remove('no-js');</script>
   <script>
     (function () {
       "use strict";

@@ -1,0 +1,53 @@
+const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Security Program - Plushtrap</title>
+  <meta name="description" content="Published Plushtrap security program covering access control, data protection, incident response, endpoint security, and vulnerability management." />
+  <style>
+    :root { --ink:#0b0a0c; --bone:#f3ece1; --bone2:#e9ddc9; --lemon:#f5e642; --bubble:#ff6eb4; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bone); color:var(--ink); font:18px/1.6 Georgia, serif; }
+    main { max-width:920px; margin:0 auto; padding:56px 24px 72px; }
+    a { color:inherit; font-weight:700; }
+    .eyebrow { font:700 12px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing:.12em; text-transform:uppercase; }
+    h1,h2 { font-family:Arial Black, Impact, sans-serif; text-transform:uppercase; line-height:.95; letter-spacing:0; }
+    h1 { font-size:clamp(44px,8vw,86px); margin:18px 0 20px; }
+    h2 { font-size:clamp(24px,4vw,36px); margin:0 0 10px; }
+    header { border-bottom:5px solid var(--ink); padding-bottom:32px; margin-bottom:36px; }
+    section { border-bottom:1px solid rgba(11,10,12,.2); padding:24px 0; }
+    .back { display:inline-block; margin-bottom:28px; }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back eyebrow" href="/">Plushtrap</a>
+    <header>
+      <p class="eyebrow">Updated May 21, 2026</p>
+      <h1>Security Program</h1>
+      <p>This published security program describes how Plushtrap protects customer, seller-authorized marketplace, support, analytics, and operational data.</p>
+    </header>
+    <section><h2>Information Security Program</h2><p>Plushtrap maintains a published information-security program for store operations, marketplace integrations, customer support, and CommerceOS workflows. The program assigns security responsibilities, limits access to approved business use, and requires personnel to protect customer, seller, and marketplace data.</p><p>Policies are reviewed when systems, vendors, platform requirements, or legal obligations materially change.</p></section>
+    <section><h2>Security Baseline</h2><p>Daily operations use a security baseline that includes multi-factor authentication, password complexity, screen locking, device locking, least-privilege access, approved software, secure secret storage, and clear-desk handling for records that contain customer or seller information.</p><p>Production credentials and marketplace API secrets are restricted to authorized systems and personnel.</p></section>
+    <section><h2>Access Control</h2><p>Personal data and marketplace API data are accessible only to authorized operations, support, engineering, and security personnel with a defined business need. Access follows least privilege and is removed or reduced when duties change.</p><p>Administrative access requires individual accounts where supported, multi-factor authentication, and periodic review.</p></section>
+    <section><h2>Data Classification and Encryption</h2><p>Plushtrap classifies customer, seller, marketplace, order, payment, support, API credential, and security log data as sensitive business information. Sensitive data is handled only in approved systems.</p><p>Sensitive data is protected in transit using HTTPS/TLS and protected at rest through platform encryption, database encryption, object-storage encryption, or managed-service controls where applicable.</p></section>
+    <section><h2>Network and Endpoint Protection</h2><p>Network access is limited to approved services and management interfaces. Cloud and application services are separated by environment and protected through provider controls, firewall rules, authentication controls, rate limits, logging, and monitoring.</p><p>Company endpoints used for operations are expected to run current operating-system security updates, anti-malware or endpoint protection, disk encryption where supported, browser security updates, and device lock controls.</p></section>
+    <section><h2>Vulnerability and Threat Management</h2><p>Plushtrap uses dependency review, code review, secret scanning, platform security alerts, and targeted remediation for vulnerabilities that affect customer, seller, or marketplace data.</p><p>Critical and high-risk issues are prioritized for remediation based on exploitability, data exposure risk, and production impact.</p></section>
+    <section><h2>Incident Response</h2><p>Plushtrap maintains an incident-response procedure for suspected or confirmed security events. Roles include owner/operator coordination, technical investigation, containment, remediation, communication, and post-incident review.</p><p>Suspected or confirmed breaches affecting customer, seller, or TikTok Shop data are reported through applicable platform, seller, customer, service-provider, and regulator notification channels as required by contract and law.</p></section>
+    <section><h2>Data Location and Subcontractors</h2><p>TikTok US and TikTok Shop seller-authorized data is accessed, processed, and stored from the United States unless TikTok has approved another location in writing.</p><p>Plushtrap does not permit subcontractors to access TikTok US data unless they are approved for the intended scope and bound by confidentiality, security, and data-protection obligations.</p></section>
+    <section><h2>Contact</h2><p>Security, privacy, or data-rights requests can be sent to <a href="mailto:support@plushtrap.com">support@plushtrap.com</a>. Plushtrap is operated from Tempe, Arizona, United States.</p></section>
+  </main>
+</body>
+</html>`;
+
+export default {
+  async fetch() {
+    return new Response(html, {
+      headers: {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=300",
+      },
+    });
+  },
+};
