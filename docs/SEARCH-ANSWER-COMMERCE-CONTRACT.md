@@ -3,39 +3,27 @@
 Verified: 2026-09-05
 
 ## Principle
-
 Search eligibility, answer-engine retrieval, merchant-feed eligibility, and agentic checkout are separate capabilities. Passing one never proves another.
 
-## Canonical authority order
+## PlushTrap authority boundary
+PlushTrap does not use Shopify for current commerce. Stripe is the money-moving commerce authority. The current site/product registry owns descriptive product identity/content; Stripe-backed product/price identifiers own current checkout economics. Historical Shopify exports and identifiers are migration/reference evidence only and are forbidden as inputs to current SEO/AEO commerce projections.
 
-1. Current visible canonical product page and canonical catalog authority.
-2. Matching Product/Offer structured data.
-3. Merchant/feed projections generated from the same authority.
-4. Machine facts and question registries generated from that authority.
-5. `llms.txt` and other ancillary discovery files.
+## Canonical publication order
+1. Current site/product registry for canonical identity/content plus Stripe-backed current product/price authority.
+2. Visible canonical product surface.
+3. Matching Product/Offer structured data.
+4. Merchant/feed projections generated only after authority reconciliation.
+5. Machine facts and question registries from the same reconciled authority.
+6. `llms.txt` and ancillary discovery files.
 
-No lower layer may silently override a higher layer.
+No lower layer may silently override a higher layer. A historical catalog dump can never become current authority merely because it is structured.
 
-## Google
-
-Google AI Overviews and AI Mode use normal Search foundations. Do not invent AI-only schema or treat `llms.txt` as a ranking requirement. Keep pages crawlable, indexable, internally linked, useful, and ensure structured data matches visible content. For ecommerce, combine Product structured data with Merchant Center product data and maximize truthful attribute completeness.
-
-## Microsoft/Bing
-
-Keep Bingbot crawlable and maintain a valid sitemap. Use IndexNow for changed canonical URLs when the production host/key are verified. Measure AI citations/cited URLs/grounding-query data when available rather than treating successful submission as proof of Copilot visibility.
-
-## OpenAI
-
-Keep OAI-SearchBot and user-requested ChatGPT retrieval crawlable. Merchant feeds are a separate commerce integration and must be generated from canonical product authority using the current OpenAI feed contract. Do not equate GPTBot training permission with ChatGPT Search eligibility.
-
-## Perplexity
-
-Keep PerplexityBot crawlable for public canonical content while private/cart/checkout/API surfaces remain excluded.
-
-## Agentic commerce
-
-Do not publish a Google UCP profile or claim native agentic checkout until merchant eligibility/onboarding, advertised capabilities, endpoints, and conformance are real. Readiness code must remain distinguishable from live capability.
+## Platform rules
+- Google: normal Search foundations remain primary. Keep visible content and structured data aligned; combine Product structured data with Merchant Center data and truthful attribute completeness.
+- Microsoft/Bing: keep Bingbot crawlable, maintain a valid sitemap, use IndexNow only with verified production host/key handling, and measure actual AI citations, cited URLs, grounding queries, intents, topics, and citation share when available.
+- OpenAI: keep OAI-SearchBot and ChatGPT-User crawlable. Merchant feeds are separate and must be generated from reconciled current authority. GPTBot training permission is independent.
+- Perplexity: keep PerplexityBot crawlable for public canonical content while private/cart/checkout/API surfaces remain excluded.
+- Agentic commerce: do not publish a UCP profile or claim native checkout until eligibility/onboarding, endpoints, advertised capabilities, and conformance are real.
 
 ## Release gates
-
-A release should fail when visible product facts, structured data, feeds, sitemap URLs, or ancillary machine files disagree on stable identity or commercial facts. Product feeds should carry rich truthful attributes and product Q&A where supported, not merely title/price/image.
+Publication must fail when visible product facts, Stripe-backed price authority, structured data, feeds, sitemap URLs, or ancillary machine files disagree on stable identity or commercial facts. Product feeds should carry rich truthful attributes and product Q&A where supported, not merely title/price/image.
