@@ -34,5 +34,4 @@ Disallow: /
 User-agent: ClaudeBot
 Disallow: /
 
-# Sitemap intentionally omitted until it can be generated from the verified
-# current site/product registry. Historical Shopify handles are not authority.
+Sitemap: https://plushtrap.com/sitemap.xml
