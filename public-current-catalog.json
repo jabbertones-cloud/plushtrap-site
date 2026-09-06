@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "1.0",
+  "authority": "verified-live-storefront-seed",
+  "verifiedAt": "2026-09-06",
+  "rules": [
+    "This seed contains only products verified on the live Plushtrap storefront.",
+    "Do not infer the rest of the catalog from historical Shopify exports or asset filenames.",
+    "Price and availability must be refreshed from current storefront/Stripe authority before feed export."
+  ],
+  "products": [
+    {"sku":"BBBM","name":"Black Brim 1-Hole Balaclava","url":"https://plushtrap.com/shop/bbbm","category":"Balaclavas","priceUsd":20,"availability":"in_stock","buyerTerms":["1-hole balaclava","black balaclava mask","ski mask","streetwear"]},
+    {"name":"Pink Bunski 3-Hole Balaclava","category":"Balaclavas","priceUsd":30,"buyerTerms":["bunny ear ski mask","3-hole balaclava","pink ski mask","kawaii streetwear"]},
+    {"name":"Satin Lined Bunny Beanie Balaclava","category":"Beanies","priceUsd":40,"buyerTerms":["bunny beanie balaclava","bunny ears hat","kawaii winter hat"]},
+    {"name":"Camo BunSki Balaclava","category":"Balaclavas","priceUsd":40,"buyerTerms":["camo bunny ear ski mask","camo balaclava","winter sports mask"]},
+    {"name":"DIY Black 5-Hole Balaclava","category":"Balaclavas","priceUsd":30,"buyerTerms":["5-hole balaclava","DIY balaclava","black ski mask"]}
+  ],
+  "storefrontFacts": {
+    "activePieceCount": 54,
+    "freeUsShippingThresholdUsd": 50,
+    "returnWindowDays": 30,
+    "shipsInBusinessDays": "1-2",
+    "checkoutProvider": "Stripe"
+  }
+}
