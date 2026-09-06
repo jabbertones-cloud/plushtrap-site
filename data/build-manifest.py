@@ -2,7 +2,7 @@
 """Build clean product manifest + download feature images from Shopify dump."""
 import json, os, re, urllib.request, urllib.parse, pathlib, datetime
 
-ROOT = pathlib.Path('/Users/scottmanthey/claw-repos/plushtrap-site')
+ROOT = pathlib.Path(__file__).resolve().parents[1]
 SRC = ROOT / 'data' / 'shopify-products-raw.json'
 OUT_DIR = ROOT / 'assets' / 'products'
 OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -40,10 +40,10 @@ for p in products:
     )
 
     slug = slugify(p['title'])
-    title = p['title'].split(' \u2013 ')[0].split(' - ')[0].strip()
+    title = p['title'].split(' – ')[0].split(' - ')[0].strip()
     tagline = ''
-    if ' \u2013 ' in p['title']:
-        tagline = p['title'].split(' \u2013 ', 1)[1].strip()
+    if ' – ' in p['title']:
+        tagline = p['title'].split(' – ', 1)[1].strip()
     elif ' - ' in p['title']:
         tagline = p['title'].split(' - ', 1)[1].strip()
 
@@ -55,9 +55,7 @@ for p in products:
 
     if not dest.exists():
         try:
-            req = urllib.request.Request(
-                feat['src'], headers={'User-Agent': 'plushtrap-fetch/1.0'}
-            )
+            req = urllib.request.Request(feat['src'], headers={'User-Agent': 'plushtrap-fetch/1.0'})
             with urllib.request.urlopen(req, timeout=30) as r, open(dest, 'wb') as w:
                 w.write(r.read())
             downloaded += 1
@@ -70,35 +68,22 @@ for p in products:
         skipped += 1
 
     manifest.append({
-        'id': p['id'],
-        'title': title,
-        'tagline': tagline,
-        'handle': p['handle'],
-        'url': f"https://plushtrap.com/products/{p['handle']}",
-        'vendor': p.get('vendor', ''),
+        'id': p['id'], 'title': title, 'tagline': tagline, 'handle': p['handle'],
+        'url': f"https://plushtrap.com/products/{p['handle']}", 'vendor': p.get('vendor', ''),
         'product_type': p.get('product_type', ''),
         'tags': [t.strip() for t in (p.get('tags', '') or '').split(',') if t.strip()],
-        'price_min': price_min,
-        'price_max': price_max,
-        'currency': 'USD',
-        'in_stock': in_stock,
-        'image': local_feat,
-        'image_alt': feat.get('alt') or title,
-        'image_w': feat.get('width'),
-        'image_h': feat.get('height'),
-        'all_images': [img['src'] for img in images],
-        'total_images': len(images),
-        'created_at': p.get('created_at'),
-        'published_at': p.get('published_at'),
+        'price_min': price_min, 'price_max': price_max, 'currency': 'USD', 'in_stock': in_stock,
+        'image': local_feat, 'image_alt': feat.get('alt') or title, 'image_w': feat.get('width'),
+        'image_h': feat.get('height'), 'all_images': [img['src'] for img in images],
+        'total_images': len(images), 'created_at': p.get('created_at'), 'published_at': p.get('published_at'),
     })
 
 manifest.sort(key=lambda x: x.get('published_at') or '', reverse=True)
-
 out_json = ROOT / 'data' / 'products.json'
 with out_json.open('w') as f:
     json.dump({
-        'generated_at': datetime.datetime.utcnow().isoformat() + 'Z',
-        'source': 'pluhtrap.myshopify.com',
+        'generated_at': datetime.datetime.now(datetime.timezone.utc).isoformat().replace('+00:00', 'Z'),
+        'source': 'plushtrap.myshopify.com',
         'total_active': len(manifest),
         'products': manifest,
     }, f, indent=2, ensure_ascii=False)
