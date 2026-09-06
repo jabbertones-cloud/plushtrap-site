@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0",
+  "publisher": "PlushTrap",
+  "canonical": "https://plushtrap.com/",
+  "source": "REGENERATE_BEFORE_RELEASE",
+  "source_generated_at": null,
+  "product_count": 0,
+  "authority_note": "Run scripts/build-discovery.py after refreshing data/products.json. Current product pages and upstream Shopify catalog govern commercial facts.",
+  "products": []
+}
