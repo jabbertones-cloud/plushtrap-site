@@ -1,0 +1,21 @@
+name: Search Discovery Proof
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  discovery-proof:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Regenerate discovery projections
+        run: python scripts/build-discovery.py
+      - name: Reject drift and false-positive completeness
+        run: python scripts/check-discovery.py
+      - name: Require committed projections to match generator
+        run: git diff --exit-code -- sitemap.xml facts.json
