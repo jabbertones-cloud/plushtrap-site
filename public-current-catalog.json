@@ -9,11 +9,317 @@
     "A related-product link proves the live route identity but does not by itself prove the linked PDP's current availability."
   ],
   "products": [
-    {"sku":"BBBM","name":"Black Brim 1-Hole Balaclava","url":"https://plushtrap.com/shop/bbbm","category":"Balaclavas","priceUsd":20,"availability":"in_stock","buyerTerms":["1-hole balaclava","black balaclava mask","ski mask","streetwear"],"verification":"direct_pdp"},
-    {"name":"Pink Bunski 3-Hole Balaclava","url":"https://plushtrap.com/shop/pink-bunski-3-hole-balaclava","category":"Balaclavas","priceUsd":30,"buyerTerms":["bunny ear ski mask","3-hole balaclava","pink ski mask","kawaii streetwear"],"verification":"live_related_product_link"},
-    {"name":"Satin Lined Bunny Beanie Balaclava","url":"https://plushtrap.com/shop/black-bunny-beanie","category":"Beanies","priceUsd":40,"buyerTerms":["bunny beanie balaclava","bunny ears hat","kawaii winter hat"],"verification":"live_related_product_link"},
-    {"name":"Camo BunSki Balaclava","url":"https://plushtrap.com/shop/snow-camo-bunski","category":"Balaclavas","priceUsd":40,"buyerTerms":["camo bunny ear ski mask","camo balaclava","winter sports mask"],"verification":"live_related_product_link"},
-    {"name":"DIY Black 5-Hole Balaclava","url":"https://plushtrap.com/shop/diy-black-bunski-3-hole-balaclava","category":"Balaclavas","priceUsd":30,"buyerTerms":["5-hole balaclava","DIY balaclava","black ski mask"],"verification":"live_related_product_link"}
+    {
+      "sku": "BBBM",
+      "name": "Black Brim 1-Hole Balaclava",
+      "url": "https://plushtrap.com/shop/bbbm",
+      "category": "Balaclavas",
+      "priceUsd": 20.0,
+      "availability": "in_stock",
+      "buyerTerms": [
+        "1-hole balaclava",
+        "black balaclava mask",
+        "ski mask",
+        "streetwear"
+      ],
+      "verification": "direct_pdp",
+      "image": "https://plushtrap.com/_next/image?url=%2Fproduct-images%2Fblack-brim-1-hole-balaclava-sleek-ski-mask-for-streetwear-wi.webp&w=1440&q=75"
+    },
+    {
+      "name": "Pink Bunski 3-Hole Balaclava",
+      "url": "https://plushtrap.com/shop/pink-bunski-3-hole-balaclava",
+      "category": "Balaclavas",
+      "priceUsd": 30.0,
+      "buyerTerms": [
+        "bunny ear ski mask",
+        "3-hole balaclava",
+        "pink ski mask",
+        "kawaii streetwear"
+      ],
+      "verification": "direct_pdp",
+      "availability": "in_stock",
+      "image": "https://plushtrap.com/_next/image?url=%2Fproduct-images%2Fpink-bunski-3-hole-balaclava-bunny-ear-ski-mask-for-kawaii-f.webp&w=1440&q=75"
+    },
+    {
+      "name": "Satin Lined Bunny Beanie Balaclava",
+      "url": "https://plushtrap.com/shop/black-bunny-beanie",
+      "category": "Beanies",
+      "priceUsd": 40.0,
+      "buyerTerms": [
+        "bunny beanie balaclava",
+        "bunny ears hat",
+        "kawaii winter hat"
+      ],
+      "verification": "direct_pdp",
+      "availability": "in_stock",
+      "image": "https://plushtrap.com/_next/image?url=%2Fproduct-images%2Fsatin-lined-bunny-beanie-balaclava-kawaii-ears-hat-for-hair-.webp&w=1440&q=75"
+    },
+    {
+      "name": "Camo BunSki Balaclava",
+      "url": "https://plushtrap.com/shop/snow-camo-bunski",
+      "category": "Balaclavas",
+      "priceUsd": 40.0,
+      "buyerTerms": [
+        "camo bunny ear ski mask",
+        "camo balaclava",
+        "winter sports mask"
+      ],
+      "verification": "direct_pdp",
+      "availability": "in_stock",
+      "image": "https://plushtrap.com/_next/image?url=%2Fproduct-images%2Fcamo-bunski-balaclava-snow-woods-camo-bunny-ear-ski-mask-for.webp&w=1440&q=75"
+    },
+    {
+      "name": "DIY Black 5-Hole Balaclava",
+      "url": "https://plushtrap.com/shop/diy-black-bunski-3-hole-balaclava",
+      "category": "Balaclavas",
+      "priceUsd": 30.0,
+      "buyerTerms": [
+        "5-hole balaclava",
+        "DIY balaclava",
+        "black ski mask"
+      ],
+      "verification": "direct_pdp",
+      "availability": "in_stock",
+      "image": "https://plushtrap.com/_next/image?url=%2Fproduct-images%2Fdiy-black-5-hole-balaclava-customizable-ski-mask-for-streetw.webp&w=1440&q=75"
+    },
+    {
+      "name": "Black Fleece Bunny Beanie",
+      "url": "https://plushtrap.com/shop/black-fleece-bunny-beanie",
+      "category": "Beanies",
+      "priceUsd": 40.0,
+      "availability": "in_stock",
+      "buyerTerms": [
+        "Kawaii Winter Hat with Bunny Ears for Alt Fashion",
+        "Streetwear & Cozy Style"
+      ],
+      "verification": "direct_pdp",
+      "image": "https://plushtrap.com/_next/image?url=%2Fproduct-images%2Fblack-fleece-bunny-beanie-kawaii-winter-hat-with-bunny-ears-.webp&w=1440&q=75"
+    },
+    {
+      "name": "Retro Golden Crystal Ashtray",
+      "url": "https://plushtrap.com/shop/retro-golden-ashtray",
+      "category": "Everything Else",
+      "priceUsd": 60.0,
+      "availability": "in_stock",
+      "buyerTerms": [
+        "Vintage Glass Dish for Smoking",
+        "Jewelry Storage",
+        "Home D\u00e9cor"
+      ],
+      "verification": "direct_pdp",
+      "image": "https://plushtrap.com/_next/image?url=%2Fproduct-images%2Fretro-golden-crystal-ashtray-vintage-glass-dish-for-smoking-.webp&w=1440&q=75"
+    },
+    {
+      "name": "Light Rust Bunski Balaclava",
+      "url": "https://plushtrap.com/shop/new-light-rust-bunski-balaclava",
+      "category": "Balaclavas",
+      "priceUsd": 40.0,
+      "availability": "in_stock",
+      "buyerTerms": [
+        "Earth-Tone Ski Mask for Streetwear",
+        "Outdoor Activities & Fall Fashion"
+      ],
+      "verification": "direct_pdp",
+      "image": "https://plushtrap.com/_next/image?url=%2Fproduct-images%2Flight-rust-bunski-balaclava-earth-tone-ski-mask-for-streetwe.webp&w=1440&q=75"
+    },
+    {
+      "name": "Blue Bunski 3-Hole Balaclava",
+      "url": "https://plushtrap.com/shop/blue-bunski-3-hole-balaclava",
+      "category": "Balaclavas",
+      "priceUsd": 30.0,
+      "availability": "in_stock",
+      "buyerTerms": [
+        "Baby Blue Bunny Ear Ski Mask for Kawaii Fashion & Winter Sports"
+      ],
+      "verification": "direct_pdp",
+      "image": "https://plushtrap.com/_next/image?url=%2Fproduct-images%2Fblue-bunski-3-hole-balaclava-baby-blue-bunny-ear-ski-mask-fo.webp&w=1440&q=75"
+    },
+    {
+      "name": "Distressed Black Bunski Balaclava",
+      "url": "https://plushtrap.com/shop/distressed-black-bunski-balaclava",
+      "category": "Balaclavas",
+      "priceUsd": 50.0,
+      "availability": "in_stock",
+      "buyerTerms": [
+        "Hand-Woven 1-Hole Ski Mask for Streetwear & Winter Sports"
+      ],
+      "verification": "direct_pdp",
+      "image": "https://plushtrap.com/_next/image?url=%2Fproduct-images%2Fdistressed-black-bunski-balaclava-hand-woven-1-hole-ski-mask.webp&w=1440&q=75"
+    },
+    {
+      "name": "Red 3-Hole Ski Mask Balaclava",
+      "url": "https://plushtrap.com/shop/red-bunski-3-hole-balaclava",
+      "category": "Balaclavas",
+      "priceUsd": 30.0,
+      "availability": "in_stock",
+      "buyerTerms": [
+        "Acrylic Knit Winter Face Cover for Streetwear",
+        "Cosplay & Cold Weather"
+      ],
+      "verification": "direct_pdp",
+      "image": "https://plushtrap.com/_next/image?url=%2Fproduct-images%2Fred-3-hole-ski-mask-balaclava-acrylic-knit-winter-face-cover.webp&w=1440&q=75"
+    },
+    {
+      "name": "Nugs 12&quot; Kawaii Cannabis Plushie",
+      "url": "https://plushtrap.com/shop/npsw",
+      "category": "Plushies",
+      "priceUsd": 20.0,
+      "availability": "in_stock",
+      "buyerTerms": [
+        "Limited Edition Sherpa Fleece Nug with Mylar Bag | Numbered Collector&#x27;s Item"
+      ],
+      "verification": "direct_pdp",
+      "image": "https://plushtrap.com/_next/image?url=%2Fproduct-images%2Fnugs-12-kawaii-cannabis-plushie-limited-edition-sherpa-fleec.webp&w=1440&q=75"
+    },
+    {
+      "name": "12&quot; Limited Edition Plushie",
+      "url": "https://plushtrap.com/shop/12-knyplsh-plush-trap-saffy-creatives-limited-200-pc-plushie",
+      "category": "Plushies",
+      "priceUsd": 60.0,
+      "availability": "in_stock",
+      "buyerTerms": [
+        "Plush Trap x Saffy Creatives Collaboration | Numbered Collector&#x27;s Item"
+      ],
+      "verification": "direct_pdp",
+      "image": "https://plushtrap.com/_next/image?url=%2Fproduct-images%2F12-limited-edition-plushie-plush-trap-x-saffy-creatives-coll.webp&w=1440&q=75"
+    },
+    {
+      "name": "RickStar Cosmetic Contact Lenses",
+      "url": "https://plushtrap.com/shop/rickstar-cosmetic-contact-lens",
+      "category": "Everything Else",
+      "priceUsd": 20.0,
+      "availability": "in_stock",
+      "buyerTerms": [
+        "Vibrant Eye Colors for Cosplay",
+        "Parties & Everyday Glam"
+      ],
+      "verification": "direct_pdp",
+      "image": "https://plushtrap.com/_next/image?url=%2Fproduct-images%2Frickstar-cosmetic-contact-lenses-vibrant-eye-colors-for-cosp.webp&w=1440&q=75"
+    },
+    {
+      "name": "Pink Fleece Bunny Beanie",
+      "url": "https://plushtrap.com/shop/pink-fleece-bunny-beanie",
+      "category": "Beanies",
+      "priceUsd": 40.0,
+      "availability": "in_stock",
+      "buyerTerms": [
+        "Kaw up  Winter Hat with Bunny Ears for Alt Fashion",
+        "Cosplay & Cozy Style"
+      ],
+      "verification": "direct_pdp",
+      "image": "https://plushtrap.com/_next/image?url=%2Fproduct-images%2Fpink-fleece-bunny-beanie-kaw-up-winter-hat-with-bunny-ears-f.webp&w=1440&q=75"
+    },
+    {
+      "name": "3ft Giant Chicken Nugget Body Pillow",
+      "url": "https://plushtrap.com/shop/3ft-nuggie-pillow",
+      "category": "Plushies",
+      "priceUsd": 40.0,
+      "availability": "in_stock",
+      "buyerTerms": [
+        "Big Mick Nuggie Plush for Memes",
+        "Gifts & Room Decor"
+      ],
+      "verification": "direct_pdp",
+      "image": "https://plushtrap.com/_next/image?url=%2Fproduct-images%2F3ft-giant-chicken-nugget-body-pillow-big-mick-nuggie-plush-f.webp&w=1440&q=75"
+    },
+    {
+      "name": "Furry Red Faux Fur Tote Bag",
+      "url": "https://plushtrap.com/shop/furry-sad-bag",
+      "category": "Everything Else",
+      "priceUsd": 60.0,
+      "availability": "in_stock",
+      "buyerTerms": [
+        "Golden Arch Statement Handbag for Y2K",
+        "Alt Fashion & Streetwear"
+      ],
+      "verification": "direct_pdp",
+      "image": "https://plushtrap.com/_next/image?url=%2Fproduct-images%2Ffurry-red-faux-fur-tote-bag-golden-arch-statement-handbag-fo.webp&w=1440&q=75"
+    },
+    {
+      "name": "White Fleece Bunny Beanie",
+      "url": "https://plushtrap.com/shop/white-fleece-bunny-beanie",
+      "category": "Beanies",
+      "priceUsd": 40.0,
+      "availability": "in_stock",
+      "buyerTerms": [
+        "Kawaii Winter Hat with Bunny Ears for Alt Fashion & Cozy Style"
+      ],
+      "verification": "direct_pdp",
+      "image": "https://plushtrap.com/_next/image?url=%2Fproduct-images%2Fwhite-fleece-bunny-beanie-kawaii-winter-hat-with-bunny-ears-.webp&w=1440&q=75"
+    },
+    {
+      "name": "APE Myc(r)o Grow Double Socks",
+      "url": "https://plushtrap.com/shop/mds",
+      "category": "Everything Else",
+      "priceUsd": 20.0,
+      "availability": "in_stock",
+      "buyerTerms": [
+        "Albino Penis Envy Mushroom Socks | 100% Cotton Crew Socks"
+      ],
+      "verification": "direct_pdp",
+      "image": "https://plushtrap.com/_next/image?url=%2Fproduct-images%2Fape-myc-r-o-grow-double-socks-albino-penis-envy-mushroom-soc.webp&w=1440&q=75"
+    },
+    {
+      "name": "G.A.S. Great Artists Steal Trucker Hat",
+      "url": "https://plushtrap.com/shop/g-a-s-great-artists-steal-trucker-hat",
+      "category": "Everything Else",
+      "priceUsd": 30.0,
+      "availability": "in_stock",
+      "buyerTerms": [],
+      "verification": "direct_pdp",
+      "image": "https://plushtrap.com/_next/image?url=%2Fproduct-images%2Fg-a-s-great-artists-steal-trucker-hat.webp&w=1440&q=75"
+    },
+    {
+      "name": "Fleece Bunny Beanie",
+      "url": "https://plushtrap.com/shop/new-colors-fleece-bunny-beanie",
+      "category": "Beanies",
+      "priceUsd": 40.0,
+      "availability": "in_stock",
+      "buyerTerms": [
+        "Red",
+        "Navy Blue & Grey Kawaii Winter Hats with Bunny Ears for Alt Fashion"
+      ],
+      "verification": "direct_pdp",
+      "image": "https://plushtrap.com/_next/image?url=%2Fproduct-images%2Ffleece-bunny-beanie-red-navy-blue-grey-kawaii-winter-hats-wi.webp&w=1440&q=75"
+    },
+    {
+      "name": "Occulted Stockings",
+      "url": "https://plushtrap.com/shop/occulted-stockings",
+      "category": "Everything Else",
+      "priceUsd": 25.0,
+      "availability": "in_stock",
+      "buyerTerms": [
+        "Mystical Nylon Blend Tights for Alt Fashion",
+        "Goth Style & Layering"
+      ],
+      "verification": "direct_pdp",
+      "image": "https://plushtrap.com/_next/image?url=%2Fproduct-images%2Focculted-stockings-mystical-nylon-blend-tights-for-alt-fashi.webp&w=1440&q=75"
+    },
+    {
+      "name": "Dope Woven Pattern Socks",
+      "url": "https://plushtrap.com/shop/dope-woven-pattern-socks",
+      "category": "Everything Else",
+      "priceUsd": 20.0,
+      "availability": "in_stock",
+      "buyerTerms": [
+        "100% Cotton Crew Socks for Streetwear & Sneaker Culture"
+      ],
+      "verification": "direct_pdp",
+      "image": "https://plushtrap.com/_next/image?url=%2Fproduct-images%2Fdope-woven-pattern-socks-100-cotton-crew-socks-for-streetwea.webp&w=1440&q=75"
+    },
+    {
+      "name": "Rick SLTNPPR Shakers",
+      "url": "https://plushtrap.com/shop/rick-sltnppr-shakers",
+      "category": "Everything Else",
+      "priceUsd": 40.0,
+      "availability": "in_stock",
+      "buyerTerms": [
+        "Quirky Salt & Pepper Set for Modern Homes",
+        "Kitchens & Gifts"
+      ],
+      "verification": "direct_pdp",
+      "image": "https://plushtrap.com/_next/image?url=%2Fproduct-images%2Frick-sltnppr-shakers-quirky-salt-pepper-set-for-modern-homes.webp&w=1440&q=75"
+    }
   ],
   "storefrontFacts": {
     "activePieceCount": 54,
