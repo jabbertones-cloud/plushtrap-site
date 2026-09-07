@@ -1,48 +1,27 @@
 # PlushTrap Current Catalog Authority — 2026-09
 
-PlushTrap's current commerce authority is Stripe/site runtime, not historical Shopify exports and not the filenames under `assets/products/`.
+PlushTrap's current commerce authority is Stripe/site runtime. Historical Shopify exports and asset filenames are migration/reference evidence only.
 
-The repository contains many useful product-image filenames with strong buyer-language clues, including examples such as:
+## Verified publication seed
 
-- Black Brim 1-Hole Balaclava
-- Black Bunski 3-Hole Balaclava / bunny-ear ski mask
-- Blue Bunski 3-Hole Balaclava / bunny-ear ski mask
-- Camo Bunski Balaclava / bunny-ear ski mask
-- Distressed Black Bunski Balaclava / 1-hole ski mask
-- DIY Black 5-Hole Balaclava / customizable ski mask
-- fleece bunny beanies
-
-These filenames are evidence that the product concepts/assets exist in the repo. They are **not** evidence of current price, inventory, Stripe status, canonical URL, color availability, restock policy or current collection membership.
+The branch now contains `public-current-catalog.json`, a deliberately small verified-live-storefront seed. It records only products whose current storefront identity, canonical URL, price/availability snapshot and buyer-language configuration were directly verified. The seed is not permission to infer other live catalog handles.
 
 ## Search ownership
 
-Once current Stripe/runtime authority is extracted, canonical PDPs should own exact configuration queries:
+Canonical PDPs own exact configuration intent: 1-hole balaclava / ski mask, 3-hole bunny-ear balaclava, 5-hole / customizable balaclava, and verified color/configuration terms. The shop/home surface owns broader kawaii streetwear, streetwear balaclava, kawaii ski mask and browse intent. Do not create doorway pages for adjective/color combinations.
 
-- 1-hole balaclava / 1-hole ski mask
-- 3-hole bunny-ear balaclava / bunny-ear ski mask
-- 5-hole balaclava / customizable ski mask
-- black bunny-ear ski mask
-- blue bunny-ear ski mask
-- camo bunny-ear ski mask
+## Sitemap status
 
-The collection/home surface can own broader `kawaii streetwear`, `streetwear balaclava`, `kawaii ski mask`, and browse intent. Do not generate a landing page for every adjective/color combination.
+A conservative sitemap now exists and `robots.txt` may advertise it. Sitemap membership is evidence-gated: homepage, shop, wholesale and verified canonical product URLs only. `scripts/audit-seo-authority.py` must reject any product sitemap URL absent from the verified current catalog seed.
 
-## Current blockers
+This replaces the earlier blocker that said no sitemap should exist. The correct rule is: **a sitemap is allowed, but only from verified current authority.**
 
-- `index.html` still advertises `Lovers Lane Drop / Live Now`, `Limited runs. No restocks.`, and named Lovers Lane bundles in metadata without a current Stripe/runtime reconciliation.
-- No `data/products.json` exists on the active branch, which is preferable to reviving a stale Shopify-derived authority file.
-- `robots.txt` correctly omits a sitemap until canonical current product URLs can be generated from verified authority.
+## Remaining extraction contract
 
-## Required extraction contract
+Before another product enters sitemap, Product JSON-LD, Merchant Center/OpenAI feed projections or answer-engine product facts, verify stable current identity, Stripe/runtime sellability, exact canonical URL, current price/currency, current availability, literal configuration attributes, and current image URL.
 
-A future canonical catalog projection must require, per product:
+Amazon identifiers remain separate channel identity. Duplicate/unresolved ASIN or SKU mappings must never become canonical site identity.
 
-1. stable current product identity
-2. current Stripe/runtime sellability
-3. current canonical public URL
-4. current price source
-5. current availability source
-6. exact configuration/title
-7. current image URL
+## ODR CNTRL comparison adopted
 
-Only after those fields reconcile should the product enter sitemap, Product JSON-LD, Merchant/OpenAI feed projections or answer-engine product facts.
+ODR CNTRL's useful pattern is an authority pipeline: independent query jobs, visible direct answers, claim boundaries, route-level schema, internal cluster links, changed-URL IndexNow submission, and a harsh completion bar that refuses to call source checks production proof. PlushTrap should copy that operating model while keeping fashion/product facts specific to its verified catalog.
