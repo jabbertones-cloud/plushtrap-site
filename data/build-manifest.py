@@ -1,8 +1,17 @@
 #!/usr/bin/env python3
-"""Build clean product manifest + download feature images from Shopify dump."""
+"""LEGACY IMPORT UTILITY ONLY.
+
+PlushTrap current commerce is Stripe-only. This script reads a historical Shopify
+export solely to preserve/migrate old media and catalog references. Its output is
+NOT current SEO/AEO authority and MUST NOT drive sitemap, structured data,
+Merchant Center feeds, llms files, facts, availability, or current pricing.
+
+Current search/discovery publication must use the live PlushTrap site/product
+registry reconciled with Stripe-backed current product/price identifiers.
+"""
 import json, os, re, urllib.request, urllib.parse, pathlib, datetime
 
-ROOT = pathlib.Path('/Users/scottmanthey/claw-repos/plushtrap-site')
+ROOT = pathlib.Path(__file__).resolve().parents[1]
 SRC = ROOT / 'data' / 'shopify-products-raw.json'
 OUT_DIR = ROOT / 'assets' / 'products'
 OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -19,93 +28,44 @@ with SRC.open() as f:
 
 products = data['products']
 manifest = []
-downloaded = 0
-skipped = 0
-failed = 0
-
+downloaded = skipped = failed = 0
 for p in products:
-    if p.get('status') != 'active':
+    if p.get('status') != 'active' or not p.get('images'):
         continue
-    images = p.get('images', [])
-    if not images:
-        continue
-
-    variants = p.get('variants', [])
-    prices = [float(v.get('price', '0') or 0) for v in variants]
-    price_min = min(prices) if prices else 0
-    price_max = max(prices) if prices else 0
-    in_stock = any(
-        (v.get('inventory_quantity') or 0) > 0 or v.get('inventory_policy') == 'continue'
-        for v in variants
-    )
-
+    images = p['images']
     slug = slugify(p['title'])
-    title = p['title'].split(' \u2013 ')[0].split(' - ')[0].strip()
-    tagline = ''
-    if ' \u2013 ' in p['title']:
-        tagline = p['title'].split(' \u2013 ', 1)[1].strip()
-    elif ' - ' in p['title']:
-        tagline = p['title'].split(' - ', 1)[1].strip()
-
+    title = p['title'].split(' – ')[0].split(' - ')[0].strip()
     feat = images[0]
     parsed = urllib.parse.urlparse(feat['src'])
     ext = os.path.splitext(parsed.path)[1] or '.jpg'
     local_feat = f'assets/products/{slug}{ext}'
     dest = ROOT / local_feat
-
     if not dest.exists():
         try:
-            req = urllib.request.Request(
-                feat['src'], headers={'User-Agent': 'plushtrap-fetch/1.0'}
-            )
+            req = urllib.request.Request(feat['src'], headers={'User-Agent': 'plushtrap-legacy-import/1.0'})
             with urllib.request.urlopen(req, timeout=30) as r, open(dest, 'wb') as w:
                 w.write(r.read())
             downloaded += 1
-            print(f'  + {slug}{ext}  ({len(images)} total imgs)')
         except Exception as e:
-            print(f'  ! failed {slug}: {e}')
+            print(f'! failed legacy media {slug}: {e}')
             failed += 1
             continue
     else:
         skipped += 1
-
     manifest.append({
-        'id': p['id'],
-        'title': title,
-        'tagline': tagline,
-        'handle': p['handle'],
-        'url': f"https://plushtrap.com/products/{p['handle']}",
-        'vendor': p.get('vendor', ''),
-        'product_type': p.get('product_type', ''),
-        'tags': [t.strip() for t in (p.get('tags', '') or '').split(',') if t.strip()],
-        'price_min': price_min,
-        'price_max': price_max,
-        'currency': 'USD',
-        'in_stock': in_stock,
-        'image': local_feat,
-        'image_alt': feat.get('alt') or title,
-        'image_w': feat.get('width'),
-        'image_h': feat.get('height'),
-        'all_images': [img['src'] for img in images],
-        'total_images': len(images),
-        'created_at': p.get('created_at'),
-        'published_at': p.get('published_at'),
+        'legacy_id': p['id'], 'title': title, 'legacy_handle': p.get('handle'),
+        'image': local_feat, 'all_images': [img['src'] for img in images],
+        'historical_only': True,
     })
-
-manifest.sort(key=lambda x: x.get('published_at') or '', reverse=True)
 
 out_json = ROOT / 'data' / 'products.json'
 with out_json.open('w') as f:
     json.dump({
-        'generated_at': datetime.datetime.utcnow().isoformat() + 'Z',
-        'source': 'pluhtrap.myshopify.com',
-        'total_active': len(manifest),
+        'generated_at': datetime.datetime.now(datetime.timezone.utc).isoformat().replace('+00:00', 'Z'),
+        'source': 'historical Shopify export; NOT CURRENT AUTHORITY',
+        'seo_authority': False,
+        'commerce_authority': False,
+        'historical_only': True,
         'products': manifest,
     }, f, indent=2, ensure_ascii=False)
-
-print('---')
-print(f'active products  : {len(manifest)}')
-print(f'images downloaded: {downloaded}')
-print(f'images cached    : {skipped}')
-print(f'images failed    : {failed}')
-print(f'manifest         : {out_json}')
+print(f'legacy references: {len(manifest)}; downloaded={downloaded}; cached={skipped}; failed={failed}')

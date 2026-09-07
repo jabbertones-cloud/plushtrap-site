@@ -1,0 +1,21 @@
+# PlushTrap
+
+> PlushTrap is an apparel brand. This file is an ancillary discovery aid; it is not an independent source of commercial truth.
+
+Canonical: https://plushtrap.com/
+
+## Authority
+
+PlushTrap commerce is Stripe-only. Use the current PlushTrap site/product registry for product identity and content, and Stripe-backed price/product identifiers for money-moving commercial truth. Historical Shopify exports or Shopify identifiers in repository history are migration/reference material only and MUST NOT be used to generate current price, availability, product feeds, structured data, sitemaps, or answer-engine facts.
+
+## Retrieval guidance
+
+- Prefer visible canonical page content and matching structured data.
+- Preserve exact color and variant identity rather than merging distinct variants.
+- Do not invent ratings, reviews, inventory, discounts, materials, dimensions, GTINs, or availability.
+- Never infer availability from a historical inventory dump.
+- If a public price conflicts with Stripe authority, fail publication and reconcile it rather than choosing either value silently.
+
+## Search note
+
+Normal crawlability, useful original content, internal linking, visible/structured-data parity, accurate product information, strong product media, merchant data, and truthful freshness signals are the primary publication contract. `llms.txt` is supplementary and is not treated as a Google ranking mechanism.
